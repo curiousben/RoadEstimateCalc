@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proposed Roadway Information Fillout</title>
+    <meta charset="utf-8"> 
+</head>
+<body>
+    <div class="table-responsive" id="Road_Estimate_Tool">
+        <table class="table"style="font-size:12px" border="1">
+            <thead>
+                <tr>
+                    <th align="center"colspan="2">Proposed Roadway</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td width="50%">Length</td>
+                    <td width="50%"><input type="number" id="ProposedRoadwayLength" value="">ft</td>
+                </tr>
+                <tr>
+                    <td width="50%">Paved Roadway Width</td>
+                    <td width="50%"><input type="number" id="PavedRoadwayWidth" value="">ft</td>
+                </tr>
+                <tr>
+                    <td width="50%">Total Shoulder Width</td>
+                    <td width="50%"><input type="number" id="TotalShoulderWidth" value="">ft</td>
+                </tr>
+                <tr>
+                    <td width="50%">Paved Shoulder Width</td>
+                    <td width="50%"><input type="number" id="PavedShoulderWidth" value="">ft</td>
+                </tr>
+                <tr>
+                    <td width="50%">Paved Shoulder Type</td>
+                    <td width="50%"><select id="PavedShoulderType">
+                        <option value="">Please Select</option>
+                        <option value="Surface Mix Only">Surface Mix Only</option>
+                        <option value="Full Pave.Depth">Full Pave.Depth</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td width="50%">Curb and Gutter Required?</td>
+                    <td width="50%">
+                    <select id="CurbandGutterRequired">
+                        <option value="">Please Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td width="50%">Length of C&G (if Required)</td>
+                    <td width="50%"><input type="number" id="LengthofCG" value="">ft</td>
+                </tr>
+                <tr>
+                    <td width="50%">Surface Mix (SM) Pave. Depth</td>
+                    <td width="50%"><input type="number" id="SurfaceMixPaveDepth" value="">in</td>
+                </tr>
+                <tr>
+                    <td width="50%">Intermediate Mix (IM) Pave. Depth</td>
+                    <td width="50%"><input type="number" id="IntermediateMix" value="">in</td>
+                </tr>
+                <tr>
+                    <td width="50%">Base Mix (BM) Pave. Depth</td>
+                    <td width="50%"><input type="number" id="BaseMix" value="">in</td>
+                </tr>
+                <tr>
+                    <td width="50%">No. 21B Stone Depth</td>
+                    <td width="50%"><input type="number" id="NoTwoOneBStone" value="">in</td>
+                </tr>
+                <tr>
+                    <td width="50%">No. 1 Stone depth</td>
+                    <td width="50%"><input type="number" id="NoOneStoneDepth" value="">in</td>
+                </tr>
+                <tr>
+                    <td width="50%">% of New Horizontal Alignment</td>
+                    <td width="50%"><input type="number" id="NewHorizontalAlignment" value="">%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/localmemory.js"></script>
+</html>

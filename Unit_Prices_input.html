@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alpha Stage Unit Prices</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="\RoadEstimateCalc\js\jquery-2.1.4.js"></script>
+</head>
+<body>
+<div class="table-responsive" id="Road_Estimate_Tool">
+<select id="choice">
+    <option value="">Please Select</option>
+    <option value="Bristol, Salem, Lynchburg, Staunton">Bristol, Salem, Lynchburg, Staunton</option>
+    <option value="NOVA">NOVA</option>
+    <option value="Hampton Roads">Hampton Roads</option>
+    <option value="Fredericksburg, Richmond, Culpepper">Fredericksburg, Richmond, Culpepper</option>
+</select>
+<button onclick="resetdata()">Reset</button>
+    <table style="font-size:12px" border="1">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Unit Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan= "2"><h1>Grading Items</h1></td>
+            </tr>
+            <tr>
+                <td>Clearing and Grubbing</td>
+                <td><input type="number" id="cr1" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Regular Excavation</td>
+                <td><input type="number" id="re1" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Borrow Excavation</td>
+                <td><input type="number" id="be1" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Unsuitable Mat'l.</td>
+                <td><input type="number" id="um1" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Backfill Stone (No.1) For Unsuitable Matl. Areas</td>
+                <td><input type="number" id="bs1" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Dry Riprap</td>
+                <td><input type="number" id="dr1" value="0">$</td>
+            </tr>
+            <tr>
+                <td  colspan= "2"><h1>Drainage Items</h1></td>
+            </tr>
+            <tr>
+                <td>Pipes Under 36"</td>
+                <td><input type="number" id="pu2" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Pipes Over 36"</td>
+                <td><input type="number" id="po2" value="0">$</td>
+            </tr>
+            <tr>
+                <td>End Walls for Pipe Over 36"</td>
+                <td><input type="number" id="ew2" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Drop Inlets</td>
+                <td><input type="number" id="di2" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Curb and Gutter</td>
+                <td><input type="number" id="cg2" value="0">$</td>
+            </tr>
+            <tr>
+                <td  colspan= "2"><h1>Pavement Items</h1></td>
+            </tr>
+            <tr>
+                <td>Surface Course</td>
+                <td><input type="number" id="sc3" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Intermediate Course</td>
+                <td><input type="number" id="ic3" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Base Course</td>
+                <td><input type="number" id="bc3" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Subbase Course</td>
+                <td><input type="number" id="sbc3" value="0">$</td>
+            </tr>
+            <tr>
+                <td>No.1 Stone</td>
+                <td><input type="number" id="ns3" value="0">$</td>
+            </tr>
+            <tr>
+                <td  colspan= "2"><h1>Incidental Items</h1></td>
+            </tr>
+            <tr>
+                <td>Retaining Walls (Conc)</td>
+                <td><input type="number" id="rw4" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Rural Private Entrance</td>
+                <td><input type="number" id="rp4" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Urban Private Entrance</td>
+                <td><input type="number" id="up4" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Commercial Entrance</td>
+                <td><input type="number" id="ce4" value="0">$</td>
+            </tr>
+            <tr>
+                <td colspan= "2"><h1>Protective Items</h1></td>
+            </tr>
+            <tr>
+                <td>Field Office</td>
+                <td><input type="number" id="fo5" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Sidewalk</td>
+                <td><input type="number" id="s5" value="0">$</td>
+            </tr>
+            <tr>
+                <td colspan= "2"><h1>Erosion Control</h1></td>
+            </tr>
+            <tr>
+                <td>Seeding</td>
+                <td><input type="number" id="s6" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Temporary Silt Fence</td>
+                <td><input type="number" id="ts6" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Check Dams TY I or TY II</td>
+                <td><input type="number" id="cd6" value="0">$</td>
+            </tr>
+            <tr>
+                <td colspan= "2"><h1>Utilities</h1></td>
+            </tr>
+            <tr>
+                <td>Below Ground Utilities (Lump Sum $$$$)</td>
+                <td><input type="number" id="bg7" value="0">$</td>
+            </tr>
+            <tr>
+                <td colspan= "2"><h1>Traffic and Safety</h1></td>
+            </tr>
+            <tr>
+                <td>Permanent Signal (Lump Sum)</td>
+                <td><input type="number" id="ps8" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Pavement Markings (If Applicable)</td>
+                <td><input type="number" id="pm8" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Guardrail GR-2</td>
+                <td><input type="number" id="gg8" value="0">$</td>
+            </tr>
+            <tr>
+                <td>End Treatment GR-9</td>
+                <td><input type="number" id="et8" value="0">$</td>
+            </tr>
+            <tr>
+                <td>GR-FOA's If Bridge Is On Project</td>
+                <td><input type="number" id="gr8" value="0">$</td>
+            </tr>
+            <tr>
+                <td colspan= "2"><h1>Bridge</h1></td>
+            </tr>
+            <tr>
+                <td>NS Bridge (Lump Sum $)(Use $300 Per Square Foot)</td>
+                <td><input type="number" id="ns9" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Demolition of Existing Bridge</td>
+                <td><input type="number" id="de9" value="0">$</td>
+            </tr>
+            <tr>
+                <td colspan= "2"><h1>Stream/Wetland Mitigation that is included in Construction</h1></td>
+            </tr>
+            <tr>
+                <td>Stream Mitigation</td>
+                <td><input type="number" id="sm0" value="0">$</td>
+            </tr>
+            <tr>
+                <td>Wetland Mitigation</td>
+                <td><input type="number" id="wm0" value="0">$</td>
+            </tr>
+          
+            <tr>
+                <td colspan= "2"><h1>CEI & Contingency</h1></td>
+            </tr>
+            <tr>    
+                <td>CEI of at least 20% as a lump Sum Item</td>
+                <td><input type="number" id="pcei" value="0">%</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script type="text/javascript" src="\RoadEstimateCalc\js\localmemory.js"></script>
+</html>
