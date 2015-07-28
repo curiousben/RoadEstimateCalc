@@ -34,6 +34,33 @@ var cls1 = localStorage.getItem("CL1l");
     cls9 = localStorage.getItem("CR3l");
     cds9 = localStorage.getItem("CR3d");
 
+    cls10 = localStorage.getItem("CL4l");
+    cds10 = localStorage.getItem("CL4d");
+
+    cls11 = localStorage.getItem("CM4l");
+    cds11 = localStorage.getItem("CM4d");
+
+    cls12 = localStorage.getItem("CR4l");
+    cds12 = localStorage.getItem("CR4d");
+
+    cls13 = localStorage.getItem("CL5l");
+    cds13 = localStorage.getItem("CL5d");
+
+    cls14 = localStorage.getItem("CM5l");
+    cds14 = localStorage.getItem("CM5d");
+
+    cls15 = localStorage.getItem("CR5l");
+    cds15 = localStorage.getItem("CR5d");
+
+    cls16 = localStorage.getItem("CL6l");
+    cds16 = localStorage.getItem("CL6d");
+
+    cls17 = localStorage.getItem("CM6l");
+    cds17 = localStorage.getItem("CM6d");
+
+    cls18 = localStorage.getItem("CR6l");
+    cds18 = localStorage.getItem("CR6d");
+
     fls1 = localStorage.getItem("FL1l");
     fds1 = localStorage.getItem("FL1d");
 
@@ -61,6 +88,33 @@ var cls1 = localStorage.getItem("CL1l");
     fls9 = localStorage.getItem("FR3l");
     fds9 = localStorage.getItem("FR3d");
 
+    fls10 = localStorage.getItem("FL4l");
+    fds10 = localStorage.getItem("FL4d");
+
+    fls11 = localStorage.getItem("FM4l");
+    fds11 = localStorage.getItem("FM4d");
+
+    fls12 = localStorage.getItem("FR4l");
+    fds12 = localStorage.getItem("FR4d");
+
+    fls13 = localStorage.getItem("FL5l");
+    fds13 = localStorage.getItem("FL5d");
+
+    fls14 = localStorage.getItem("FM5l");
+    fds14 = localStorage.getItem("FM5d");
+
+    fls15 = localStorage.getItem("FR5l");
+    fds15 = localStorage.getItem("FR5d");
+
+    fls16 = localStorage.getItem("FL6l");
+    fds16 = localStorage.getItem("FL6d");
+
+    fls17 = localStorage.getItem("FM6l");
+    fds17 = localStorage.getItem("FM6d");
+
+    fls18 = localStorage.getItem("FR6l");
+    fds18 = localStorage.getItem("FR6d");
+
      tsw = localStorage.getItem("TotalShoulderWidth");
     ersw = localStorage.getItem("ExistingRoadwayShldrWidth");
      prl = localStorage.getItem("ProposedRoadwayLength");
@@ -68,7 +122,7 @@ var cls1 = localStorage.getItem("CL1l");
     errw = localStorage.getItem("ExistingRoadwayRdwayWidth");
      nha = localStorage.getItem("NewHorizontalAlignment");
 
-return (((cls1*cds1)+(cls2*cds2)+(cls3*cds3)+(cls4*cds4)+(cls5*cds5)+(cls6*cds6)+(cls7*cds7)+(cls8*cds8)+(cls9*cds9)+(fls1*fds1)+(fls2*fds2)+(fls3*fds3)+(fls4*fds4)+(fls5*fds5)+(fls6*fds6)+(fls7*fds7)+(fls8*fds8)+(fls9*fds9)+((tsw-ersw)*2*prl)+((prw-errw)*prl))/43560)+(prl*((parseFloat(prw,10)+parseFloat(tsw,10)))*((nha/100)/43560));
+return (((cls1*cds1)+(cls2*cds2)+(cls3*cds3)+(cls4*cds4)+(cls5*cds5)+(cls6*cds6)+(cls7*cds7)+(cls8*cds8)+(cls9*cds9)+(cls10*cds10)+(cls11*cds11)+(cls12*cds12)+(cls13*cds13)+(cls14*cds14)+(cls15*cds15)+(cls16*cds16)+(cls17*cds17)+(cls18*cds18)+(fls1*fds1)+(fls2*fds2)+(fls3*fds3)+(fls4*fds4)+(fls5*fds5)+(fls6*fds6)+(fls7*fds7)+(fls8*fds8)+(fls9*fds9)+(fls10*fds10)+(fls11*fds11)+(fls12*fds12)+(fls13*fds13)+(fls14*fds14)+(fls15*fds15)+(fls16*fds16)+(fls17*fds17)+(fls18*fds18)+((tsw-ersw)*2*prl)+((prw-errw)*prl))/43560)+(prl*((parseFloat(prw,10)+parseFloat(tsw,10)))*((nha/100)/43560));
 }
 function AnticipatedRegularExcavation()
 {
@@ -109,13 +163,47 @@ var ls1 = localStorage.getItem("CL1l");
     ws9 = localStorage.getItem("CR3w");
     ds9 = localStorage.getItem("CR3d");
 
-    return (((ls1*ws1*ds1)+(ls2*ws2*ds2)+(ls3*ws3*ds3)+(ls4*ws4*ds4)+(ls5*ws5*ds5)+(ls6*ws6*ds6)+(ls7*ws7*ds7)+(ls8*ws8*ds8)+(ls9*ws9*ds9))/27);
+    ls10 = localStorage.getItem("CL4l");
+    ws10 = localStorage.getItem("CL4w");
+    ds10 = localStorage.getItem("CL4d");
 
+    ls11 = localStorage.getItem("CM4l");
+    ws11 = localStorage.getItem("CM4w");
+    ds11 = localStorage.getItem("CM4d");
+
+    ls12 = localStorage.getItem("CR4l");
+    ws12 = localStorage.getItem("CR4w");
+    ds12 = localStorage.getItem("CR4d");
+
+    ls13 = localStorage.getItem("CL5l");
+    ws13 = localStorage.getItem("CL5w");
+    ds13 = localStorage.getItem("CL5d");
+
+    ls14 = localStorage.getItem("CM5l");
+    ws14 = localStorage.getItem("CM5w");
+    ds14 = localStorage.getItem("CM5d");
+
+    ls15 = localStorage.getItem("CR5l");
+    ws15 = localStorage.getItem("CR5w");
+    ds15 = localStorage.getItem("CR5d");
+
+    ls16 = localStorage.getItem("CL6l");
+    ws16 = localStorage.getItem("CL6w");
+    ds16 = localStorage.getItem("CL6d");
+
+    ls17 = localStorage.getItem("CM6l");
+    ws17 = localStorage.getItem("CM6w");
+    ds17 = localStorage.getItem("CM6d");
+
+    ls18 = localStorage.getItem("CR6l");
+    ws18 = localStorage.getItem("CR6w");
+    ds18 = localStorage.getItem("CR6d");
+
+    return (((ls1*ws1*ds1)+(ls2*ws2*ds2)+(ls3*ws3*ds3)+(ls4*ws4*ds4)+(ls5*ws5*ds5)+(ls6*ws6*ds6)+(ls7*ws7*ds7)+(ls8*ws8*ds8)+(ls9*ws9*ds9)+(ls10*ws10*ds10)+(ls11*ws11*ds11)+(ls12*ws12*ds12)+(ls13*ws13*ds13)+(ls14*ws14*ds14)+(ls15*ws15*ds15)+(ls16*ws16*ds16)+(ls17*ws17*ds17)+(ls18*ws18*ds18))/27);
 }
-
 function FillTotalCY()
 {
-
+    
 var ls1 = localStorage.getItem("FL1l");
     ws1 = localStorage.getItem("FL1w");
     ds1 = localStorage.getItem("FL1d");
@@ -152,7 +240,43 @@ var ls1 = localStorage.getItem("FL1l");
     ws9 = localStorage.getItem("FR3w");
     ds9 = localStorage.getItem("FR3d");
 
-    return (((ls1*ws1*ds1)+(ls2*ws2*ds2)+(ls3*ws3*ds3)+(ls4*ws4*ds4)+(ls5*ws5*ds5)+(ls6*ws6*ds6)+(ls7*ws7*ds7)+(ls8*ws8*ds8)+(ls9*ws9*ds9))/27);
+    ls10 = localStorage.getItem("FL4l");
+    ws10 = localStorage.getItem("FL4w");
+    ds10 = localStorage.getItem("FL4d");
+
+    ls11 = localStorage.getItem("FM4l");
+    ws11 = localStorage.getItem("FM4w");
+    ds11 = localStorage.getItem("FM4d");
+
+    ls12 = localStorage.getItem("FR4l");
+    ws12 = localStorage.getItem("FR4w");
+    ds12 = localStorage.getItem("FR4d");
+
+    ls13 = localStorage.getItem("FL5l");
+    ws13 = localStorage.getItem("FL5w");
+    ds13 = localStorage.getItem("FL5d");
+
+    ls14 = localStorage.getItem("FM5l");
+    ws14 = localStorage.getItem("FM5w");
+    ds14 = localStorage.getItem("FM5d");
+
+    ls15 = localStorage.getItem("FR5l");
+    ws15 = localStorage.getItem("FR5w");
+    ds15 = localStorage.getItem("FR5d");
+
+    ls16 = localStorage.getItem("FL6l");
+    ws16 = localStorage.getItem("FL6w");
+    ds16 = localStorage.getItem("FL6d");
+
+    ls17 = localStorage.getItem("FM6l");
+    ws17 = localStorage.getItem("FM6w");
+    ds17 = localStorage.getItem("FM6d");
+
+    ls18 = localStorage.getItem("FR6l");
+    ws18 = localStorage.getItem("FR6w");
+    ds18 = localStorage.getItem("FR6d");
+
+    return (((ls1*ws1*ds1)+(ls2*ws2*ds2)+(ls3*ws3*ds3)+(ls4*ws4*ds4)+(ls5*ws5*ds5)+(ls6*ws6*ds6)+(ls7*ws7*ds7)+(ls8*ws8*ds8)+(ls9*ws9*ds9)+(ls10*ws10*ds10)+(ls11*ws11*ds11)+(ls12*ws12*ds12)+(ls13*ws13*ds13)+(ls14*ws14*ds14)+(ls15*ws15*ds15)+(ls16*ws16*ds16)+(ls17*ws17*ds17)+(ls18*ws18*ds18))/27);
 
 }
 
@@ -536,7 +660,7 @@ function GradingItems()
        TotBS = BackFillStoneNoOne()*localStorage.getItem("bs1");
        TotDR = DryRipRap()*localStorage.getItem("dr1");
       SubTot = TotCG+TotRE+TotBE+TotUM+TotBS+TotDR;
-        Cont = 0.05*SubTot;
+        Cont = (localStorage.getItem("GIPercent")*SubTot)/100;
         document.getElementById("ClearingFC").innerHTML = numbercomma(ClearingGrubbing().toFixed());
         document.getElementById("ClearingUP").innerHTML = "$"+numbercomma(localStorage.getItem("cr1"));
         document.getElementById("TotClearingFC").innerHTML = "$"+numbercomma(TotCG.toFixed());
@@ -562,6 +686,7 @@ function GradingItems()
         document.getElementById("TotRiprapFC").innerHTML = "$"+numbercomma(TotDR.toFixed());
 
         document.getElementById("GradingSubTot").innerHTML = "$"+numbercomma(SubTot.toFixed());
+        document.getElementById("GradeCon").innerHTML = "%"+numbercomma(localStorage.getItem("GIPercent"));
         document.getElementById("GradingContin").innerHTML = "$"+numbercomma(Cont.toFixed());
        return [TotCG,TotRE,TotBE,TotUM,TotBS,TotDR,SubTot,Cont];
 }
@@ -574,7 +699,7 @@ function DrainageItems()
        TotDU = DropInletsfc()*localStorage.getItem("di2");
        TotCG = CurbGutterfc()*localStorage.getItem("cg2");
      SubTotD = parseFloat(TotCC,10)+parseFloat(TotPU36,10)+parseFloat(TotPO36,10)+parseFloat(TotEP36,10)+parseFloat(TotDU,10)+parseFloat(TotCG,10);
-       ContD = 0.05*SubTotD;
+       ContD = (localStorage.getItem("DIPercent")*SubTotD)/100;
         document.getElementById("ConcreteFC").innerHTML = "$"+numbercomma(Number(ConcreteBoxCulvert()).toFixed());
         document.getElementById("TotConcreteFC").innerHTML="$"+numbercomma(TotCC.toFixed());
 
@@ -599,6 +724,7 @@ function DrainageItems()
         document.getElementById("TotCurbFC").innerHTML="$"+numbercomma(TotCG.toFixed());
 
         document.getElementById("DrainageSubTot").innerHTML="$"+numbercomma(SubTotD.toFixed());
+        document.getElementById("DrainCon").innerHTML="%"+numbercomma(localStorage.getItem("DIPercent"));
         document.getElementById("DrainageContin").innerHTML="$"+numbercomma(ContD.toFixed());
        return [TotCC,TotPU36,TotPO36,TotEP36,TotDU,TotCG,SubTotD,ContD];
 }
@@ -610,7 +736,7 @@ function PavementItems()
       TotSbC = SubbaseCourse()*localStorage.getItem("sbc3");
        TotNS = NoOneStone()*localStorage.getItem("ns3");
       SubTot = TotSB+TotIC+TotBC+TotSbC+TotNS;
-        Cont = 0.05*SubTot;
+        Cont = (localStorage.getItem("PavIPercent")*SubTot)/100;
     document.getElementById("SurfaceFC").innerHTML=numbercomma(SurfaceCourse().toFixed());
     document.getElementById("SurfaceUP").innerHTML="$"+numbercomma(localStorage.getItem("sc3"));
     document.getElementById("TotSurfaceFC").innerHTML="$"+numbercomma(TotSB.toFixed());
@@ -632,6 +758,7 @@ function PavementItems()
     document.getElementById("TotNo1FC").innerHTML="$"+numbercomma(TotNS.toFixed());
 
     document.getElementById("PavementSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
+    document.getElementById("PaveCon").innerHTML="%"+numbercomma(localStorage.getItem("PavIPercent"));
     document.getElementById("PavementContin").innerHTML="$"+numbercomma(Cont.toFixed());
     return [TotSB,TotIC,TotBC,TotSbC,TotNS,SubTot,Cont];
 }
@@ -642,7 +769,7 @@ function IncidentalItems()
        TotUE = UrbEnt()*localStorage.getItem("up4");
        TotCE = CommEnt()*localStorage.getItem("ce4");
       SubTot = TotRW+TotPE+TotUE+TotCE;
-        Cont = 0.05*SubTot;
+        Cont = (localStorage.getItem("IIPercent")*SubTot)/100;
         document.getElementById("RetainFC").innerHTML=numbercomma(RetainingWalls().toFixed());
         document.getElementById("RetainUP").innerHTML="$"+numbercomma(localStorage.getItem("rw4"));
         document.getElementById("TotRetainFC").innerHTML="$"+numbercomma(TotRW.toFixed());
@@ -660,6 +787,7 @@ function IncidentalItems()
         document.getElementById("TotCommFC").innerHTML="$"+numbercomma(TotCE.toFixed());
 
         document.getElementById("IncidentalSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
+        document.getElementById("IncidCon").innerHTML="%"+numbercomma(localStorage.getItem("IIPercent"));
         document.getElementById("IncidentalContin").innerHTML="$"+numbercomma(Cont.toFixed());
        return [TotRW,TotPE,TotUE,TotCE,SubTot,Cont];
 }
@@ -669,7 +797,7 @@ function ProtectiveItems()
        TotFO = FieldOffice()*localStorage.getItem("fo5");
         TotS = Sidewalk()*localStorage.getItem("s5");
       SubTot = TotMT+TotFO+TotS;
-        Cont = 0.05*SubTot;
+        Cont = (localStorage.getItem("ProIPercent")*SubTot)/100;
         document.getElementById("MainUP").innerHTML="$"+numbercomma(MainofTraffic().toFixed());
         document.getElementById("TotMainFC").innerHTML="$"+numbercomma(TotMT.toFixed());
 
@@ -682,6 +810,7 @@ function ProtectiveItems()
         document.getElementById("TotSideFC").innerHTML="$"+numbercomma(TotS.toFixed());
 
         document.getElementById("ProtectiveSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
+        document.getElementById("ProtCon").innerHTML="%"+numbercomma(localStorage.getItem("ProIPercent"));
         document.getElementById("ProtectiveContin").innerHTML="$"+numbercomma(Cont.toFixed()); 
        return [TotMT,TotFO,TotS,SubTot,Cont];
 }
@@ -692,7 +821,7 @@ function ErosionItems()
        TotTS = TempSiltFence()*localStorage.getItem("ts6");
        TotCD = CheckDamsTYlOrTYll()*localStorage.getItem("cd6");
       SubTot = TotSM+TotS+TotTS+TotCD;
-        Cont = 0.05*SubTot;
+        Cont = (localStorage.getItem("ECPercent")*SubTot)/100;
         document.getElementById("StormFC").innerHTML=numbercomma(Number(StormWaterManageFac()[0]).toFixed()); 
         document.getElementById("StormUP").innerHTML="$"+numbercomma(Number(StormWaterManageFac()[1]).toFixed()); 
         document.getElementById("TotStormFC").innerHTML="$"+numbercomma(TotSM.toFixed());
@@ -710,18 +839,20 @@ function ErosionItems()
         document.getElementById("TotCheckFC").innerHTML="$"+numbercomma(TotCD.toFixed());
 
         document.getElementById("ErosionSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
+        document.getElementById("ErosCon").innerHTML="%"+numbercomma(localStorage.getItem("ECPercent"));
         document.getElementById("ErosionContin").innerHTML="$"+numbercomma(Cont.toFixed());
        return [TotSM,TotS,TotTS,TotCD,SubTot,Cont];
 }
 function UtilItems()
 {
    var TotSM = BelowGroundUtilities()*localStorage.getItem("bg7");
-        Cont = 0.05*TotSM;
+        Cont = (localStorage.getItem("UPercent")*TotSM)/100;
     document.getElementById("BelowFC").innerHTML=numbercomma(BelowGroundUtilities().toFixed());
     document.getElementById("BelowUP").innerHTML="$"+numbercomma(localStorage.getItem("bg7"));
     document.getElementById("TotBelowFC").innerHTML="$"+numbercomma(TotSM.toFixed());
 
     document.getElementById("UtilitiesSubTot").innerHTML="$"+numbercomma(TotSM.toFixed());
+    document.getElementById("UtilCon").innerHTML="%"+numbercomma(localStorage.getItem("UPercent"));
     document.getElementById("UtilitiesContin").innerHTML="$"+numbercomma(Cont.toFixed());
        return [TotSM,TotSM,Cont];
 }
@@ -733,7 +864,7 @@ function TrafficandSafetyItems()
        TotET = EndTreatmentGR9()*localStorage.getItem("et8");
       TotGRF = GRFOA()*localStorage.getItem("gr8");
       SubTot = TotPS+TotPM+TotGR+TotET+TotGRF;
-        Cont = 0.05*SubTot;
+        Cont = (localStorage.getItem("TSPercent")*SubTot)/100;
         document.getElementById("PermFC").innerHTML=numbercomma(Number(PermanentSignal()).toFixed());
         document.getElementById("PermUP").innerHTML="$"+numbercomma(localStorage.getItem("ps8"));
         document.getElementById("TotPermFC").innerHTML="$"+numbercomma(TotPS.toFixed());
@@ -755,6 +886,7 @@ function TrafficandSafetyItems()
         document.getElementById("TotGRFC").innerHTML="$"+numbercomma(TotGRF.toFixed());
 
         document.getElementById("TrafficSSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
+        document.getElementById("TrafCon").innerHTML="%"+numbercomma(localStorage.getItem("TSPercent"));
         document.getElementById("TrafficSContin").innerHTML="$"+numbercomma(Cont.toFixed());
        return [TotPS,TotPM,TotGR,TotET,TotGRF,SubTot,Cont];
 }
@@ -763,7 +895,7 @@ function BridgeItems()
    var TotNS = NSBridge()*localStorage.getItem("ns9");
        TotDB = DemolitionExistingBridge()*localStorage.getItem("de9");
       SubTot = TotNS+TotDB;
-        Cont = 0.05*SubTot;
+        Cont = (localStorage.getItem("BPercent")*SubTot)/100;
         document.getElementById("NSFC").innerHTML=numbercomma(NSBridge().toFixed());
         document.getElementById("NSUP").innerHTML="$"+numbercomma(localStorage.getItem("ns9"));
         document.getElementById("TotNSFC").innerHTML="$"+numbercomma(TotNS.toFixed());
@@ -773,6 +905,7 @@ function BridgeItems()
         document.getElementById("TotDemoFC").innerHTML="$"+numbercomma(TotDB.toFixed());
 
         document.getElementById("BridgeSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
+        document.getElementById("BridCon").innerHTML="$"+numbercomma(localStorage.getItem("BPercent"));
         document.getElementById("BridgeContin").innerHTML="$"+numbercomma(Cont.toFixed());
        return [TotNS,TotDB,SubTot,Cont];
 }

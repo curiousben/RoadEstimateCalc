@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Earthwork:Fill Information Fillout</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src='\RoadEstimateCalc\js\jquery-2.1.4.js'></script>
+    <script type="text/javascript" src="\RoadEstimateCalc\bootstrap-3.3.5-dist\js/bootstrap.min.js"></script>
+    <link href="\RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="\RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
+<!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
+</head>
+<body>
+    <div class="container-fluid" id="Road_Estimate_Tool">
+        <div class="row">
+            <div class="col-xs-12" id="header">Earthwork:Fill</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4"><img src="\RoadEstimateCalc/images/image1.png" class="img-responsive" width="342" height="221"></div>
+            <div class="col-xs-4"><img src="\RoadEstimateCalc/images/image2.png" class="img-responsive" width="347" height="236"></div>
+            <div class="col-xs-4">
+                <div class="row">
+                    <div class="col-xs-4"><div class="mini-box" id="RoadPicPara">Length: </div></div>
+                    <div class="col-xs-8"><div class="mini-box" id="RoadPicPara"><p1>Length of</p1></div></div>
+
+                    <div class="col-xs-4"><div class="mini-box" id="RoadPicPara">W: </div></div>
+                    <div class="col-xs-8"><div class="mini-box" id="RoadPicPara"><p1>Distance from existing edge pf pavement to the proposed bottom/top of cut/fill</p1></div></div>
+
+                    <div class="col-xs-4"><div class="mini-box" id="RoadPicPara">Distance: </div></div>
+                    <div class="col-xs-8"><div class="mini-box" id="RoadPicPara"><p1>Distance from existing edge of pavement to the proposed cut/fill tie-in (using a range finder is recommended)</p1></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Left Section 1</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL1l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL1w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL1d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Mid Section 1</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM1l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM1w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM1d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Right Section 1</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR1l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR1w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR1d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Left Section 2</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL2l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL2w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL2d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Mid Section 2</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM2l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM2w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM2d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Right Section 2</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR2l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR2w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR2d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Left Section 3</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL3l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL3w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL3d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Mid Section 3</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM3l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM3w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM3d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Right Section 3</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR3l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR3w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR3d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Left Section 4</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL4l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL4w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL4d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Mid Section 4</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM4l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM4w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM4d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Right Section 4</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR4l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR4w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR4d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Left Section 5</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL5l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL5w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL5d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Mid Section 5</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM5l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM5w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM5d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Right Section 5</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR5l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR5w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR5d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Left Section 6</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL6l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL6w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FL6d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Mid Section 6</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM6l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM6w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FM6d" value="">   ft</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Right Section 6</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-4">Length</div>
+            <div class="col-xs-12 col-sm-4">Width</div>
+            <div class="col-xs-12 col-sm-4">Distance</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR6l" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR6w" value="">   ft</div>
+            <div class="col-xs-12 col-sm-4"><input type="number" id="FR6d" value="">   ft</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="\RoadEstimateCalc\js\localmemory.js"></script>
+<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/localmemory.js"></script> -->
+</html>

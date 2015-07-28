@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proposed Roadway Information Fillout</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src='\RoadEstimateCalc\js\jquery-2.1.4.js'></script>
+    <link href="\RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="\RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
+</head>
+<body>
+    <div class="container-fluid" id="Road_Estimate_Tool">
+        <div class="row">
+            <div class="col-xs-12" id="header">Proposed Roadway</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-6">Length</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="ProposedRoadwayLength" value="">   ft</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-6">Paved Roadway Width</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="PavedRoadwayWidth" value="">   ft</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-6">Total Shoulder Width</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="TotalShoulderWidth" value="">   ft</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-6">Paved Shoulder Width</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="PavedShoulderWidth" value="">   ft</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-6">Paved Shoulder Type</div>
+            <div class="col-xs-12 col-sm-6"><select id="PavedShoulderType">
+                        <option value="">Please Select</option>
+                        <option value="Surface Mix Only">Surface Mix Only</option>
+                        <option value="Full Pave.Depth">Full Pave.Depth</option>
+                    </select></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-6">Curb and Gutter Required?</div>
+            <div class="col-xs-12 col-sm-6"><select id="CurbandGutterRequired">
+                        <option value="">Please Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-6">Length of C&G (if Required)</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="LengthofCG" value="">   ft</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-6">Surface Mix (SM) Pave. Depth</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="SurfaceMixPaveDepth" value="">   in</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-6">Intermediate Mix (IM) Pave. Depth</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="IntermediateMix" value="">   in</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-6">Base Mix (BM) Pave. Depth</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="BaseMix" value="">   in</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-6">No. 21B Stone Depth</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="NoTwoOneBStone" value="">   in</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-6">No. 1 Stone depth</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="NoOneStoneDepth" value="">   in</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-6">% of New Horizontal Alignment</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="NewHorizontalAlignment" value="">   %</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="\RoadEstimateCalc\js\localmemory.js"></script>
+<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/localmemory.js"></script> -->
+</html>

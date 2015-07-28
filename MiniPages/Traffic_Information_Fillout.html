@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Information Fillout</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src='\RoadEstimateCalc\js\jquery-2.1.4.js'></script>
+    <link href="\RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="\RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
+</head>
+<body>
+    <div class="container-fluid" id="Road_Estimate_Tool">
+        <div class="row">
+            <div class="col-xs-12" id="header">Traffic</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-6">Guardrail Length</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="GuardrailLength" value="">ft</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-6">GR-9</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="GR9" value="">ea</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-12 col-sm-6">Permanent Traffic Signal</div>
+            <div class="col-xs-12 col-sm-6"><input type="number" id="PermanentTrafficSignal" value="">ea</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-12 col-sm-6">How complex is MOT?</div>
+            <div class="col-xs-12 col-sm-6"><select id="HowComplexIsMOT">
+                        <option value="">Please Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="\RoadEstimateCalc\js\localmemory.js"></script>
+<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/localmemory.js"></script> -->
+</html>

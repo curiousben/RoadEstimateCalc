@@ -1,569 +1,569 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Alpha Stage Reciept</title>
+    <title>Reciept</title>
     <meta charset="utf-8">
+    <script type="text/javascript" src='\RoadEstimateCalc\js\jquery-2.1.4.js'></script>
+    <link href="\RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="\RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css">
+    <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/brains.js"></script> -->
     <script type="text/javascript" src="\RoadEstimateCalc\js\brains.js"></script>
     <script type="text/javascript" src="\RoadEstimateCalc\js\jquery-2.1.4.js"></script>
+    <!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/pdfmake.min.js"> --></script>
     <script type="text/javascript" src="\RoadEstimateCalc\js\PDF\pdfmake.min.js"></script>
+    <!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/vfs_fonts.js"></script> -->
     <script type="text/javascript" src="\RoadEstimateCalc\js\PDF\vfs_fonts.js"></script>
 </head>
 <body>
-<div>
-    <p>
-        <h2> For use in Pre-Scoping and Scoping Construction Estimates</h2>
-        <p>
-            (This is not intended to be a detailed pay item breakdown. It is intended to be a tool that assits users in preparing early estimates prior to having developed plans. TRNSPRT should be utilites by the PFI stage.)
-        </p>
-    </p>
-</div>
-<div id="ResultTable">
-    <table style="width: 1020px; font-size:12px;" border="1">
-        <thead>
-            <tr>
-                <th colspan = "5"><h1>Receipt</h1></th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <td colspan= "4"><h2>Grand Total</h2></td>
-                <td id="GrandtotalFC"></td>
-            </tr>
-        </tfoot>
-        <tbody>
-            <tr>
-                <td>Project</td>
-                <td colspan = "4" id="ProjectNum"></td>
-            </tr>
-            <tr>
-                <td>UPC</td>
-                <td colspan = "4" id="UPCid"</td>
-            </tr>
-            <tr>
-                <td>Date</td>
-                <td colspan = "4" id="time"></td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td colspan = "4" id="Estname"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Mobilization and Construction Survey</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>            
-            <tr>
-                <td>Mobilization</td>
-                <td>LS</td>
-                <td>1</td>
-                <td id="MobileFC"></td>
-                <td id="TotMobileFC"></td>
-            </tr>
-            <tr>
-                <td>Construction Surveying</td>
-                <td>LS</td>
-                <td>1</td>
-                <td id="ConstructFC"></td>
-                <td id="TotConstructFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Grading Items</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>Clearing and Grubbing</td>
-                <td>Acre</td>
-                <td id="ClearingFC"></td>
-                <td id="ClearingUP"></td>
-                <td id="TotClearingFC"></td>
-            </tr>
-            <tr>
-                <td>Regular Excavation</td>
-                <td>CY</td>
-                <td id="RegularFC"></td>
-                <td id="RegularUP"></td>
-                <td id="TotRegularFC"></td>
-            </tr>
-            <tr>
-                <td>Borrow Excavation</td>
-                <td>CY</td>
-                <td id="BorrowFC"></td>
-                <td id="BorrowUP"></td>
-                <td id="TotBorrowFC"></td>
-            </tr>
-            <tr>
-                <td>Unsuitable Mat'l.</td>
-                <td>CY</td>
-                <td id="UnsuitableFC"></td>
-                <td id="UnsuitableUP"></td>
-                <td id="TotUnsuitableFC"></td>
-            </tr>
-            <tr>
-                <td>Backfill Stone (No.1) For Unsuitable Matl. Areas</td>
-                <td>Tons</td>
-                <td id="BackfillFC"></td>
-                <td id="BackfillUP"></td>
-                <td id="TotBackfillFC"></td>
-            </tr>
-            <tr>
-                <td>Dry Riprap</td>
-                <td>Tons</td>
-                <td id="RiprapFC"></td>
-                <td id="RiprapUP"></td>
-                <td id="TotRiprapFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="GradingSubTot"></td>
-            </tr>
-            <tr>
-                <td>Grading Items Contingency</td>
-                <td colspan= "3">5.00%</td>
-                <td id="GradingContin"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Drainage Items</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>Concrete Box Culvert</td>
-                <td>LS</td>
-                <td>1</td>
-                <td id="ConcreteFC"></td>
-                <td id="TotConcreteFC"></td>
-            </tr>
-            <tr>
-                <td>Pipes Under 36"</td>
-                <td>LF</td>
-                <td id="PipesUFC"></td>
-                <td id="PipesUUP"></td>
-                <td id="TotPipesFC"></td>
-            </tr>
-            <tr>
-                <td>Pipes Over 36"</td>
-                <td>LF</td>
-                <td id="PipesOFC"></td>
-                <td id="PipesOUP"></td>
-                <td id="TotPipesOFC"></td>
-            </tr>
-            <tr>
-                <td>End Walls for Pipe Over 36"</td>
-                <td>EA</td>
-                <td id="EndWallsFC"></td>
-                <td id="EndWallsUP"></td>
-                <td id="TotEndwallsFC"></td>
-            </tr>
-            <tr>
-                <td>Drop Inlets</td>
-                <td>EA</td>
-                <td id="DropFC"></td>
-                <td id="DropUP"></td>
-                <td id="TotDropFC"></td>
-            </tr>
-            <tr>
-                <td>Curb and Gutter</td>
-                <td>LF</td>
-                <td id="CurbFC"></td>
-                <td id="CurbUP"></td>
-                <td id="TotCurbFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="DrainageSubTot"></td>
-            </tr>
-            <tr>
-                <td>Drainage Items Contingency (XX%)</td>
-                <td colspan= "3">5.00%</td>
-                <td id="DrainageContin"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Pavement Items</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>Surface Course</td>
-                <td>Tons</td>
-                <td id="SurfaceFC"></td>
-                <td id="SurfaceUP"></td>
-                <td id="TotSurfaceFC"></td>
-            </tr>
-            <tr>
-                <td>Intermediate Course</td>
-                <td>Tons</td>
-                <td id="IntermediateFC"></td>
-                <td id="IntermediateUP"></td>
-                <td id="TotIntermediateFC"></td>
-            </tr>
-            <tr>
-                <td>Base Course</td>
-                <td>Tons</td>
-                <td id="BaseFC"></td>
-                <td id="BaseUP"></td>
-                <td id="TotBaseFC"></td>
-            </tr>
-            <tr>
-                <td>Subbase Course</td>
-                <td>Tons</td>
-                <td id="SubbaseFC"></td>
-                <td id="SubbaseUP"></td>
-                <td id="TotSubbaseFC"></td>
-            </tr>
-            <tr>
-                <td>No.1 Stone</td>
-                <td>Tons</td>
-                <td id="No1FC"></td>
-                <td id="No1UP"></td>
-                <td id="TotNo1FC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="PavementSubTot"></td>
-            </tr>
-            <tr>
-                <td>Pavement Items Contingency</td>
-                <td colspan= "3">5.00%</td>
-                <td id="PavementContin"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Incidental Items</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>Retaining Walls (Conc)</td>
-                <td>CY</td>
-                <td id="RetainFC"></td>
-                <td id="RetainUP"></td>
-                <td id="TotRetainFC"></td>
-            </tr>
-            <tr>
-                <td>Rural Private Entrance</td>
-                <td>EA</td>
-                <td id="RuralFC"></td>
-                <td id="RuralUP"></td>
-                <td id="TotRuralFC"></td>
-            </tr>
-            <tr>
-                <td>Urban Private Entrance</td>
-                <td>EA</td>
-                <td id="UrbanFC"></td>
-                <td id="UrbanUP"></td>
-                <td id="TotUrbanFC"></td>
-            </tr>
-            <tr>
-                <td>Commercial Entrance</td>
-                <td>EA</td>
-                <td id="CommFC"></td>
-                <td id="CommUP"></td>
-                <td id="TotCommFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="IncidentalSubTot"></td>
-            </tr>
-            <tr>
-                <td>Incidental Items Contingency</td>
-                <td colspan= "3">5.00%</td>
-                <td id="IncidentalContin"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Protective Items</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>Maintenance of Traffic (Lump Sum)</td>
-                <td>LS</td>
-                <td>1</td>
-                <td id="MainUP"></td>
-                <td id="TotMainFC"></td>
-            </tr>
-            <tr>
-                <td>Field Office</td>
-                <td>MO</td>
-                <td id="FieldFC"></td>
-                <td id="FieldUP"></td>
-                <td id="TotFieldFC"></td>
-            </tr>
-            <tr>
-                <td>Sidewalk</td>
-                <td>SY</td>
-                <td id="SideFC"></td>
-                <td id="SideUP"></td>
-                <td id="TotSideFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="ProtectiveSubTot"></td>
-            </tr>
-            <tr>
-                <td>Protective Items Contingency</td>
-                <td colspan= "3">5.00%</td>
-                <td id="ProtectiveContin"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Erosion Control</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>Storm Water Management Facility</td>
-                <td>EA</td>
-                <td id="StormFC"></td>
-                <td id="StormUP"></td>
-                <td id="TotStormFC"></td>
-            </tr>
-            <tr>
-                <td>Seeding</td>
-                <td>LB</td>
-                <td id="SeedFC"></td>
-                <td id="SeedUP"></td>
-                <td id="TotSeedFC"></td>
-            </tr>
-            <tr>
-                <td>Temporary Silt Fence</td>
-                <td>LF</td>
-                <td id="TempFC"></td>
-                <td id="TempUP"></td>
-                <td id="TotTempFC"></td>
-            </tr>
-            <tr>
-                <td>Check Dams TY I or TY II</td>
-                <td>EA</td>
-                <td id="CheckFC"></td>
-                <td id="CheckUP"></td>
-                <td id="TotCheckFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="ErosionSubTot"></td>
-            </tr>
-            <tr>
-                <td>Erosion Items Contingency</td>
-                <td colspan= "3">5.00%</td>
-                <td id="ErosionContin"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Utilities</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>Below Ground Utilities (Lump Sum $$$$)</td>
-                <td>LF</td>
-                <td id="BelowFC"></td>
-                <td id="BelowUP"></td>
-                <td id="TotBelowFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="UtilitiesSubTot"></td>
-            </tr>
-            <tr>
-                <td>Utilities Items Contingency</td>
-                <td colspan= "3">5.00%</td>
-                <td id="UtilitiesContin"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Traffic and Safety</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>Permanent Signal (Lump Sum)</td>
-                <td>EA</td>
-                <td id="PermFC"></td>
-                <td id="PermUP"></td>
-                <td id="TotPermFC"></td>
-            </tr>
-            <tr>
-                <td>Pavement Markings (If Applicable)</td>
-                <td>LF</td>
-                <td id="PaveFC"></td>
-                <td id="PaveUP"></td>
-                <td id="TotPaveFC"></td>
-            </tr>
-            <tr>
-                <td>Guardrail GR-2</td>
-                <td>LF</td>
-                <td id="GuardFC"></td>
-                <td id="GuardUP"></td>
-                <td id="TotGuardFC"></td>
-            </tr>
-            <tr>
-                <td>End Treatment GR-9</td>
-                <td>EA</td>
-                <td id="EndFC"></td>
-                <td id="EndUP"></td>
-                <td id="TotEndFC"></td>
-            </tr>
-            <tr>
-                <td>GR-FOA's If Bridge Is On Project</td>
-                <td>EA</td>
-                <td id="GRFC"></td>
-                <td id="GRUP"></td>
-                <td id="TotGRFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="TrafficSSubTot"></td>
-            </tr>
-            <tr>
-                <td>Traffic and Safety Items Contingency</td>
-                <td colspan= "3">5.00%</td>
-                <td id="TrafficSContin"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h1>Bridge</h1></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>NS Bridge (Lump Sum $)(Use $300 Per Square Foot)</td>
-                <td>SF</td>
-                <td id="NSFC"></td>
-                <td id="NSUP"></td>
-                <td id="TotNSFC"></td>
-            </tr>
-            <tr>
-                <td>Demolition of Existing Bridge</td>
-                <td>LS</td>
-                <td id="DemoFC"></td>
-                <td id="DemoUP"></td>
-                <td id="TotDemoFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="BridgeSubTot"></td>
-            </tr>
-            <tr>
-                <td>Bridge Items Contingency</td>
-                <td colspan= "3">5.00%</td>
-                <td id="BridgeContin"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Stream/Wetland Mitigation that is included in Construction</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-            </tr>
-            <tr>
-                <td>Stream Mitigation</td>
-                <td>LF</td>
-                <td id="StreamFC"></td>
-                <td id="StreamUP"></td>
-                <td id="TotStreamFC"></td>
-            </tr>
-            <tr>
-                <td>Wetland Mitigation</td>
-                <td>ACRE</td>
-                <td id="WetlandFC"></td>
-                <td id="WetlandUP"></td>
-                <td id="TotWetlandFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "5"><h2>Sub-Totals</h2></td>
-            </tr>
-            <tr>
-                <td colspan="4">Item</td>
-                <td>Amount</td>
-            </tr>            
-            <tr>
-                <td colspan= "4">Contingency Total</td>
-                <td id="ContingencyFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Sub-Total</td>
-                <td id="SubTotalsFC"></td>
-            </tr>
-            <tr>
-                <td colspan= "4">Total</td>
-                <td id="PreGrandTotalsFC"></td>
-            </tr>
-                <td colspan= "5"><h2>CEI & Contingency</h2></td>
-            </tr>
-            <tr>
-                <td>Item</td>
-                <td>Unit</td>
-                <td>Quantity</td>
-                <td>Percentage</td>
-                <td>Amount</td>
-            </tr>
-            <tr>    
-                <td>CEI of at least 20% as a lump Sum Item</td>
-                <td>LS</td>
-                <td>1</td>
-                <td id="MainPercent"></td>
-                <td id="CEIPercentSum"></td>
-            </tr>
-            <tr>
-                <td>Project Contingency</td>
-                <td  colspan= "3" id="TierNum"></td>
-                <td id="ProjectContin"></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<button onclick="GrandTotal()">Calculate</button>
-<button onclick="javascript:window.print()">Print</button>
-<button onclick="pdfg()">PDF</button>
-<script type="text/javascript" src="\RoadEstimateCalc\js\PDFDriver.js"></script>
+    <div class="container-fluid" id="Road_Estimate_Tool">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>
+                    <h2> For use in Pre-Scoping and Scoping Construction Estimates</h2>
+                    <p>
+                        (This is not intended to be a detailed pay  breakdown. It is intended to be a tool that assits users in preparing early estimates prior to having developed plans. TRNSPRT should be utilites by the PFI stage.)
+                    </p>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="header">Reciept</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-6">Project</div>
+            <div class="col-xs-6" id="ProjectNum"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-6">UPC</div>
+            <div class="col-xs-6" id="UPCid"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-6">Date</div>
+            <div class="col-xs-6" id="time"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-6">Name</div>
+            <div class="col-xs-6" id="Estname"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Mobilization and Construction Survey</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-4">Amount</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Mobilization</div>
+            <div class="col-xs-1">LS</div>
+            <div class="col-xs-2">1</div>
+            <div class="col-xs-1" id="MobileFC"></div>
+            <div class="col-xs-2" id="TotMobileFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Construction Surveying</div>
+            <div class="col-xs-1">LS</div>
+            <div class="col-xs-2">1</div>
+            <div class="col-xs-1" id="ConstructFC"></div>
+            <div class="col-xs-2" id="TotConstructFC"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Grading Items</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Clearing and Grubbing</div>
+            <div class="col-xs-1">Acre</div>
+            <div class="col-xs-2" id="ClearingFC"></div>
+            <div class="col-xs-1" id="ClearingUP"></div>
+            <div class="col-xs-2" id="TotClearingFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Regular Excavation</div>
+            <div class="col-xs-1">CY</div>
+            <div class="col-xs-2" id="RegularFC"></div>
+            <div class="col-xs-1" id="RegularUP"></div>
+            <div class="col-xs-2" id="TotRegularFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Borrow Excavation</div>
+            <div class="col-xs-1">CY</div>
+            <div class="col-xs-2" id="BorrowFC"></div>
+            <div class="col-xs-1" id="BorrowUP"></div>
+            <div class="col-xs-2" id="TotBorrowFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Unsuitable Mat'l.</div>
+            <div class="col-xs-1">CY</div>
+            <div class="col-xs-2" id="UnsuitableFC"></div>
+            <div class="col-xs-1" id="UnsuitableUP"></div>
+            <div class="col-xs-2" id="TotUnsuitableFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Backfill Stone (No.1) For Unsuitable Matl. Areas</div>
+            <div class="col-xs-1">Tons</div>
+            <div class="col-xs-2" id="BackfillFC"></div>
+            <div class="col-xs-1" id="BackfillUP"></div>
+            <div class="col-xs-2" id="TotBackfillFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Dry Riprap</div>
+            <div class="col-xs-1">Tons</div>
+            <div class="col-xs-2" id="RiprapFC"></div>
+            <div class="col-xs-1" id="RiprapUP"></div>
+            <div class="col-xs-2" id="TotRiprapFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-8">Sub-Total</div>
+            <div class="col-xs-4" id="GradingSubTot"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Grading Items Contingency</div>
+            <div class="col-xs-4" id="GradeCon"></div>
+            <div class="col-xs-4" id="GradingContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Drainage Items</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Concrete Box Culvert</div>
+            <div class="col-xs-1">LS</div>
+            <div class="col-xs-2">1</div>
+            <div class="col-xs-1" id="ConcreteFC"></div>
+            <div class="col-xs-4" id="TotConcreteFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Pipes Under 36"</div>
+            <div class="col-xs-1">LF</div>
+            <div class="col-xs-2" id="PipesUFC"></div>
+            <div class="col-xs-1" id="PipesUUP"></div>
+            <div class="col-xs-4" id="TotPipesFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Pipes Over 36"</div>
+            <div class="col-xs-1">LF</div>
+            <div class="col-xs-2" id="PipesOFC"></div>
+            <div class="col-xs-1" id="PipesOUP"></div>
+            <div class="col-xs-4" id="TotPipesOFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">End Walls for Pipe Over 36"</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="EndWallsFC"></div>
+            <div class="col-xs-1" id="EndWallsUP"></div>
+            <div class="col-xs-4" id="TotEndwallsFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Drop Inlets</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="DropFC"></div>
+            <div class="col-xs-1" id="DropUP"></div>
+            <div class="col-xs-4" id="TotDropFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Curb and Gutter</div>
+            <div class="col-xs-1">LF</div>
+            <div class="col-xs-2" id="CurbFC"></div>
+            <div class="col-xs-1" id="CurbUP"></div>
+            <div class="col-xs-4" id="TotCurbFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-8">Sub-Total</div>
+            <div class="col-xs-4" id="DrainageSubTot"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Drainage Items Contingency (XX%)</div>
+            <div class="col-xs-4" id="DrainCon"></div>
+            <div class="col-xs-4" id="DrainageContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Pavement Items</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Surface Course</div>
+            <div class="col-xs-1">Tons</div>
+            <div class="col-xs-2" id="SurfaceFC"></div>
+            <div class="col-xs-1" id="SurfaceUP"></div>
+            <div class="col-xs-4" id="TotSurfaceFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Intermediate Course</div>
+            <div class="col-xs-1">Tons</div>
+            <div class="col-xs-2" id="IntermediateFC"></div>
+            <div class="col-xs-1" id="IntermediateUP"></div>
+            <div class="col-xs-4" id="TotIntermediateFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Base Course</div>
+            <div class="col-xs-1">Tons</div>
+            <div class="col-xs-2" id="BaseFC"></div>
+            <div class="col-xs-1" id="BaseUP"></div>
+            <div class="col-xs-4" id="TotBaseFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Subbase Course</div>
+            <div class="col-xs-1">Tons</div>
+            <div class="col-xs-2" id="SubbaseFC"></div>
+            <div class="col-xs-1" id="SubbaseUP"></div>
+            <div class="col-xs-4" id="TotSubbaseFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">No.1 Stone</div>
+            <div class="col-xs-1">Tons</div>
+            <div class="col-xs-2" id="No1FC"></div>
+            <div class="col-xs-1" id="No1UP"></div>
+            <div class="col-xs-4" id="TotNo1FC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-8">Sub-Total</div>
+            <div class="col-xs-4" id="PavementSubTot"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Pavement Items Contingency</div>
+            <div class="col-xs-4" id="PaveCon"></div>
+            <div class="col-xs-4" id="PavementContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Incidental Items</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Retaining Walls (Conc)</div>
+            <div class="col-xs-1">CY</div>
+            <div class="col-xs-2" id="RetainFC"></div>
+            <div class="col-xs-1" id="RetainUP"></div>
+            <div class="col-xs-4" id="TotRetainFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Rural Private Entrance</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="RuralFC"></div>
+            <div class="col-xs-1" id="RuralUP"></div>
+            <div class="col-xs-4" id="TotRuralFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Urban Private Entrance</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="UrbanFC"></div>
+            <div class="col-xs-1" id="UrbanUP"></div>
+            <div class="col-xs-4" id="TotUrbanFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Commercial Entrance</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="CommFC"></div>
+            <div class="col-xs-1" id="CommUP"></div>
+            <div class="col-xs-4" id="TotCommFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-8">Sub-Total</div>
+            <div class="col-xs-4" id="IncidentalSubTot"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Incidental Items Contingency</div>
+            <div class="col-xs-4" id="IncidCon"></div>
+            <div class="col-xs-4" id="IncidentalContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Protective Items</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Maintenance of Traffic (Lump Sum)</div>
+            <div class="col-xs-1">LS</div>
+            <div class="col-xs-2">1</div>
+            <div class="col-xs-1" id="MainUP"></div>
+            <div class="col-xs-4" id="TotMainFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Field Office</div>
+            <div class="col-xs-1">MO</div>
+            <div class="col-xs-2" id="FieldFC"></div>
+            <div class="col-xs-1" id="FieldUP"></div>
+            <div class="col-xs-4" id="TotFieldFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Sidewalk</div>
+            <div class="col-xs-1">SY</div>
+            <div class="col-xs-2" id="SideFC"></div>
+            <div class="col-xs-1" id="SideUP"></div>
+            <div class="col-xs-4" id="TotSideFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-8">Sub-Total</div>
+            <div class="col-xs-4" id="ProtectiveSubTot"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Protective Items Contingency</div>
+            <div class="col-xs-4" id="ProtCon"></div>
+            <div class="col-xs-4" id="ProtectiveContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Erosion Items</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Storm Water Management Facility</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="StormFC"></div>
+            <div class="col-xs-1" id="StormUP"></div>
+            <div class="col-xs-4" id="TotStormFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Seeding</div>
+            <div class="col-xs-1">LB</div>
+            <div class="col-xs-2" id="SeedFC"></div>
+            <div class="col-xs-1" id="SeedUP"></div>
+            <div class="col-xs-4" id="TotSeedFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Temporary Silt Fence</div>
+            <div class="col-xs-1">LF</div>
+            <div class="col-xs-2" id="TempFC"></div>
+            <div class="col-xs-1" id="TempUP"></div>
+            <div class="col-xs-4" id="TotTempFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Check Dams TY I or TY II</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="CheckFC"></div>
+            <div class="col-xs-1" id="CheckUP"></div>
+            <div class="col-xs-4" id="TotCheckFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Sub-Total</div>
+            <div class="col-xs-1" id="ErosionSubTot"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Erosion Items Contingency</div>
+            <div class="col-xs-1" id="ErosCon"></div>
+            <div class="col-xs-2" id="ErosionContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Utilities</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Below Ground Utilities (Lump Sum $$$$)</div>
+            <div class="col-xs-1">LF</div>
+            <div class="col-xs-2" id="BelowFC"></div>
+            <div class="col-xs-1" id="BelowUP"></div>
+            <div class="col-xs-4" id="TotBelowFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-8">Sub-Total</div>
+            <div class="col-xs-4" id="UtilitiesSubTot"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Utilities Items Contingency</div>
+            <div class="col-xs-4" id="UtilCon"></div>
+            <div class="col-xs-4" id="UtilitiesContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Traffic and Safety</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Permanent Signal (Lump Sum)</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="PermFC"></div>
+            <div class="col-xs-1" id="PermUP"></div>
+            <div class="col-xs-4" id="TotPermFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Pavement Markings (If Applicable)</div>
+            <div class="col-xs-1">LF</div>
+            <div class="col-xs-2" id="PaveFC"></div>
+            <div class="col-xs-1" id="PaveUP"></div>
+            <div class="col-xs-4" id="TotPaveFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Guardrail GR-2</div>
+            <div class="col-xs-1">LF</div>
+            <div class="col-xs-2" id="GuardFC"></div>
+            <div class="col-xs-1" id="GuardUP"></div>
+            <div class="col-xs-4" id="TotGuardFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">End Treatment GR-9</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="EndFC"></div>
+            <div class="col-xs-1" id="EndUP"></div>
+            <div class="col-xs-4" id="TotEndFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">GR-FOA's If Bridge Is On Project</div>
+            <div class="col-xs-1">EA</div>
+            <div class="col-xs-2" id="GRFC"></div>
+            <div class="col-xs-1" id="GRUP"></div>
+            <div class="col-xs-4" id="TotGRFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-8">Sub-Total</div>
+            <div class="col-xs-4" id="TrafficSSubTot"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Traffic and Safety Items Contingency</div>
+            <div class="col-xs-4" id="TrafCon"></div>
+            <div class="col-xs-4" id="TrafficSContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Bridge</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">NS Bridge (Lump Sum $)(Use $300 Per Square Foot)</div>
+            <div class="col-xs-1">SF</div>
+            <div class="col-xs-2" id="NSFC"></div>
+            <div class="col-xs-1" id="NSUP"></div>
+            <div class="col-xs-4" id="TotNSFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Demolition of Existing Bridge</div>
+            <div class="col-xs-1">LS</div>
+            <div class="col-xs-2" id="DemoFC"></div>
+            <div class="col-xs-1" id="DemoUP"></div>
+            <div class="col-xs-4" id="TotDemoFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-8">Sub-Total</div>
+            <div class="col-xs-4" id="BridgeSubTot"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Bridge Items Contingency</div>
+            <div class="col-xs-4" id="BridCon"></div>
+            <div class="col-xs-4" id="BridgeContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Stream/Wetland Mitigation that is included in Construction</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Unit Price</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Stream Mitigation</div>
+            <div class="col-xs-1">LF</div>
+            <div class="col-xs-2" id="StreamFC"></div>
+            <div class="col-xs-1" id="StreamUP"></div>
+            <div class="col-xs-4" id="TotStreamFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">Wetland Mitigation</div>
+            <div class="col-xs-1">ACRE</div>
+            <div class="col-xs-2" id="WetlandFC"></div>
+            <div class="col-xs-1" id="WetlandUP"></div>
+            <div class="col-xs-4" id="TotWetlandFC"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">Sub-Totals</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-8">Item</div>
+            <div class="col-xs-4">Amount</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-8">Contingency Total</div>
+            <div class="col-xs-4" id="ContingencyFC"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-8">Sub-Total</div>
+            <div class="col-xs-4" id="SubTotalsFC"></div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-8">Total</div>
+            <div class="col-xs-4" id="PreGrandTotalsFC"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="subheader">CEI & Contingency</div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Item</div>
+            <div class="col-xs-1">Unit</div>
+            <div class="col-xs-2">Quantity</div>
+            <div class="col-xs-1">Percentage</div>
+            <div class="col-xs-2">Amount</div>
+        </div>
+        <div class="row" id="oddrow">
+            <div class="col-xs-4">CEI of at least 20% as a lump Sum Item</div>
+            <div class="col-xs-1">LS</div>
+            <div class="col-xs-2">1</div>
+            <div class="col-xs-1" id="MainPercent"></div>
+            <div class="col-xs-4" id="CEIPercentSum"></div>
+        </div>
+        <div class="row" id="evenrow">
+            <div class="col-xs-4">Project Contingency</div>
+            <div class="col-xs-4" id="TierNum"></div>
+            <div class="col-xs-4" id="ProjectContin"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8" id="subheader">Grand Total</div>
+            <div class="col-xs-4" id="GrandtotalFC"></div>
+        </div>
+    </div>
 </body>
+<script type="text/javascript" src="\RoadEstimateCalc\js\PDFDriver.js"></script>
+<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/PDFDriver.js"> --></script>
 </html>

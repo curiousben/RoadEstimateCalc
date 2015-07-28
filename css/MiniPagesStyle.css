@@ -1,0 +1,69 @@
+input {
+	max-width: 100%;
+}
+
+#subheader {
+	color: #000000; 
+	background-color: #eeeeee;
+	padding: 10px 10px;
+	text-align: center;
+}
+#header {
+	color: #ffffff; 
+	background-color: #000000;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+#evenrow {
+	background-color: #dcdcdc;
+	padding: 10px 10px;
+	text-align: left;
+	margin-top: 4px;
+}
+#oddrow {
+	background-color: #aaaaaa;
+	padding: 10px 10px;
+	text-align: left;
+	margin-top: 4px;
+}
+#GrandtotalFC {
+	color: #000000; 
+	background-color: #eeeeee;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+#misc1unit,#misc2unit,#misc3unit,#misc4unit,#misc5unit{
+	width: 50px;
+}
+.misclass1,.misclass2,.misclass3,.misclass4,.misclass5{
+	width: 100%;
+}
+@media (max-width: 480px) {
+    #RoadPicPara {
+    font-size:6px;
+    padding: 1px 1px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    #RoadPicPara {
+    font-size:7px;
+    padding: 1px 1px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    #RoadPicPara {
+    font-size:11px;
+    padding: 3px 3px;
+    }
+}
+
+@media (min-width: 980px) {
+  #RoadPicPara {
+  font-size:14px;
+  padding: 5px 5px;
+  }
+}
