@@ -1,21 +1,30 @@
 $(document).ready(function(){
 
-	var	inp_dat_arr=[];
-		sel_dat_arr=[];
-		tex_dat_arr=[];
-		inp_pres = $.contains(document.body,$("#Road_Estimate_Tool input")[0])
-		sel_pres = $.contains(document.body,$("#Road_Estimate_Tool select")[0])
-		tex_pres = $.contains(document.body,$("#Road_Estimate_Tool textarea")[0])
+	var inp_pres = $.contains(document.body,$("#Road_Estimate_Tool input")[0]),
+		sel_pres = $.contains(document.body,$("#Road_Estimate_Tool select")[0]),
+		tex_pres = $.contains(document.body,$("#Road_Estimate_Tool textarea")[0]);
 	//three arrays to store ID Strings of INPUT data, SELECT, and TEXTAREA Types
 	
 	if (inp_pres) {
+
+	var	inp_dat_arr=[],
+		per_dat_arr=[];
+
+
+
 		$('#Road_Estimate_Tool input').each(function(){
-				inp_dat_arr.push($(this).attr('id'));
+			if ($(this).attr('type') == "range") {
+				per_dat_arr.push($(this).attr('id'))
+				};
+			inp_dat_arr.push($(this).attr('id'));
 		});
 		//Grabs each INPUT data type ID
 
 		for (var i = inp_dat_arr.length - 1; i >= 0; i--) {
 			if (localStorage.getItem(inp_dat_arr[i])!= null) {
+				if (jQuery.inArray(inp_dat_arr[i],per_dat_arr)>=0) {
+				document.getElementById(inp_dat_arr[i]+'Show').innerText=localStorage.getItem(inp_dat_arr[i]);
+				};
 				document.getElementById(inp_dat_arr[i]).value=localStorage.getItem(inp_dat_arr[i]);
 			};
 		};
@@ -23,6 +32,9 @@ $(document).ready(function(){
 	};
 
 	if (sel_pres) {
+
+	var	sel_dat_arr=[];
+
 		$('#Road_Estimate_Tool select').each(function(){
 				sel_dat_arr.push($(this).attr('id'));
 		});
@@ -40,9 +52,12 @@ $(document).ready(function(){
 	};
 
 	if (tex_pres) {
+
+	var tex_dat_arr=[];
+
 		$('#Road_Estimate_Tool textarea').each(function(){
 			tex_dat_arr.push($(this).attr('id'));
-			expandTextarea($(this).attr('id'));
+			expandTextarea(tex_dat_arr.length-1,$(this).attr('id'));
 		});
 		//Grabs each TEXTAREA data type ID
 
@@ -55,13 +70,16 @@ $(document).ready(function(){
 	};
 })
 
-$( "#Road_Estimate_Tool input" ).bind('keyup mouseup',input_data_add);
+$( "#Road_Estimate_Tool input" ).bind('keyup mouseup change',input_data_add);
 $( "#Road_Estimate_Tool select" ).bind('change',select_data_add);
 $( "#Road_Estimate_Tool textarea" ).bind('keyup mouseup',input_data_add);
 //what function is called when the INPUT and SELECT type of inputs are interacted with
 
 function input_data_add() 
 {
+	if ($(this).attr('type')=="range") {
+		document.getElementById(this.id + 'Show').innerText=this.value;
+	};
 	localStorage.setItem(this.id,this.value);
 }
 function select_data_add()
@@ -70,11 +88,8 @@ function select_data_add()
 }
 //the functions that were mentioned above
 
-function expandTextarea(misid) {
-    var miscid = document.getElementById(misid);
-        misclassnam = '.' + miscid.className;
-
-    var $element = $(misclassnam).get(0);
+function expandTextarea(num, id) {
+    var $element = $('.misclass').get(num);
 
     $element.addEventListener('keyup', function(){
         this.style.overflow = 'hidden';
@@ -84,10 +99,10 @@ function expandTextarea(misid) {
 }
 
 function resetdata() {
-var		dataidarr=[];
-		districtone=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000,25];
-		districttwo=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-		districtthree=[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2];
+var		dataidarr=[],
+		districtone=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000,25],
+		districttwo=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+		districtthree=[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
 		districtfour=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 		//defined three options for prefilled input boxes
 

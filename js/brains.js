@@ -865,6 +865,7 @@ function TrafficandSafetyItems()
       TotGRF = GRFOA()*localStorage.getItem("gr8");
       SubTot = TotPS+TotPM+TotGR+TotET+TotGRF;
         Cont = (localStorage.getItem("TSPercent")*SubTot)/100;
+
         document.getElementById("PermFC").innerHTML=numbercomma(Number(PermanentSignal()).toFixed());
         document.getElementById("PermUP").innerHTML="$"+numbercomma(localStorage.getItem("ps8"));
         document.getElementById("TotPermFC").innerHTML="$"+numbercomma(TotPS.toFixed());
@@ -905,7 +906,7 @@ function BridgeItems()
         document.getElementById("TotDemoFC").innerHTML="$"+numbercomma(TotDB.toFixed());
 
         document.getElementById("BridgeSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
-        document.getElementById("BridCon").innerHTML="$"+numbercomma(localStorage.getItem("BPercent"));
+        document.getElementById("BridCon").innerHTML="%"+numbercomma(localStorage.getItem("BPercent"));
         document.getElementById("BridgeContin").innerHTML="$"+numbercomma(Cont.toFixed());
        return [TotNS,TotDB,SubTot,Cont];
 }
@@ -922,6 +923,46 @@ function StreamWetlandMitigationItems()
         document.getElementById("TotWetlandFC").innerHTML="$"+numbercomma(TotWM.toFixed());
        return [TotSM,TotWM];
 }
+function MiscellaneousItems() {
+    var TotMisc1=localStorage.getItem("misc1quan")*localStorage.getItem("misc1pric");
+        TotMisc2=localStorage.getItem("misc2quan")*localStorage.getItem("misc2pric");
+        TotMisc3=localStorage.getItem("misc3quan")*localStorage.getItem("misc3pric");
+        TotMisc4=localStorage.getItem("misc4quan")*localStorage.getItem("misc4pric");
+        TotMisc5=localStorage.getItem("misc5quan")*localStorage.getItem("misc5pric");
+        TotMisc=TotMisc1+TotMisc2+TotMisc3+TotMisc4+TotMisc5;
+
+        document.getElementById("MiscI1I").innerHTML=localStorage.getItem("misc1item");
+        document.getElementById("MiscI1Qu").innerHTML=numbercomma(localStorage.getItem("misc1unit"));
+        document.getElementById("MiscI1FC").innerHTML=numbercomma(Number(localStorage.getItem("misc1quan")));
+        document.getElementById("MiscI1UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc1pric")));
+        document.getElementById("TotMiscI1FC").innerHTML="$"+numbercomma(TotMisc1.toFixed());
+
+        document.getElementById("MiscI2I").innerHTML=localStorage.getItem("misc2item");
+        document.getElementById("MiscI2Qu").innerHTML=numbercomma(localStorage.getItem("misc2unit"));
+        document.getElementById("MiscI2FC").innerHTML=numbercomma(Number(localStorage.getItem("misc2quan")));
+        document.getElementById("MiscI2UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc2pric")));
+        document.getElementById("TotMiscI2FC").innerHTML="$"+numbercomma(TotMisc2.toFixed());
+
+        document.getElementById("MiscI3I").innerHTML=localStorage.getItem("misc3item");
+        document.getElementById("MiscI3Qu").innerHTML=numbercomma(localStorage.getItem("misc3unit"));
+        document.getElementById("MiscI3FC").innerHTML=numbercomma(Number(localStorage.getItem("misc3quan")));
+        document.getElementById("MiscI3UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc3pric")));
+        document.getElementById("TotMiscI3FC").innerHTML="$"+numbercomma(TotMisc3.toFixed());
+
+        document.getElementById("MiscI4I").innerHTML=localStorage.getItem("misc4item");
+        document.getElementById("MiscI4Qu").innerHTML=numbercomma(localStorage.getItem("misc4unit"));
+        document.getElementById("MiscI4FC").innerHTML=numbercomma(Number(localStorage.getItem("misc4quan")));
+        document.getElementById("MiscI4UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc4pric")));
+        document.getElementById("TotMiscI4FC").innerHTML="$"+numbercomma(TotMisc4.toFixed());
+
+        document.getElementById("MiscI5I").innerHTML=localStorage.getItem("misc5item");
+        document.getElementById("MiscI5Qu").innerHTML=numbercomma(localStorage.getItem("misc5unit"));
+        document.getElementById("MiscI5FC").innerHTML=numbercomma(Number(localStorage.getItem("misc5quan")));
+        document.getElementById("MiscI5UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc5pric")));
+        document.getElementById("TotMiscI5FC").innerHTML="$"+numbercomma(TotMisc5.toFixed());
+
+        return TotMisc;
+}
 //
 //
 //
@@ -931,7 +972,7 @@ function StreamWetlandMitigationItems()
 //
 function SubGrandTotals()
 {   
-    var  GrandSubTotal = parseFloat(GradingItems()[6],10)+parseFloat(DrainageItems()[6],10)+parseFloat(PavementItems()[5],10)+parseFloat(IncidentalItems()[4],10)+parseFloat(ProtectiveItems()[3],10)+parseFloat(ErosionItems()[4],10)+parseFloat(UtilItems()[1],10)+parseFloat(TrafficandSafetyItems()[5],10)+parseFloat(BridgeItems()[2],10)+parseFloat(StreamWetlandMitigationItems()[0],10)+parseFloat(StreamWetlandMitigationItems()[1],10);
+    var GrandSubTotal = parseFloat(GradingItems()[6],10)+parseFloat(DrainageItems()[6],10)+parseFloat(PavementItems()[5],10)+parseFloat(IncidentalItems()[4],10)+parseFloat(ProtectiveItems()[3],10)+parseFloat(ErosionItems()[4],10)+parseFloat(UtilItems()[1],10)+parseFloat(TrafficandSafetyItems()[5],10)+parseFloat(BridgeItems()[2],10)+parseFloat(StreamWetlandMitigationItems()[0],10)+parseFloat(StreamWetlandMitigationItems()[1],10)+parseFloat(MiscellaneousItems(),10);
               ContTot = parseFloat(GradingItems()[7],10)+parseFloat(DrainageItems()[7],10)+parseFloat(PavementItems()[6],10)+parseFloat(IncidentalItems()[5],10)+parseFloat(ProtectiveItems()[4],10)+parseFloat(ErosionItems()[5],10)+parseFloat(UtilItems()[2],10)+parseFloat(TrafficandSafetyItems()[6],10)+parseFloat(BridgeItems()[3],10);
             ConSurvey = Math.ceil((GrandSubTotal*0.015)/1000)*1000;
     if (GrandSubTotal <= 1000000) {
@@ -940,14 +981,16 @@ function SubGrandTotals()
         var Mobile = ((GrandSubTotal-1000000)*0.05)+80000;
     }
     var    PreGrandTot = GrandSubTotal+ContTot+ConSurvey+Mobile;
+
     document.getElementById("MobileFC").innerHTML="$"+numbercomma(Mobile.toFixed());
     document.getElementById("TotMobileFC").innerHTML="$"+numbercomma(Mobile.toFixed());
     document.getElementById("ConstructFC").innerHTML="$"+numbercomma(ConSurvey.toFixed());
     document.getElementById("TotConstructFC").innerHTML="$"+numbercomma(ConSurvey.toFixed());
     document.getElementById("ContingencyFC").innerHTML="$"+numbercomma(ContTot.toFixed());
     document.getElementById("SubTotalsFC").innerHTML="$"+numbercomma(GrandSubTotal.toFixed());
-    document.getElementById("PreGrandTotalsFC").innerHTML="$"+numbercomma(PreGrandTot.toFixed());              
-   return [Mobile,ConSurvey,ContTot,GrandSubTotal,PreGrandTot];
+    document.getElementById("PreGrandTotalsFC").innerHTML="$"+numbercomma(PreGrandTot.toFixed());   
+
+    return [Mobile,ConSurvey,ContTot,GrandSubTotal,PreGrandTot];
 
 }
 function CEIContigency()
@@ -976,6 +1019,7 @@ var CurtYear = localStorage.getItem("CurrentYear");
     document.getElementById("UPCid").innerHTML=localStorage.getItem("upcid");
     document.getElementById("Estname").innerHTML=localStorage.getItem("estname");
     document.getElementById("GrandtotalFC").innerHTML="$"+numbercomma(FinalGrandTotal);
+    MiscellaneousItems();
     return FinalGrandTotal;
 }
 //
@@ -992,4 +1036,12 @@ function curtime() {
     var CurrentTime= new Date();
     document.getElementById('time').innerHTML = CurrentTime;
     return CurrentTime;
+}
+window.onload = function () {
+    $("#calc").click( function () {
+        GrandTotal();
+    })
+    $("#prnt").click(function () {
+        window.print()
+    })
 }

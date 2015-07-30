@@ -13,6 +13,7 @@ input {
 	background-color: #000000;
 	padding: 10px 10px;
 	text-align: center;
+	font-size: 14pt;
 }
 
 #evenrow {
@@ -35,10 +36,21 @@ input {
 }
 
 #misc1unit,#misc2unit,#misc3unit,#misc4unit,#misc5unit{
-	width: 50px;
+	width: 75px;
 }
-.misclass1,.misclass2,.misclass3,.misclass4,.misclass5{
-	width: 100%;
+
+.row_Cont_Per div:nth-child(even){
+	background-color: #dcdcdc;
+	padding: 10px 10px;
+	text-align: left;
+	margin-top: 4px;
+}
+
+.row_Cont_Per div:nth-child(odd){
+	background-color: #aaaaaa;
+	padding: 10px 10px;
+	text-align: left;
+	margin-top: 4px;
 }
 @media (max-width: 480px) {
     #RoadPicPara {
@@ -59,6 +71,12 @@ input {
     font-size:11px;
     padding: 3px 3px;
     }
+    .row_Cont_Per div:nth-child(4n), .row_Cont_Per div:nth-child(4n-1) {
+    	background-color: #dcdcdc;
+    }
+    .row_Cont_Per div:nth-child(4n-2), .row_Cont_Per div:nth-child(4n-3) {
+    	background-color: #aaaaaa;
+    }
 }
 
 @media (min-width: 980px) {
@@ -66,4 +84,10 @@ input {
   font-size:14px;
   padding: 5px 5px;
   }
+  .row_Cont_Per div:nth-child(6n), .row_Cont_Per div:nth-child(6n-1), .row_Cont_Per div:nth-child(6n-2) {
+    	background-color: #dcdcdc;
+    }
+    .row_Cont_Per div:nth-child(6n-3), .row_Cont_Per div:nth-child(6n-4), .row_Cont_Per div:nth-child(6n-5) {
+    	background-color: #aaaaaa;
+    }
 }

@@ -1,6 +1,4 @@
 function pdfg () {
-    pdfMake.createPdf(roadestimate).download(localStorage.getItem("projectnum")+'.pdf')
-}
 var roadestimate = 
 {
     content: [
@@ -137,4 +135,6 @@ var roadestimate =
     },
 
     
+}
+pdfMake.createPdf(roadestimate).download(localStorage.getItem("projectnum")+'.pdf')
 }
