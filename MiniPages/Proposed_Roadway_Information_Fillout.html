@@ -13,65 +13,79 @@
         <div class="row">
             <div class="col-xs-12" id="header">Proposed Roadway</div>
         </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Length</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="ProposedRoadwayLength" value="">   ft</div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">Paved Roadway Width</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="PavedRoadwayWidth" value="">   ft</div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Total Shoulder Width</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="TotalShoulderWidth" value="">   ft</div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">Paved Shoulder Width</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="PavedShoulderWidth" value="">   ft</div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Paved Shoulder Type</div>
-            <div class="col-xs-12 col-sm-6"><select id="PavedShoulderType">
+        <div class="row_type_1">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="ProposedRoadwayLength">Length (ft)</label>
+                    <input type="number" id="ProposedRoadwayLength" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="PavedRoadwayWidth">Paved Roadway Width (ft)</label>
+                    <input type="number" id="PavedRoadwayWidth" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="TotalShoulderWidth">Total Shoulder Width (ft)</label>
+                    <input type="number" id="TotalShoulderWidth" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="PavedShoulderWidth">Paved Shoulder Width (ft)</label>
+                    <input type="number" id="PavedShoulderWidth" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="PavedShoulderType">Paved Shoulder Type</label>
+                    <select id="PavedShoulderType" class="form-control">
                         <option value="">Please Select</option>
                         <option value="Surface Mix Only">Surface Mix Only</option>
                         <option value="Full Pave.Depth">Full Pave.Depth</option>
-                    </select></div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">Curb and Gutter Required?</div>
-            <div class="col-xs-12 col-sm-6"><select id="CurbandGutterRequired">
+                    </select>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="CurbandGutterRequired">Curb and Gutter Required?</label>
+                    <select id="CurbandGutterRequired" class="form-control">
                         <option value="">Please Select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
-                    </select></div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Length of C&G (if Required)</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="LengthofCG" value="">   ft</div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">Surface Mix (SM) Pave. Depth</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="SurfaceMixPaveDepth" value="">   in</div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Intermediate Mix (IM) Pave. Depth</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="IntermediateMix" value="">   in</div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">Base Mix (BM) Pave. Depth</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="BaseMix" value="">   in</div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">No. 21B Stone Depth</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="NoTwoOneBStone" value="">   in</div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">No. 1 Stone depth</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="NoOneStoneDepth" value="">   in</div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">% of New Horizontal Alignment</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="NewHorizontalAlignment" value="">   %</div>
+                    </select>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="LengthofCG">Length of C&G (if Required) (ft)</label>
+                    <input type="number" id="LengthofCG" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="SurfaceMixPaveDepth">Surface Mix (SM) Pave. Depth (in)</label>
+                    <input type="number" id="SurfaceMixPaveDepth" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="IntermediateMix">Intermediate Mix (IM) Pave. Depth (in)</label>
+                    <input type="number" id="IntermediateMix" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="BaseMix">Base Mix (BM) Pave. Depth (in)</label>
+                    <input type="number" id="BaseMix" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="NoTwoOneBStone">No. 21B Stone Depth (in)</label>
+                    <input type="number" id="NoTwoOneBStone" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="NoOneStoneDepth">No. 1 Stone depth (in)</label>
+                    <input type="number" id="NoOneStoneDepth" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="NewHorizontalAlignment">Percentage of New Horizontal Alignment    <span id="NewHorizontalAlignmentShow">1</span>  %</label>
+                    <input type="range" id="NewHorizontalAlignment" min="1" max="50" step="1" value="1" class="form-control">
+            </div>
         </div>
     </div>
 </body>

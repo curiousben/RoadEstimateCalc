@@ -13,29 +13,37 @@
         <div class="row">
             <div class="col-xs-12" id="header">Administration Information Fillout</div>
         </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Project</div>
-            <div class="col-xs-12 col-sm-6"><input type="text" id="projectnum" maxlength="7" value=""></div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">UPC</div>
-            <div class="col-xs-12 col-sm-6"><input type="text" id="upcid" maxlength="5" value=""></div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Estimator</div>
-            <div class="col-xs-12 col-sm-6"><input type="text" id="estname" value=""></div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">Current Year</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="CurrentYear" value=""></div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Proposed Ad Date Year</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="ProposedAdDateYear" value=""></div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">Construction Duration</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="ConstructionDuration" value="">   Months</div>
+        <div class="row_type_1">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="projectnum">Project</label>
+                <input type="text" id="projectnum" maxlength="7" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="upcid">UPC</label>
+                <input type="text" id="upcid" maxlength="5" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="estname">Estimator</label>
+                <input type="text" id="estname" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="CurrentYear">Current Year</label>
+                <input type="number" id="CurrentYear" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="ProposedAdDateYear">Proposed Ad Date Year</label>
+                <input type="number" id="ProposedAdDateYear" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="ConstructionDuration">Construction Duration (Months)</label>
+                <input type="number" id="ConstructionDuration" value="" class="form-control">
+            </div>
+
         </div>
 
     </div>

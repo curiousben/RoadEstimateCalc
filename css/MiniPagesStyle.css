@@ -28,6 +28,9 @@ input {
 	text-align: left;
 	margin-top: 4px;
 }
+#misc1unit,#misc2unit,#misc3unit,#misc4unit,#misc5unit{
+	width: 75px;
+}
 #GrandtotalFC {
 	color: #000000; 
 	background-color: #eeeeee;
@@ -35,18 +38,27 @@ input {
 	text-align: center;
 }
 
-#misc1unit,#misc2unit,#misc3unit,#misc4unit,#misc5unit{
-	width: 75px;
-}
-
-.row_Cont_Per div:nth-child(even){
+.row_type_1 div:nth-child(even){
 	background-color: #dcdcdc;
 	padding: 10px 10px;
 	text-align: left;
 	margin-top: 4px;
 }
 
-.row_Cont_Per div:nth-child(odd){
+.row_type_1 div:nth-child(odd){
+	background-color: #aaaaaa;
+	padding: 10px 10px;
+	text-align: left;
+	margin-top: 4px;
+}
+.row_type_2 div:nth-child(even){
+	background-color: #dcdcdc;
+	padding: 10px 10px;
+	text-align: left;
+	margin-top: 4px;
+}
+
+.row_type_2 div:nth-child(odd){
 	background-color: #aaaaaa;
 	padding: 10px 10px;
 	text-align: left;
@@ -71,23 +83,36 @@ input {
     font-size:11px;
     padding: 3px 3px;
     }
-    .row_Cont_Per div:nth-child(4n), .row_Cont_Per div:nth-child(4n-1) {
+    .row_type_1 div:nth-child(4n), .row_type_1 div:nth-child(4n-1) {
     	background-color: #dcdcdc;
     }
-    .row_Cont_Per div:nth-child(4n-2), .row_Cont_Per div:nth-child(4n-3) {
+    .row_type_1 div:nth-child(4n-2), .row_type_1 div:nth-child(4n-3) {
+    	background-color: #aaaaaa;
+    }
+    .row_type_2 div:nth-child(6n), .row_type_2 div:nth-child(6n-1), .row_type_2 div:nth-child(6n-2) {
+    	background-color: #dcdcdc;
+    }
+    .row_type_2 div:nth-child(6n-3), .row_type_2 div:nth-child(6n-4), .row_type_2 div:nth-child(6n-5) {
     	background-color: #aaaaaa;
     }
 }
 
 @media (min-width: 980px) {
-  #RoadPicPara {
-  font-size:14px;
-  padding: 5px 5px;
-  }
-  .row_Cont_Per div:nth-child(6n), .row_Cont_Per div:nth-child(6n-1), .row_Cont_Per div:nth-child(6n-2) {
+	#RoadPicPara {
+	font-size:14px;
+	padding: 5px 5px;
+	}
+  	.row_type_1 div:nth-child(6n), .row_type_1 div:nth-child(6n-1), .row_type_1 div:nth-child(6n-2) {
     	background-color: #dcdcdc;
     }
-    .row_Cont_Per div:nth-child(6n-3), .row_Cont_Per div:nth-child(6n-4), .row_Cont_Per div:nth-child(6n-5) {
+    .row_type_1 div:nth-child(6n-3), .row_type_1 div:nth-child(6n-4), .row_type_1 div:nth-child(6n-5) {
     	background-color: #aaaaaa;
     }
+    .row_type_2 div:nth-child(6n), .row_type_2 div:nth-child(6n-1), .row_type_2 div:nth-child(6n-2) {
+    	background-color: #dcdcdc;
+    }
+    .row_type_2 div:nth-child(6n-3), .row_type_2 div:nth-child(6n-4), .row_type_2 div:nth-child(6n-5) {
+    	background-color: #aaaaaa;
+    }
+
 }

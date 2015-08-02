@@ -70,16 +70,15 @@ $(document).ready(function(){
 	};
 })
 
-$( "#Road_Estimate_Tool input" ).bind('keyup mouseup change',input_data_add);
+$( "#Road_Estimate_Tool input" ).bind('keyup mouseup',input_data_add);
+$("#Road_Estimate_Tool input[type=range]").on("input change",function () {
+	{document.getElementById(this.id+"Show").innerText = this.value;}
+})
 $( "#Road_Estimate_Tool select" ).bind('change',select_data_add);
 $( "#Road_Estimate_Tool textarea" ).bind('keyup mouseup',input_data_add);
 //what function is called when the INPUT and SELECT type of inputs are interacted with
-
 function input_data_add() 
 {
-	if ($(this).attr('type')=="range") {
-		document.getElementById(this.id + 'Show').innerText=this.value;
-	};
 	localStorage.setItem(this.id,this.value);
 }
 function select_data_add()

@@ -13,25 +13,31 @@
         <div class="row">
             <div class="col-xs-12" id="header">Drainage</div>
         </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Pipes 18"-36"</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="OnePipesSix" value="">   LF</div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">Pipes > 36"</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="PipesSix" value="">   LF</div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">End Walls for Pipes Over 36"</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="EndWallsforPipesOverSix" value="">   ea</div>
-        </div>
-        <div class="row" id="oddrow">
-            <div class="col-xs-12 col-sm-6">Drop Inlets</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="DropInlets" value="">   ea</div>
-        </div>
-        <div class="row" id="evenrow">
-            <div class="col-xs-12 col-sm-6">Concrete Box Culvert</div>
-            <div class="col-xs-12 col-sm-6"><input type="number" id="ConcreteBoxCulvert" value="">   $</div>
+        <div class="row_type_1">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="OnePipesSix">Pipes 18"-36" (LF)</label>
+                <input type="number" id="OnePipesSix" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="PipesSix">Pipes > 36" (LF)</label>
+                <input type="number" id="PipesSix" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="EndWallsforPipesOverSix">End Walls for Pipes Over 36" (ea)</label>
+                <input type="number" id="EndWallsforPipesOverSix" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="DropInlets">Drop Inlets (ea)</label>
+                <input type="number" id="DropInlets" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="ConcreteBoxCulvert">Concrete Box Culvert ($)</label>
+                <input type="number" id="ConcreteBoxCulvert" value="" class="form-control">
+            </div>
         </div>
     </div>
 </body>
