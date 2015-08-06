@@ -3,9 +3,10 @@
 <head>
     <title>Drainage Information Fillout</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src='\RoadEstimateCalc\js\jquery-2.1.4.js'></script>
-    <link href="\RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="\RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
+    <script type="text/javascript" src='/RoadEstimateCalc/js/jquery-2.1.4.js'></script>
+    <script type="text/javascript" src='/RoadEstimateCalc/bootstrap-3.3.5-dist/js/bootstrap.min.js'></script>
+    <link href="/RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
 </head>
 <body>
@@ -14,14 +15,24 @@
             <div class="col-xs-12" id="header">Drainage</div>
         </div>
         <div class="row_type_1">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="OnePipesSix">Pipes 18"-36" (LF)</label>
-                <input type="number" id="OnePipesSix" value="" class="form-control">
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Pipes 18"-36" (LF)</label>
+                <div class="input-group" id="Label_Me">
+                    <input type="number" id="OnePipesSix" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#PInfo">&#63;</button>
+                    </span>
+                </div>
             </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="PipesSix">Pipes > 36" (LF)</label>
-                <input type="number" id="PipesSix" value="" class="form-control">
+        
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Pipes > 36" (LF)</label>
+                <div class="input-group" id="Label_Me">
+                    <input type="number" id="PipesSix" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#PInfo">&#63;</button>
+                    </span>
+                </div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -34,10 +45,49 @@
                 <input type="number" id="DropInlets" value="" class="form-control">
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="ConcreteBoxCulvert">Concrete Box Culvert ($)</label>
-                <input type="number" id="ConcreteBoxCulvert" value="" class="form-control">
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Concrete Box Culvert ($)</label>
+                <div class="input-group" id="Label_Me">
+                    <input type="number" id="ConcreteBoxCulvert" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#CBCInfo">&#63;</button>
+                    </span>
+                </div>
             </div>
+        </div>
+    </div>
+    <!-- Modal for OnePipesSix and PipesSix -->
+    <div class="modal fade" id="PInfo" tabindex="-1" role="dialog" aria-labelledby="PInfoLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="PInfoLabel">Pipes 18" and up</h4>
+          </div>
+            <div class="modal-body">
+            Drainage Pipe Length to Include Entrance Pipes, Cross Pipes, and Storm Sewer Pipes
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal for ConcreteBoxCulvert -->
+    <div class="modal fade" id="CBCInfo" tabindex="-1" role="dialog" aria-labelledby="CBCInfoLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="CBCInfoLabel">Concrete Box Colvert</h4>
+          </div>
+            <div class="modal-body">
+            Click on the Header to access the Seperate Concrete Box Culvert.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
         </div>
     </div>
 </body>

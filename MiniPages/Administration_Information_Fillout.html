@@ -3,9 +3,10 @@
 <head>
     <title>Administration Information Fillout</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src='\RoadEstimateCalc\js\jquery-2.1.4.js'></script>
-    <link href="\RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="\RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
+    <script type="text/javascript" src='/RoadEstimateCalc/js/jquery-2.1.4.js'></script>
+    <script type="text/javascript" src='/RoadEstimateCalc/bootstrap-3.3.5-dist/js/bootstrap.min.js'></script>
+    <link href="/RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
 </head>
 <body>
@@ -29,23 +30,65 @@
                 <input type="text" id="estname" value="" class="form-control">
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="CurrentYear">Current Year</label>
-                <input type="number" id="CurrentYear" value="" class="form-control">
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Current Year</label>
+                <div class="input-group" id="Label_Me">
+                    <input type="number" id="CurrentYear" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#CurrYear">&#63;</button>
+                    </span>
+                </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="ProposedAdDateYear">Proposed Ad Date Year</label>
-                <input type="number" id="ProposedAdDateYear" value="" class="form-control">
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Proposed Ad Date Year</label>
+                <div class="input-group" id="Label_Me">
+                    <input type="number" id="ProposedAdDateYear" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#PropYear">&#63;</button>
+                    </span>
+                </div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <label for="ConstructionDuration">Construction Duration (Months)</label>
                 <input type="number" id="ConstructionDuration" value="" class="form-control">
             </div>
-
         </div>
-
+    </div>
+    <!-- Modal for Current Year -->
+    <div class="modal fade" id="CurrYear" tabindex="-1" role="dialog" aria-labelledby="CurrYearLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="CurrYearLabel">Current Year Data Info</h4>
+          </div>
+            <div class="modal-body">
+            Current Year used for Inflation Factor.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal for Proposed Year -->
+    <div class="modal fade" id="PropYear" tabindex="-1" role="dialog" aria-labelledby="PropYearLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="PropYearLabel">Proposed Year Data Info</h4>
+          </div>
+            <div class="modal-body">
+            Proposed Advertisement Year used for Inflation Factor. 
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
     </div>
 </body>
 <script type="text/javascript" src="\RoadEstimateCalc\js\localmemory.js"></script>

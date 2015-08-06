@@ -2,6 +2,9 @@ input {
 	max-width: 100%;
 }
 
+a {
+	color: #FFFFFF;
+}
 #subheader {
 	color: #000000; 
 	background-color: #eeeeee;
@@ -30,6 +33,12 @@ input {
 }
 #misc1unit,#misc2unit,#misc3unit,#misc4unit,#misc5unit{
 	width: 75px;
+}
+#Label_Me {
+	padding: 0px ;
+}
+#InfoBox {
+	padding-top: 6px;
 }
 #GrandtotalFC {
 	color: #000000; 

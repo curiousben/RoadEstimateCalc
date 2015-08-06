@@ -4,6 +4,7 @@
     <title>Existing Roadway Information Fillout</title>
     <meta charset="utf-8">
     <script type="text/javascript" src='\RoadEstimateCalc\js\jquery-2.1.4.js'></script>
+    <script type="text/javascript" src='\RoadEstimateCalc/bootstrap-3.3.5-dist/js/bootstrap.min.js'></script>
     <link href="\RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="\RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
@@ -24,12 +25,34 @@
                 <input type="number" id="ExistingRoadwayRdwayWidth" value="" class="form-control">
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="ExistingRoadwayShldrWidth">Shldr Width (ft)</label>
-                <input type="number" id="ExistingRoadwayShldrWidth" value="" class="form-control">
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Shldr Width (ft)</label>
+                <div class="input-group" id="Label_Me">
+                    <input type="number" id="ExistingRoadwayShldrWidth" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#ERRInfo">&#63;</button>
+                    </span>
+                </div>
             </div>
 
         </div>
+    </div>
+    <!-- Modal for ExistingRoadwayShldrWidth -->
+    <div class="modal fade" id="ERRInfo" tabindex="-1" role="dialog" aria-labelledby="ERRInfoLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="ERRInfoLabel">Existing Roadway Shoulder Width Information</h4>
+          </div>
+          <div class="modal-body">
+            Average Shoulder Width for One Shoulder
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
 </body>
 <script type="text/javascript" src="\RoadEstimateCalc\js\localmemory.js"></script>

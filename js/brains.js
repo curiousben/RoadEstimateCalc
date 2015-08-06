@@ -931,32 +931,32 @@ function MiscellaneousItems() {
         TotMisc5=localStorage.getItem("misc5quan")*localStorage.getItem("misc5pric");
         TotMisc=TotMisc1+TotMisc2+TotMisc3+TotMisc4+TotMisc5;
 
-        document.getElementById("MiscI1I").innerHTML=localStorage.getItem("misc1item");
-        document.getElementById("MiscI1Qu").innerHTML=numbercomma(localStorage.getItem("misc1unit"));
+        document.getElementById("MiscI1I").innerHTML=MiscFiller(localStorage.getItem("misc1item"));
+        document.getElementById("MiscI1Qu").innerHTML=MiscFiller(localStorage.getItem("misc1unit"));
         document.getElementById("MiscI1FC").innerHTML=numbercomma(Number(localStorage.getItem("misc1quan")));
         document.getElementById("MiscI1UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc1pric")));
         document.getElementById("TotMiscI1FC").innerHTML="$"+numbercomma(TotMisc1.toFixed());
 
-        document.getElementById("MiscI2I").innerHTML=localStorage.getItem("misc2item");
-        document.getElementById("MiscI2Qu").innerHTML=numbercomma(localStorage.getItem("misc2unit"));
+        document.getElementById("MiscI2I").innerHTML=MiscFiller(localStorage.getItem("misc2item"));
+        document.getElementById("MiscI2Qu").innerHTML=MiscFiller(localStorage.getItem("misc2unit"));
         document.getElementById("MiscI2FC").innerHTML=numbercomma(Number(localStorage.getItem("misc2quan")));
         document.getElementById("MiscI2UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc2pric")));
         document.getElementById("TotMiscI2FC").innerHTML="$"+numbercomma(TotMisc2.toFixed());
 
-        document.getElementById("MiscI3I").innerHTML=localStorage.getItem("misc3item");
-        document.getElementById("MiscI3Qu").innerHTML=numbercomma(localStorage.getItem("misc3unit"));
+        document.getElementById("MiscI3I").innerHTML=MiscFiller(localStorage.getItem("misc3item"));
+        document.getElementById("MiscI3Qu").innerHTML=MiscFiller(localStorage.getItem("misc3unit"));
         document.getElementById("MiscI3FC").innerHTML=numbercomma(Number(localStorage.getItem("misc3quan")));
         document.getElementById("MiscI3UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc3pric")));
         document.getElementById("TotMiscI3FC").innerHTML="$"+numbercomma(TotMisc3.toFixed());
 
-        document.getElementById("MiscI4I").innerHTML=localStorage.getItem("misc4item");
-        document.getElementById("MiscI4Qu").innerHTML=numbercomma(localStorage.getItem("misc4unit"));
+        document.getElementById("MiscI4I").innerHTML=MiscFiller(localStorage.getItem("misc4item"));
+        document.getElementById("MiscI4Qu").innerHTML=MiscFiller(localStorage.getItem("misc4unit"));
         document.getElementById("MiscI4FC").innerHTML=numbercomma(Number(localStorage.getItem("misc4quan")));
         document.getElementById("MiscI4UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc4pric")));
         document.getElementById("TotMiscI4FC").innerHTML="$"+numbercomma(TotMisc4.toFixed());
 
-        document.getElementById("MiscI5I").innerHTML=localStorage.getItem("misc5item");
-        document.getElementById("MiscI5Qu").innerHTML=numbercomma(localStorage.getItem("misc5unit"));
+        document.getElementById("MiscI5I").innerHTML=MiscFiller(localStorage.getItem("misc5item"));
+        document.getElementById("MiscI5Qu").innerHTML=MiscFiller(localStorage.getItem("misc5unit"));
         document.getElementById("MiscI5FC").innerHTML=numbercomma(Number(localStorage.getItem("misc5quan")));
         document.getElementById("MiscI5UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc5pric")));
         document.getElementById("TotMiscI5FC").innerHTML="$"+numbercomma(TotMisc5.toFixed());
@@ -1030,7 +1030,19 @@ var CurtYear = localStorage.getItem("CurrentYear");
 //
 //
 function numbercomma (num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    if (num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    else {
+        return 0;
+    }
+}
+
+function MiscFiller (Tex) {
+    if (Tex==false) 
+    {
+        return 'Not Entered';
+    }
 }
 function curtime() {
     var CurrentTime= new Date();

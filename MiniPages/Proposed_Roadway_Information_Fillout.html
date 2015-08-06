@@ -3,15 +3,16 @@
 <head>
     <title>Proposed Roadway Information Fillout</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src='\RoadEstimateCalc\js\jquery-2.1.4.js'></script>
-    <link href="\RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="\RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
+    <script type="text/javascript" src='/RoadEstimateCalc/js/jquery-2.1.4.js'></script>
+    <link href="/RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src='/RoadEstimateCalc/bootstrap-3.3.5-dist/js/bootstrap.min.js'></script>
+    <link href="/RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
 </head>
 <body>
     <div class="container-fluid" id="Road_Estimate_Tool">
         <div class="row">
-            <div class="col-xs-12" id="header">Proposed Roadway</div>
+            <div class="col-xs-12" id="header"><a href="http://www.extranet.vdot.state.va.us/locdes/Electronic_Pubs/2005%20RDM/appenda.pdf">Proposed Roadway</a> <button class="btn btn-default" data-toggle="modal" data-target="#PropRHeader">&#63;</button></div>
         </div>
         <div class="row_type_1">
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -24,14 +25,24 @@
                     <input type="number" id="PavedRoadwayWidth" value="" class="form-control">
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="TotalShoulderWidth">Total Shoulder Width (ft)</label>
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Total Shoulder Width (ft)</label>
+                <div class="input-group" id="Label_Me">
                     <input type="number" id="TotalShoulderWidth" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#TotShrWid">&#63;</button>
+                    </span>
+                </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="PavedShoulderWidth">Paved Shoulder Width (ft)</label>
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Paved Shoulder Width (ft)</label>
+                <div class="input-group" id="Label_Me">
                     <input type="number" id="PavedShoulderWidth" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#PavShlrWid">&#63;</button>
+                    </span>
+                </div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -44,7 +55,7 @@
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="CurbandGutterRequired">Curb and Gutter Required?</label>
+                <label for="CurbandGutterRequired">Are the Curb and Gutter Required?</label>
                     <select id="CurbandGutterRequired" class="form-control">
                         <option value="">Please Select</option>
                         <option value="yes">Yes</option>
@@ -53,39 +64,204 @@
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="LengthofCG">Length of C&G (if Required) (ft)</label>
+                <label for="LengthofCG">Length of Curb and Gutter (if Required) (ft)</label>
                     <input type="number" id="LengthofCG" value="" class="form-control">
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="SurfaceMixPaveDepth">Surface Mix (SM) Pave. Depth (in)</label>
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Surface Mix (SM) Pave. Depth (in)</label>
+                <div class="input-group" id="Label_Me">
                     <input type="number" id="SurfaceMixPaveDepth" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#SurMixPavDep">&#63;</button>
+                    </span>
+                </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="IntermediateMix">Intermediate Mix (IM) Pave. Depth (in)</label>
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Intermediate Mix (IM) Pave. Depth (in)</label>
+                <div class="input-group" id="Label_Me">
                     <input type="number" id="IntermediateMix" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#IntMix">&#63;</button>
+                    </span>
+                </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="BaseMix">Base Mix (BM) Pave. Depth (in)</label>
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Base Mix (BM) Pave. Depth (in)</label>
+                <div class="input-group" id="Label_Me">
                     <input type="number" id="BaseMix" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#BasMix">&#63;</button>
+                    </span>
+                </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="NoTwoOneBStone">No. 21B Stone Depth (in)</label>
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">No. 21B Stone Depth (in)</label>
+                <div class="input-group" id="Label_Me">
                     <input type="number" id="NoTwoOneBStone" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#No21BS">&#63;</button>
+                    </span>
+                </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <label for="NoOneStoneDepth">No. 1 Stone depth (in)</label>
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">No. 1 Stone depth (in)</label>
+                <div class="input-group" id="Label_Me">
                     <input type="number" id="NoOneStoneDepth" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#No1SD">&#63;</button>
+                    </span>
+                </div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <label for="NewHorizontalAlignment">Percentage of New Horizontal Alignment    <span id="NewHorizontalAlignmentShow">1</span>  %</label>
                     <input type="range" id="NewHorizontalAlignment" min="1" max="50" step="1" value="1" class="form-control">
             </div>
+        </div>
+    </div>
+    
+    <!-- Modal Code -->
+
+    <!-- Modal for TotalShoulderWidth -->
+    <div class="modal fade" id="TotShrWid" tabindex="-1" role="dialog" aria-labelledby="TotShrWidLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="TotShrWidLabel">Total Shoulder Width Info</h4>
+          </div>
+            <div class="modal-body">
+            Average Shoulder Width for One Shoulder.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal for PavedShoulderWidth -->
+    <div class="modal fade" id="PavShlrWid" tabindex="-1" role="dialog" aria-labelledby="PavShlrWidLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="PavShlrWidLabel">Paved Shoulder Width Info</h4>
+          </div>
+            <div class="modal-body">
+            Average Shoulder Width for One Shoulder.<br>
+            Paved Shoulder Width will always be at least a minimum of 1'.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal for Surface Mix Pavement Depth -->
+    <div class="modal fade" id="SurMixPavDep" tabindex="-1" role="dialog" aria-labelledby="SurMixPavDepLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="SurMixPavDepLabel">Surface Mix Pavement Depth Info</h4>
+          </div>
+            <div class="modal-body">
+            Typically 1.5"-2.0"
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal for Intermediate Mix -->
+    <div class="modal fade" id="IntMix" tabindex="-1" role="dialog" aria-labelledby="IntMixLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="IntMixLabel">Intermediate Mix Info</h4>
+          </div>
+            <div class="modal-body">
+            Typically 2"-3" (if required)
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal for Base Mix -->
+    <div class="modal fade" id="BasMix" tabindex="-1" role="dialog" aria-labelledby="BasMixLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="BasMixLabel">Base Mix Info</h4>
+          </div>
+            <div class="modal-body">
+            Typically 4"-6" Can be up to 10" on Interstate
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal for No.21B Stone Depth -->
+    <div class="modal fade" id="No21BS" tabindex="-1" role="dialog" aria-labelledby="No21BSLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="No21BSLabel">No.21B Stone Depth Info</h4>
+          </div>
+            <div class="modal-body">
+            Typically 6" - 12"
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal for No.1 Stone Depth -->
+    <div class="modal fade" id="No1SD" tabindex="-1" role="dialog" aria-labelledby="No1SDLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="No1SDLabel">No.1 Stone Depth Info</h4>
+          </div>
+            <div class="modal-body">
+            Typically used on roadways with a high truck volume. Assume 12" if needed
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal for Proposed Roadway HyperLink -->
+    <div class="modal fade" id="PropRHeader" tabindex="-1" role="dialog" aria-labelledby="PropRHeaderLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="PropRHeaderLabel">Proposed Roadway HyperLink</h4>
+          </div>
+            <div class="modal-body">
+            Hyperlink to the Road Design Manual GS Standards
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
         </div>
     </div>
 </body>
