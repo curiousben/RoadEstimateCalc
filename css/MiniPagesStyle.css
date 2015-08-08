@@ -98,12 +98,6 @@ a {
     .row_type_1 div:nth-child(4n-2), .row_type_1 div:nth-child(4n-3) {
     	background-color: #aaaaaa;
     }
-    .row_type_2 div:nth-child(6n), .row_type_2 div:nth-child(6n-1), .row_type_2 div:nth-child(6n-2) {
-    	background-color: #dcdcdc;
-    }
-    .row_type_2 div:nth-child(6n-3), .row_type_2 div:nth-child(6n-4), .row_type_2 div:nth-child(6n-5) {
-    	background-color: #aaaaaa;
-    }
 }
 
 @media (min-width: 980px) {
@@ -115,12 +109,6 @@ a {
     	background-color: #dcdcdc;
     }
     .row_type_1 div:nth-child(6n-3), .row_type_1 div:nth-child(6n-4), .row_type_1 div:nth-child(6n-5) {
-    	background-color: #aaaaaa;
-    }
-    .row_type_2 div:nth-child(6n), .row_type_2 div:nth-child(6n-1), .row_type_2 div:nth-child(6n-2) {
-    	background-color: #dcdcdc;
-    }
-    .row_type_2 div:nth-child(6n-3), .row_type_2 div:nth-child(6n-4), .row_type_2 div:nth-child(6n-5) {
     	background-color: #aaaaaa;
     }
 

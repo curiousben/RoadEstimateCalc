@@ -71,8 +71,8 @@ $(document).ready(function(){
 })
 
 $( "#Road_Estimate_Tool input" ).bind('keyup mouseup',input_data_add);
-$("#Road_Estimate_Tool input[type=range]").on("input change",function () {
-	{document.getElementById(this.id+"Show").innerText = this.value;}
+$("#Road_Estimate_Tool input[type=range]").mousemove(function(){
+	$("#"+this.id+"Show").html($(this).val());
 })
 $( "#Road_Estimate_Tool select" ).bind('change',select_data_add);
 $( "#Road_Estimate_Tool textarea" ).bind('keyup mouseup',input_data_add);
@@ -87,7 +87,7 @@ function select_data_add()
 }
 //the functions that were mentioned above
 
-function expandTextarea(num, id) {
+function expandTextarea(num) {
     var $element = $('.misclass').get(num);
 
     $element.addEventListener('keyup', function(){
@@ -98,12 +98,7 @@ function expandTextarea(num, id) {
 }
 
 function resetdata() {
-var		dataidarr=[],
-		districtone=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000,25],
-		districttwo=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-		districtthree=[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-		districtfour=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
-		//defined three options for prefilled input boxes
+var		dataidarr=[];
 
 			$('#Road_Estimate_Tool input').each(function(){
 					dataidarr.push($(this).attr('id'));
@@ -113,39 +108,47 @@ var		dataidarr=[],
 		switch (document.getElementById('choice').value)
 		{
 			case 'Bristol, Salem, Lynchburg, Staunton':
+				var districtone=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000,25];
+
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					localStorage.setItem(dataidarr[i],districtone[i]);
 				};
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					document.getElementById(dataidarr[i]).value=districtone[i];
 				};
+				document.getElementById("pceiShow").innerText=localStorage.getItem("pcei");
 				break;
 			case 'NOVA':
+				var districttwo=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,51];
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					localStorage.setItem(dataidarr[i],districttwo[i]);
 				};
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					document.getElementById(dataidarr[i]).value=districttwo[i];
 				};
+				document.getElementById("pceiShow").innerText=localStorage.getItem("pcei");
 				break;
 			case 'Hampton Roads':
+				var districtthree=[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,52];
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					localStorage.setItem(dataidarr[i],districtthree[i]);
 				};
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					document.getElementById(dataidarr[i]).value=districtthree[i];
 				};
+				document.getElementById("pceiShow").innerText=localStorage.getItem("pcei");
 				break;
 			case 'Fredericksburg, Richmond, Culpepper':
+					districtfour=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,53];
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					localStorage.setItem(dataidarr[i],districtfour[i]);
 				};
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					document.getElementById(dataidarr[i]).value=districtfour[i];
 				};
+				document.getElementById("pceiShow").innerText=localStorage.getItem("pcei");
 				break;
 			default:
 				break;
 		}
-		//switch for different preferences that uses the input ID array and zips it up with the preset values of the specified areas
-}
+}		//switch for different preferences that uses the input ID array and zips it up with the preset values of the specified areas
