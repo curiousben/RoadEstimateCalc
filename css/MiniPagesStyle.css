@@ -47,6 +47,25 @@ a {
 	text-align: center;
 }
 
+#checkbox1 {
+	display: none;
+}
+#checkbox2 {
+	display: none;
+}
+#checkbox3 {
+	display: none;
+}
+#checkbox4 {
+	display: none;
+}
+#checkbox5 {
+	display: none;
+}
+#checkbox6 {
+	display: none;
+}
+
 .row_type_1 div:nth-child(even){
 	background-color: #dcdcdc;
 	padding: 10px 10px;
@@ -111,5 +130,4 @@ a {
     .row_type_1 div:nth-child(6n-3), .row_type_1 div:nth-child(6n-4), .row_type_1 div:nth-child(6n-5) {
     	background-color: #aaaaaa;
     }
-
 }

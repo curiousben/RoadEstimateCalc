@@ -8,13 +8,16 @@ $(document).ready(function(){
 	if (inp_pres) {
 
 	var	inp_dat_arr=[],
-		per_dat_arr=[];
-
+		per_dat_arr=[],
+		che_dat_arr=[];
 
 
 		$('#Road_Estimate_Tool input').each(function(){
 			if ($(this).attr('type') == "range") {
 				per_dat_arr.push($(this).attr('id'))
+				};
+			if ($(this).attr('type') == "checkbox") {
+				che_dat_arr.push($(this).attr('id'))
 				};
 			inp_dat_arr.push($(this).attr('id'));
 		});
@@ -23,7 +26,18 @@ $(document).ready(function(){
 		for (var i = inp_dat_arr.length - 1; i >= 0; i--) {
 			if (localStorage.getItem(inp_dat_arr[i])!= null) {
 				if (jQuery.inArray(inp_dat_arr[i],per_dat_arr)>=0) {
-				document.getElementById(inp_dat_arr[i]+'Show').innerText=localStorage.getItem(inp_dat_arr[i]);
+					document.getElementById(inp_dat_arr[i]+'Show').innerText=localStorage.getItem(inp_dat_arr[i]);
+				};
+				
+				if (jQuery.inArray(inp_dat_arr[i],che_dat_arr)>=0) {
+					if (localStorage.getItem(inp_dat_arr[i])=='true') {
+						document.getElementById(inp_dat_arr[i]).checked=true;
+						checkboxhide(inp_dat_arr[i].slice(-1),false);
+					}
+					else
+					{
+					document.getElementById(inp_dat_arr[i]).checked=false;
+					};
 				};
 				document.getElementById(inp_dat_arr[i]).value=localStorage.getItem(inp_dat_arr[i]);
 			};
@@ -33,7 +47,7 @@ $(document).ready(function(){
 
 	if (sel_pres) {
 
-	var	sel_dat_arr=[];
+		var	sel_dat_arr=[];
 
 		$('#Road_Estimate_Tool select').each(function(){
 				sel_dat_arr.push($(this).attr('id'));
@@ -70,22 +84,34 @@ $(document).ready(function(){
 	};
 })
 
-$( "#Road_Estimate_Tool input" ).bind('keyup mouseup',input_data_add);
+$( "#Road_Estimate_Tool input" ).bind('keyup mouseup', function () {
+	localStorage.setItem(this.id,this.value);
+});
 $("#Road_Estimate_Tool input[type=range]").mousemove(function(){
 	$("#"+this.id+"Show").html($(this).val());
 })
-$( "#Road_Estimate_Tool select" ).bind('change',select_data_add);
-$( "#Road_Estimate_Tool textarea" ).bind('keyup mouseup',input_data_add);
-//what function is called when the INPUT and SELECT type of inputs are interacted with
-function input_data_add() 
-{
-	localStorage.setItem(this.id,this.value);
-}
-function select_data_add()
-{
+$( "#Road_Estimate_Tool select" ).bind('change',function () {
 	localStorage.setItem(this.id,this.options[this.selectedIndex].value);
-}
-//the functions that were mentioned above
+});
+$( "#Road_Estimate_Tool textarea" ).bind('keyup mouseup', function () {
+	localStorage.setItem(this.id,this.value);
+});
+$('#Road_Estimate_Tool input[type="checkbox"]').on('change', function() {
+	var previouscheck,currentcheck;
+		currentcheck=($(this).prop('id')).slice(-1);
+		localStorage.setItem($(this).prop('id'),$(this).prop('checked'));
+
+   $('#Road_Estimate_Tool input[type="checkbox"]').not(this).prop('checked', function () {
+		if ($(this).prop('checked')) {
+			previouscheck=($(this).prop('id')).slice(-1);
+		};   	
+	   	$(this).prop('checked',false);
+	   	localStorage.setItem($(this).prop('id'),false);
+   });
+	checkboxhide(currentcheck,previouscheck);
+});
+//what function is called when the INPUT and SELECT type of inputs are interacted with
+
 
 function expandTextarea(num) {
     var $element = $('.misclass').get(num);
@@ -152,3 +178,17 @@ var		dataidarr=[];
 				break;
 		}
 }		//switch for different preferences that uses the input ID array and zips it up with the preset values of the specified areas
+
+function checkboxhide (curr,prev) {
+
+	if (prev) {
+		while (prev>=1) {
+			$('#checkbox'+prev).toggle(false);
+			prev--;
+		};
+	};
+	while (curr>=1) {
+			$('#checkbox'+curr).toggle('swing');
+			curr--;
+		};
+}
