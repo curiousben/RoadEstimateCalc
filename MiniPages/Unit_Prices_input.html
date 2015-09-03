@@ -3,10 +3,10 @@
 <head>
     <title>Unit Prices</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src='/RoadEstimateCalc/js/jquery-2.1.4.js'></script>
-    <link href="/RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
+    <script type="text/javascript" src='/RoadEstimateCalc/Frameworks/jQuery/jquery-2.1.4.js'></script>
+    <link href="/RoadEstimateCalc/Frameworks/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/RoadEstimateCalc/build/css/style.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/style.css"> -->
 </head>
 <body>
     <div class="container-fluid" id="Road_Estimate_Tool">
@@ -24,7 +24,7 @@
                             <option value="Hampton Roads">Hampton Roads</option>
                             <option value="Fredericksburg, Richmond, Culpepper">Fredericksburg, Richmond, Culpepper</option>
                         </select>
-                        <span class="input-group-btn">
+                        <span class="input-group-btn" id="UnitPricebutton">
                             <button class="btn btn-default" id="reset" onclick="resetdata()">Region Default Prices</button>
                         </span>
                     </div>
@@ -267,6 +267,6 @@
             </div>
         </div>
 </body>
-<script type="text/javascript" src="/RoadEstimateCalc/js/localmemory.js"></script>
-<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/localmemory.js"></script> -->
+<script type="text/javascript" src="/RoadEstimateCalc/build/js/minipages.min.js"></script>
+<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/minipages.min.js"></script> -->
 </html>

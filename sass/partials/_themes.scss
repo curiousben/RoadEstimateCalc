@@ -1,0 +1,72 @@
+#subheader {
+    color: $black; 
+    background-color: $lightgray;
+    padding: 10px 10px;
+    text-align: center;
+}
+#header {
+    color: $white; 
+    background-color: $black;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 14pt;
+}
+.row.MOT_even_row {
+    background-color:$MOTTableOrange;
+}
+
+.row.MOT_odd_row {
+    background-color:$MOTTableBlue;
+}
+.row_type_1 div:nth-child(even){
+	@include even_row;
+}
+
+.row_type_1 div:nth-child(odd){
+	@include odd_row;
+}
+
+
+//set to change below
+.row_type_2 div:nth-child(even){
+	@include even_row;
+}
+
+.row_type_2 div:nth-child(odd){
+	@include odd_row;
+}
+// there be change coming ^^ up here soon
+
+
+@media (max-width: 767px) {
+    #PDFButton{
+    	display: none;
+    }
+    #PrintButton {
+    	display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) { 
+    #PDFButton{
+    	display: none;
+    }
+    #PrintButton {
+    	display: none;
+    }
+    .row_type_1 div:nth-child(4n), .row_type_1 div:nth-child(4n-1) {
+    	background-color: $mediumgray;
+    }
+    .row_type_1 div:nth-child(4n-2), .row_type_1 div:nth-child(4n-3) {
+    	background-color: $gray;
+    }
+}
+
+@media (min-width: 992px) {
+  	.row_type_1 div:nth-child(6n), .row_type_1 div:nth-child(6n-1), .row_type_1 div:nth-child(6n-2) {
+    	background-color: $mediumgray;
+    }
+    .row_type_1 div:nth-child(6n-3), .row_type_1 div:nth-child(6n-4), .row_type_1 div:nth-child(6n-5) {
+    	background-color: $gray;
+    }
+}

@@ -1,0 +1,33 @@
+#MOTTable, #MOTrefbutton {
+	padding: 14.25px;
+}
+#checkbox1, #checkbox2, #checkbox3, #checkbox4, #checkbox5, #checkbox6 {
+	display: none;
+}
+@media (max-width: 480px) { 
+    #UnitPricebutton {
+    display: inline;
+	}
+	#reset {
+		width: 100%;
+	}
+	.wholechkboxstyl{
+		width: 100%;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 676px) {
+    #UnitPricebutton {
+    display: inline;
+	}
+	#reset {
+		width: 100%;
+	}
+}
+//button responsive style
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.wholechkboxstyl{
+		width: 100%;
+	}
+}

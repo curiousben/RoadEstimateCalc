@@ -1,0 +1,40 @@
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/themes';
+@import 'partials/buttons';
+
+input {
+	max-width: 100%;
+}
+
+a {
+	color: $white;
+}
+#evenrow {
+	background-color: $mediumgray;
+	padding: 10px 10px;
+	text-align: left;
+	margin-top: 4px;
+}
+#oddrow {
+	background-color: $gray;
+	padding: 10px 10px;
+	text-align: left;
+	margin-top: 4px;
+}
+#Label_Me {
+	padding: 0px ;
+}
+#InfoBox {
+	padding-top: 6px;
+}
+#GrandtotalFC {
+	color: $black; 
+	background-color: $lightgray;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+#misc1unit,#misc2unit,#misc3unit,#misc4unit,#misc5unit{
+	width: 75px;
+}

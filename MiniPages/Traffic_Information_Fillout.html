@@ -3,10 +3,11 @@
 <head>
     <title>Traffic Information Fillout</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src='/RoadEstimateCalc/js/jquery-2.1.4.js'></script>
-    <link href="/RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
+    <script type="text/javascript" src='/RoadEstimateCalc/Frameworks/jQuery/jquery-2.1.4.js'></script>
+    <script type="text/javascript" src='/RoadEstimateCalc/Frameworks/bootstrap-3.3.5-dist/js/bootstrap.min.js'></script>
+    <link href="/RoadEstimateCalc/Frameworks/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/RoadEstimateCalc/build/css/style.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/style.css"> -->
 </head>
 <body>
     <div class="container-fluid" id="Road_Estimate_Tool">
@@ -45,9 +46,168 @@
                         <option value="10">10</option>
                     </select>
             </div>
+            <div class="col-xs-12 col-sm-6 col-md-4" id='MOTTable'>
+                <button class="btn btn-info btn-block" id="MOTrefbutton" data-toggle="modal" data-target="#ModalReferencetable">MOT Reference Table</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal window for MOT Reference Table-->
+    <div class="modal fade" id="ModalReferencetable" tabindex="-1" role="dialog" aria-labelledby="ModalReferencetableLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="ModalReferencetableLabel">MOT Rankings</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class='col-xs-2'>
+                            <b>Category</b>
+                        </div>
+                        <div class='col-xs-4'>
+                            <b>Examples</b>
+                        </div>
+                        <div class='col-xs-2'>
+                            <b>Category</b>
+                        </div>
+                        <div class='col-xs-4'>
+                            <b>Cost</b>
+                        </div>
+                    </div>
+                    <div class='row MOT_even_row'>
+                        <div class='col-xs-2'>
+                            M
+                        </div>
+                        <div class='col-xs-4'>
+                            Maintance
+                        </div>
+                        <div class='col-xs-2'>
+                            1
+                        </div>
+                        <div class='col-xs-4'>
+                            $50,000
+                        </div>
+                    </div>
+                    <div class='row MOT_odd_row'>
+                        <div class='col-xs-2'>
+                            I
+                        </div>
+                        <div class='col-xs-4'>
+                            <p>Bridge and approach or low AADT Roadway Only</p>
+                        </div>
+                        <div class='col-xs-6'>
+                            <div class='row'>
+                                <div class='col-xs-4'>
+                                    2
+                                </div>
+                                <div class='col-xs-8'>
+                                    $100,000
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col-xs-4'>
+                                    3
+                                </div>
+                                <div class='col-xs-8'>
+                                    $150,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row MOT_even_row'>
+                        <div class='col-xs-2'>
+                            II
+                        </div>
+                        <div class='col-xs-4'>
+                            Complex Bridge and Approach or Medium AADT Roadway Only
+                        </div>
+                        <div class='col-xs-6'>
+                            <div class='row'>
+                                <div class='col-xs-4'>
+                                    4
+                                </div>
+                                <div class='col-xs-8'>
+                                    $200,000
+                                </div>
+                                <div class='col-xs-4'>
+                                    5
+                                </div>
+                                <div class='col-xs-8'>
+                                    $300,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row MOT_odd_row'>
+                        <div class='col-xs-2'>
+                            III
+                        </div>
+                        <div class='col-xs-4'>
+                            High AADT on Primary or Urban Roadway Project < 1 mile
+                        </div>
+                        <div class='col-xs-6'>
+                            <div class='row'>
+                                <div class='col-xs-4'>
+                                    6
+                                </div>
+                                <div class='col-xs-8'>
+                                    $500,000
+                                </div>
+                                <div class='col-xs-4'>
+                                    7
+                                </div>
+                                <div class='col-xs-8'>
+                                    $750,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row MOT_even_row'>
+                        <div class='col-xs-2'>
+                            IV
+                        </div>
+                        <div class='col-xs-4'>
+                            Interstate or High AADT Primary that is > 1 mile
+                        </div>
+                        <div class='col-xs-6'>
+                            <div class='row'>
+                                <div class='col-xs-4'>
+                                    8
+                                </div>
+                                <div class='col-xs-8'>
+                                    $1,000,000
+                                </div>
+                                <div class='col-xs-4'>
+                                    9
+                                </div>
+                                <div class='col-xs-8'>
+                                    $2,000,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row MOT_odd_row'>
+                        <div class='col-xs-2'>
+                            V
+                        </div>
+                        <div class='col-xs-4'>
+                            Mega Project
+                        </div>
+                        <div class='col-xs-2'>
+                            10
+                        </div>
+                        <div class='col-xs-4'>
+                            $4,000,000
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
-<script type="text/javascript" src="/RoadEstimateCalc/js/localmemory.js"></script>
-<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/localmemory.js"></script> -->
+<script type="text/javascript" src="/RoadEstimateCalc/build/js/minipages.min.js"></script>
+<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/minipages.min.js"></script> -->
 </html>

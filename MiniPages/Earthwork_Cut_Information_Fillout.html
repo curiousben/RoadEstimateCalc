@@ -3,11 +3,10 @@
 <head>
     <title>Earthwork:Cut Information Fillout</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src='/RoadEstimateCalc/js/jquery-2.1.4.js'></script>
-    <script type="text/javascript" src="/RoadEstimateCalc/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-    <link href="/RoadEstimateCalc/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/RoadEstimateCalc/css/MiniPagesStyle.css" rel="stylesheet" />
-<!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/MiniPagesStyle.css"> -->
+    <script type="text/javascript" src='/RoadEstimateCalc/Frameworks/jQuery/jquery-2.1.4.js'></script>
+    <link href="/RoadEstimateCalc/Frameworks/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/RoadEstimateCalc/build/css/style.css" rel="stylesheet" />
+<!--<link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/style.css"> -->
 </head>
 <body>
     <div class="container-fluid" id="Road_Estimate_Tool">
@@ -15,45 +14,59 @@
             <div class="col-xs-12" id="header">Earthwork:Cut</div>
         </div>
         <div class="row">
-            <div class="col-xs-4"><img src="/RoadEstimateCalc/images/image1.png" class="img-responsive" width="342" height="221" id="test"></div>
-            <div class="col-xs-4"><img src="/RoadEstimateCalc/images/image2.png" class="img-responsive" width="347" height="236"></div>
-            <div class="col-xs-4">
-                <div class="row">
-                    <div class="col-xs-4"><div class="mini-box" id="RoadPicPara">Length: </div></div>
-                    <div class="col-xs-8"><div class="mini-box" id="RoadPicPara"><p1>Length of</p1></div></div>
-
-                    <div class="col-xs-4"><div class="mini-box" id="RoadPicPara">W: </div></div>
-                    <div class="col-xs-8"><div class="mini-box" id="RoadPicPara"><p1>Distance from existing edge pf pavement to the proposed bottom/top of cut/fill</p1></div></div>
-
-                    <div class="col-xs-4"><div class="mini-box" id="RoadPicPara">Distance: </div></div>
-                    <div class="col-xs-8"><div class="mini-box" id="RoadPicPara"><p1>Distance from existing edge of pavement to the proposed cut/fill tie-in (using a range finder is recommended)</p1></div></div>
+            <!--'https://s3.amazonaws.com/libapps/accounts/52949/images/image1.png'-->
+            <div class="col-xs-6"><img src="/RoadEstimateCalc/images/image1.png" class="img-responsive" width="342" height="221"></div>
+            <!--'https://s3.amazonaws.com/libapps/accounts/52949/images/image2.png'-->
+            <div class="col-xs-6"><img src="/RoadEstimateCalc/images/image2.png" class="img-responsive" width="347" height="236"></div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><b>Length:</b></div>
+                    <div class="panel-body"><p>Length of</p></div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Width:</div>
+                    <div class="panel-body"><p>Distance from existing edge pf pavement to the proposed bottom/top of cut/fill</p></div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Distance:</div>
+                    <div class="panel-body"><p>Distance from existing edge of pavement to the proposed cut/fill tie-in (using a range finder is recommended)</p></div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-2">
-                <label for="CCB1">1 Section(s)</label>
-                <input type="checkbox" id="CCB1" value="">
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <label class="btn btn-default wholechkboxstyl">
+                    <input type="checkbox" id="CCB1"> 1 Section(s)
+                </label>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-2">
-                <label for="CCB2">2 Section(s)</label>
-                <input type="checkbox" id="CCB2" value="">
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <label class="btn btn-default wholechkboxstyl">
+                    <input type="checkbox" id="CCB2"> 2 Section(s)
+                </label>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-2">
-                <label for="CCB3">3 Section(s)</label>
-                <input type="checkbox" id="CCB3" value="">
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <label class="btn btn-default wholechkboxstyl">
+                    <input type="checkbox" id="CCB3"> 3 Section(s)
+                </label>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-2">
-                <label for="CCB4">4 Section(s)</label>
-                <input type="checkbox" id="CCB4" value="">
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <label class="btn btn-default wholechkboxstyl">
+                    <input type="checkbox" id="CCB4"> 4 Section(s)
+                </label>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-2">
-                <label for="CCB5">5 Section(s)</label>
-                <input type="checkbox" id="CCB5" value="">
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <label class="btn btn-default wholechkboxstyl">
+                    <input type="checkbox" id="CCB5"> 5 Section(s)
+                </label>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-2">
-                <label for="CCB6">6 Section(s)</label>
-                <input type="checkbox" id="CCB6" value="">
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <label class="btn btn-default wholechkboxstyl">
+                    <input type="checkbox" id="CCB6"> 6 Section(s)
+                </label>
             </div>
         </div>
         <div id="checkbox1">
@@ -390,6 +403,6 @@
         </div>
     </div>
 </body>
-<script type="text/javascript" src="/RoadEstimateCalc/js/localmemory.js"></script>
-<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/localmemory.js"></script> -->
+<script type="text/javascript" src="/RoadEstimateCalc/build/js/minipages.min.js"></script>
+<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/minipages.min.js"></script> -->
 </html>
