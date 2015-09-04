@@ -11,49 +11,48 @@
     text-align: center;
     font-size: 14pt;
 }
-.row.MOT_even_row {
-    background-color:$MOTTableOrange;
+
+.row {
+    &.MOT_even_row {
+        background-color:$MOTTableOrange;
+    }
+    &.MOT_odd_row {
+        background-color:$MOTTableBlue;
+    }
+    &.default_even_row{
+        @include even_row;
+    } 
+    &.default_odd_row{
+        @include odd_row;
+    }
 }
 
-.row.MOT_odd_row {
-    background-color:$MOTTableBlue;
-}
-.row_type_1 div:nth-child(even){
+.row_type_1,.earthwork_even_row div:nth-child(even){
 	@include even_row;
 }
 
-.row_type_1 div:nth-child(odd){
+.row_type_1,.earthwork_odd_row div:nth-child(odd){
 	@include odd_row;
 }
 
 
-//set to change below
-.row_type_2 div:nth-child(even){
-	@include even_row;
+.earthwork_even_row div{
+    @include even_row;
 }
-
-.row_type_2 div:nth-child(odd){
-	@include odd_row;
+.earthwork_odd_row div{
+    @include odd_row;
 }
-// there be change coming ^^ up here soon
-
-
 @media (max-width: 767px) {
-    #PDFButton{
-    	display: none;
+    .earthwork_even_row div:nth-child(even){
+        @include even_row;
     }
-    #PrintButton {
-    	display: none;
+    .earthwork_odd_row div:nth-child(odd){
+        @include odd_row;
     }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) { 
-    #PDFButton{
-    	display: none;
-    }
-    #PrintButton {
-    	display: none;
-    }
     .row_type_1 div:nth-child(4n), .row_type_1 div:nth-child(4n-1) {
     	background-color: $mediumgray;
     }

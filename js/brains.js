@@ -661,33 +661,33 @@ function GradingItems()
        TotDR = DryRipRap()*localStorage.getItem("dr1");
       SubTot = TotCG+TotRE+TotBE+TotUM+TotBS+TotDR;
         Cont = (localStorage.getItem("GIPercent")*SubTot)/100;
-        document.getElementById("ClearingFC").innerHTML = numbercomma(ClearingGrubbing().toFixed());
-        document.getElementById("ClearingUP").innerHTML = "$"+numbercomma(localStorage.getItem("cr1"));
-        document.getElementById("TotClearingFC").innerHTML = "$"+numbercomma(TotCG.toFixed());
+        document.getElementById("ClearingFC").innerHTML = numberleftblankcomma(ClearingGrubbing().toFixed());
+        document.getElementById("ClearingUP").innerHTML = "$"+numberleftblankcomma(localStorage.getItem("cr1"));
+        document.getElementById("TotClearingFC").innerHTML = "$"+numberleftblankcomma(TotCG.toFixed());
 
-        document.getElementById("RegularFC").innerHTML = numbercomma(AnticipatedRegularExcavation().toFixed());
-        document.getElementById("RegularUP").innerHTML = "$"+numbercomma(localStorage.getItem("re1"));
-        document.getElementById("TotRegularFC").innerHTML = "$"+numbercomma(TotRE.toFixed());
+        document.getElementById("RegularFC").innerHTML = numberleftblankcomma(AnticipatedRegularExcavation().toFixed());
+        document.getElementById("RegularUP").innerHTML = "$"+numberleftblankcomma(localStorage.getItem("re1"));
+        document.getElementById("TotRegularFC").innerHTML = "$"+numberleftblankcomma(TotRE.toFixed());
 
-        document.getElementById("BorrowFC").innerHTML = numbercomma(AnticipatedBowExcavation().toFixed());
-        document.getElementById("BorrowUP").innerHTML = "$"+numbercomma(localStorage.getItem("be1"));
-        document.getElementById("TotBorrowFC").innerHTML = "$"+numbercomma(TotBE.toFixed());
+        document.getElementById("BorrowFC").innerHTML = numberleftblankcomma(AnticipatedBowExcavation().toFixed());
+        document.getElementById("BorrowUP").innerHTML = "$"+numberleftblankcomma(localStorage.getItem("be1"));
+        document.getElementById("TotBorrowFC").innerHTML = "$"+numberleftblankcomma(TotBE.toFixed());
 
-        document.getElementById("UnsuitableFC").innerHTML = numbercomma(AnticipatedUnsuitableMat().toFixed());
-        document.getElementById("UnsuitableUP").innerHTML = "$"+numbercomma(localStorage.getItem("um1"));
-        document.getElementById("TotUnsuitableFC").innerHTML = "$"+numbercomma(TotUM.toFixed());
+        document.getElementById("UnsuitableFC").innerHTML = numberleftblankcomma(AnticipatedUnsuitableMat().toFixed());
+        document.getElementById("UnsuitableUP").innerHTML = "$"+numberleftblankcomma(localStorage.getItem("um1"));
+        document.getElementById("TotUnsuitableFC").innerHTML = "$"+numberleftblankcomma(TotUM.toFixed());
 
-        document.getElementById("BackfillFC").innerHTML = numbercomma(BackFillStoneNoOne().toFixed());
-        document.getElementById("BackfillUP").innerHTML = "$"+numbercomma(localStorage.getItem("bs1"));
-        document.getElementById("TotBackfillFC").innerHTML = "$"+numbercomma(TotBS.toFixed());
+        document.getElementById("BackfillFC").innerHTML = numberleftblankcomma(BackFillStoneNoOne().toFixed());
+        document.getElementById("BackfillUP").innerHTML = "$"+numberleftblankcomma(localStorage.getItem("bs1"));
+        document.getElementById("TotBackfillFC").innerHTML = "$"+numberleftblankcomma(TotBS.toFixed());
 
-        document.getElementById("RiprapFC").innerHTML = numbercomma(DryRipRap().toFixed());
-        document.getElementById("RiprapUP").innerHTML = "$"+numbercomma(localStorage.getItem("dr1"));
-        document.getElementById("TotRiprapFC").innerHTML = "$"+numbercomma(TotDR.toFixed());
+        document.getElementById("RiprapFC").innerHTML = numberleftblankcomma(DryRipRap().toFixed());
+        document.getElementById("RiprapUP").innerHTML = "$"+numberleftblankcomma(localStorage.getItem("dr1"));
+        document.getElementById("TotRiprapFC").innerHTML = "$"+numberleftblankcomma(TotDR.toFixed());
 
-        document.getElementById("GradingSubTot").innerHTML = "$"+numbercomma(SubTot.toFixed());
-        document.getElementById("GradeCon").innerHTML = "%"+numbercomma(localStorage.getItem("GIPercent"));
-        document.getElementById("GradingContin").innerHTML = "$"+numbercomma(Cont.toFixed());
+        document.getElementById("GradingSubTot").innerHTML = "$"+numberleftblankcomma(SubTot.toFixed());
+        document.getElementById("GradeCon").innerHTML = "%"+numberleftblankcomma(localStorage.getItem("GIPercent"));
+        document.getElementById("GradingContin").innerHTML = "$"+numberleftblankcomma(Cont.toFixed());
        return [TotCG,TotRE,TotBE,TotUM,TotBS,TotDR,SubTot,Cont];
 }
 function DrainageItems()
@@ -700,32 +700,32 @@ function DrainageItems()
        TotCG = CurbGutterfc()*localStorage.getItem("cg2");
      SubTotD = parseFloat(TotCC,10)+parseFloat(TotPU36,10)+parseFloat(TotPO36,10)+parseFloat(TotEP36,10)+parseFloat(TotDU,10)+parseFloat(TotCG,10);
        ContD = (localStorage.getItem("DIPercent")*SubTotD)/100;
-        document.getElementById("ConcreteFC").innerHTML = "$"+numbercomma(Number(ConcreteBoxCulvert()).toFixed());
-        document.getElementById("TotConcreteFC").innerHTML="$"+numbercomma(TotCC.toFixed());
+        document.getElementById("ConcreteFC").innerHTML = "$"+numberleftblankcomma(Number(ConcreteBoxCulvert()).toFixed());
+        document.getElementById("TotConcreteFC").innerHTML="$"+numberleftblankcomma(TotCC.toFixed());
 
-        document.getElementById("PipesUFC").innerHTML=numbercomma(Number(PipesUnderThreeSixInfc()).toFixed()); 
-        document.getElementById("PipesUUP").innerHTML="$"+numbercomma(localStorage.getItem("pu2")); 
-        document.getElementById("TotPipesFC").innerHTML="$"+numbercomma(TotPU36.toFixed());
+        document.getElementById("PipesUFC").innerHTML=numberleftblankcomma(Number(PipesUnderThreeSixInfc()).toFixed()); 
+        document.getElementById("PipesUUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("pu2")); 
+        document.getElementById("TotPipesFC").innerHTML="$"+numberleftblankcomma(TotPU36.toFixed());
 
-        document.getElementById("PipesOFC").innerHTML=numbercomma(Number(PipesOverThreeSixInfc()).toFixed());
-        document.getElementById("PipesOUP").innerHTML="$"+numbercomma(localStorage.getItem("po2")); 
-        document.getElementById("TotPipesOFC").innerHTML="$"+numbercomma(TotPO36.toFixed());
+        document.getElementById("PipesOFC").innerHTML=numberleftblankcomma(Number(PipesOverThreeSixInfc()).toFixed());
+        document.getElementById("PipesOUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("po2")); 
+        document.getElementById("TotPipesOFC").innerHTML="$"+numberleftblankcomma(TotPO36.toFixed());
 
-        document.getElementById("EndWallsFC").innerHTML=numbercomma(Number(EndWallsPipesOverThreeSixfc()).toFixed()); 
-        document.getElementById("EndWallsUP").innerHTML="$"+numbercomma(localStorage.getItem("ew2"));  
-        document.getElementById("TotEndwallsFC").innerHTML="$"+numbercomma(TotEP36.toFixed());
+        document.getElementById("EndWallsFC").innerHTML=numberleftblankcomma(Number(EndWallsPipesOverThreeSixfc()).toFixed()); 
+        document.getElementById("EndWallsUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("ew2"));  
+        document.getElementById("TotEndwallsFC").innerHTML="$"+numberleftblankcomma(TotEP36.toFixed());
 
-        document.getElementById("DropFC").innerHTML=numbercomma(Number(DropInletsfc()).toFixed()); 
-        document.getElementById("DropUP").innerHTML="$"+numbercomma(localStorage.getItem("di2")); 
-        document.getElementById("TotDropFC").innerHTML="$"+numbercomma(TotDU.toFixed());
+        document.getElementById("DropFC").innerHTML=numberleftblankcomma(Number(DropInletsfc()).toFixed()); 
+        document.getElementById("DropUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("di2")); 
+        document.getElementById("TotDropFC").innerHTML="$"+numberleftblankcomma(TotDU.toFixed());
 
-        document.getElementById("CurbFC").innerHTML=numbercomma(Number(CurbGutterfc()).toFixed());
-        document.getElementById("CurbUP").innerHTML="$"+numbercomma(localStorage.getItem("cg2"));
-        document.getElementById("TotCurbFC").innerHTML="$"+numbercomma(TotCG.toFixed());
+        document.getElementById("CurbFC").innerHTML=numberleftblankcomma(Number(CurbGutterfc()).toFixed());
+        document.getElementById("CurbUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("cg2"));
+        document.getElementById("TotCurbFC").innerHTML="$"+numberleftblankcomma(TotCG.toFixed());
 
-        document.getElementById("DrainageSubTot").innerHTML="$"+numbercomma(SubTotD.toFixed());
-        document.getElementById("DrainCon").innerHTML="%"+numbercomma(localStorage.getItem("DIPercent"));
-        document.getElementById("DrainageContin").innerHTML="$"+numbercomma(ContD.toFixed());
+        document.getElementById("DrainageSubTot").innerHTML="$"+numberleftblankcomma(SubTotD.toFixed());
+        document.getElementById("DrainCon").innerHTML="%"+numberleftblankcomma(localStorage.getItem("DIPercent"));
+        document.getElementById("DrainageContin").innerHTML="$"+numberleftblankcomma(ContD.toFixed());
        return [TotCC,TotPU36,TotPO36,TotEP36,TotDU,TotCG,SubTotD,ContD];
 }
 function PavementItems()
@@ -737,29 +737,29 @@ function PavementItems()
        TotNS = NoOneStone()*localStorage.getItem("ns3");
       SubTot = TotSB+TotIC+TotBC+TotSbC+TotNS;
         Cont = (localStorage.getItem("PavIPercent")*SubTot)/100;
-    document.getElementById("SurfaceFC").innerHTML=numbercomma(SurfaceCourse().toFixed());
-    document.getElementById("SurfaceUP").innerHTML="$"+numbercomma(localStorage.getItem("sc3"));
-    document.getElementById("TotSurfaceFC").innerHTML="$"+numbercomma(TotSB.toFixed());
+    document.getElementById("SurfaceFC").innerHTML=numberleftblankcomma(SurfaceCourse().toFixed());
+    document.getElementById("SurfaceUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("sc3"));
+    document.getElementById("TotSurfaceFC").innerHTML="$"+numberleftblankcomma(TotSB.toFixed());
 
-    document.getElementById("IntermediateFC").innerHTML=numbercomma(IntermediateCourse().toFixed());
-    document.getElementById("IntermediateUP").innerHTML="$"+numbercomma(localStorage.getItem("ic3"));
-    document.getElementById("TotIntermediateFC").innerHTML="$"+numbercomma(TotIC.toFixed());
+    document.getElementById("IntermediateFC").innerHTML=numberleftblankcomma(IntermediateCourse().toFixed());
+    document.getElementById("IntermediateUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("ic3"));
+    document.getElementById("TotIntermediateFC").innerHTML="$"+numberleftblankcomma(TotIC.toFixed());
 
-    document.getElementById("BaseFC").innerHTML=numbercomma(BaseCourse().toFixed());
-    document.getElementById("BaseUP").innerHTML="$"+numbercomma(localStorage.getItem("bc3"));
-    document.getElementById("TotBaseFC").innerHTML="$"+numbercomma(TotBC.toFixed());
+    document.getElementById("BaseFC").innerHTML=numberleftblankcomma(BaseCourse().toFixed());
+    document.getElementById("BaseUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("bc3"));
+    document.getElementById("TotBaseFC").innerHTML="$"+numberleftblankcomma(TotBC.toFixed());
 
-    document.getElementById("SubbaseFC").innerHTML=numbercomma(SubbaseCourse().toFixed());
-    document.getElementById("SubbaseUP").innerHTML="$"+numbercomma(localStorage.getItem("sbc3"));
-    document.getElementById("TotSubbaseFC").innerHTML="$"+numbercomma(TotSbC.toFixed());
+    document.getElementById("SubbaseFC").innerHTML=numberleftblankcomma(SubbaseCourse().toFixed());
+    document.getElementById("SubbaseUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("sbc3"));
+    document.getElementById("TotSubbaseFC").innerHTML="$"+numberleftblankcomma(TotSbC.toFixed());
 
-    document.getElementById("No1FC").innerHTML=numbercomma(NoOneStone().toFixed());
-    document.getElementById("No1UP").innerHTML="$"+numbercomma(localStorage.getItem("ns3"));
-    document.getElementById("TotNo1FC").innerHTML="$"+numbercomma(TotNS.toFixed());
+    document.getElementById("No1FC").innerHTML=numberleftblankcomma(NoOneStone().toFixed());
+    document.getElementById("No1UP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("ns3"));
+    document.getElementById("TotNo1FC").innerHTML="$"+numberleftblankcomma(TotNS.toFixed());
 
-    document.getElementById("PavementSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
-    document.getElementById("PaveCon").innerHTML="%"+numbercomma(localStorage.getItem("PavIPercent"));
-    document.getElementById("PavementContin").innerHTML="$"+numbercomma(Cont.toFixed());
+    document.getElementById("PavementSubTot").innerHTML="$"+numberleftblankcomma(SubTot.toFixed());
+    document.getElementById("PaveCon").innerHTML="%"+numberleftblankcomma(localStorage.getItem("PavIPercent"));
+    document.getElementById("PavementContin").innerHTML="$"+numberleftblankcomma(Cont.toFixed());
     return [TotSB,TotIC,TotBC,TotSbC,TotNS,SubTot,Cont];
 }
 function IncidentalItems()
@@ -770,25 +770,25 @@ function IncidentalItems()
        TotCE = CommEnt()*localStorage.getItem("ce4");
       SubTot = TotRW+TotPE+TotUE+TotCE;
         Cont = (localStorage.getItem("IIPercent")*SubTot)/100;
-        document.getElementById("RetainFC").innerHTML=numbercomma(RetainingWalls().toFixed());
-        document.getElementById("RetainUP").innerHTML="$"+numbercomma(localStorage.getItem("rw4"));
-        document.getElementById("TotRetainFC").innerHTML="$"+numbercomma(TotRW.toFixed());
+        document.getElementById("RetainFC").innerHTML=numberleftblankcomma(RetainingWalls().toFixed());
+        document.getElementById("RetainUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("rw4"));
+        document.getElementById("TotRetainFC").innerHTML="$"+numberleftblankcomma(TotRW.toFixed());
 
-        document.getElementById("RuralFC").innerHTML=numbercomma(Number(PrivEnt()).toFixed());
-        document.getElementById("RuralUP").innerHTML="$"+numbercomma(localStorage.getItem("rp4"));
-        document.getElementById("TotRuralFC").innerHTML="$"+numbercomma(TotPE.toFixed());
+        document.getElementById("RuralFC").innerHTML=numberleftblankcomma(Number(PrivEnt()).toFixed());
+        document.getElementById("RuralUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("rp4"));
+        document.getElementById("TotRuralFC").innerHTML="$"+numberleftblankcomma(TotPE.toFixed());
 
-        document.getElementById("UrbanFC").innerHTML=numbercomma(Number(UrbEnt()).toFixed());
-        document.getElementById("UrbanUP").innerHTML="$"+numbercomma(localStorage.getItem("up4"));
-        document.getElementById("TotUrbanFC").innerHTML="$"+numbercomma(TotUE.toFixed());
+        document.getElementById("UrbanFC").innerHTML=numberleftblankcomma(Number(UrbEnt()).toFixed());
+        document.getElementById("UrbanUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("up4"));
+        document.getElementById("TotUrbanFC").innerHTML="$"+numberleftblankcomma(TotUE.toFixed());
 
-        document.getElementById("CommFC").innerHTML=numbercomma(Number(CommEnt()).toFixed());
-        document.getElementById("CommUP").innerHTML="$"+numbercomma(localStorage.getItem("ce4"));
-        document.getElementById("TotCommFC").innerHTML="$"+numbercomma(TotCE.toFixed());
+        document.getElementById("CommFC").innerHTML=numberleftblankcomma(Number(CommEnt()).toFixed());
+        document.getElementById("CommUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("ce4"));
+        document.getElementById("TotCommFC").innerHTML="$"+numberleftblankcomma(TotCE.toFixed());
 
-        document.getElementById("IncidentalSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
-        document.getElementById("IncidCon").innerHTML="%"+numbercomma(localStorage.getItem("IIPercent"));
-        document.getElementById("IncidentalContin").innerHTML="$"+numbercomma(Cont.toFixed());
+        document.getElementById("IncidentalSubTot").innerHTML="$"+numberleftblankcomma(SubTot.toFixed());
+        document.getElementById("IncidCon").innerHTML="%"+numberleftblankcomma(localStorage.getItem("IIPercent"));
+        document.getElementById("IncidentalContin").innerHTML="$"+numberleftblankcomma(Cont.toFixed());
        return [TotRW,TotPE,TotUE,TotCE,SubTot,Cont];
 }
 function ProtectiveItems()
@@ -798,20 +798,20 @@ function ProtectiveItems()
         TotS = Sidewalk()*localStorage.getItem("s5");
       SubTot = TotMT+TotFO+TotS;
         Cont = (localStorage.getItem("ProIPercent")*SubTot)/100;
-        document.getElementById("MainUP").innerHTML="$"+numbercomma(MainofTraffic().toFixed());
-        document.getElementById("TotMainFC").innerHTML="$"+numbercomma(TotMT.toFixed());
+        document.getElementById("MainUP").innerHTML="$"+numberleftblankcomma(MainofTraffic().toFixed());
+        document.getElementById("TotMainFC").innerHTML="$"+numberleftblankcomma(TotMT.toFixed());
 
-        document.getElementById("FieldFC").innerHTML=numbercomma(Number(FieldOffice()).toFixed());
-        document.getElementById("FieldUP").innerHTML="$"+numbercomma(localStorage.getItem("fo5"));
-        document.getElementById("TotFieldFC").innerHTML="$"+numbercomma(TotFO.toFixed());
+        document.getElementById("FieldFC").innerHTML=numberleftblankcomma(Number(FieldOffice()).toFixed());
+        document.getElementById("FieldUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("fo5"));
+        document.getElementById("TotFieldFC").innerHTML="$"+numberleftblankcomma(TotFO.toFixed());
 
-        document.getElementById("SideFC").innerHTML=numbercomma(Sidewalk().toFixed());
-        document.getElementById("SideUP").innerHTML="$"+numbercomma(localStorage.getItem("s5"));
-        document.getElementById("TotSideFC").innerHTML="$"+numbercomma(TotS.toFixed());
+        document.getElementById("SideFC").innerHTML=numberleftblankcomma(Sidewalk().toFixed());
+        document.getElementById("SideUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("s5"));
+        document.getElementById("TotSideFC").innerHTML="$"+numberleftblankcomma(TotS.toFixed());
 
-        document.getElementById("ProtectiveSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
-        document.getElementById("ProtCon").innerHTML="%"+numbercomma(localStorage.getItem("ProIPercent"));
-        document.getElementById("ProtectiveContin").innerHTML="$"+numbercomma(Cont.toFixed()); 
+        document.getElementById("ProtectiveSubTot").innerHTML="$"+numberleftblankcomma(SubTot.toFixed());
+        document.getElementById("ProtCon").innerHTML="%"+numberleftblankcomma(localStorage.getItem("ProIPercent"));
+        document.getElementById("ProtectiveContin").innerHTML="$"+numberleftblankcomma(Cont.toFixed()); 
        return [TotMT,TotFO,TotS,SubTot,Cont];
 }
 function ErosionItems()
@@ -822,38 +822,38 @@ function ErosionItems()
        TotCD = CheckDamsTYlOrTYll()*localStorage.getItem("cd6");
       SubTot = TotSM+TotS+TotTS+TotCD;
         Cont = (localStorage.getItem("ECPercent")*SubTot)/100;
-        document.getElementById("StormFC").innerHTML=numbercomma(Number(StormWaterManageFac()[0]).toFixed()); 
-        document.getElementById("StormUP").innerHTML="$"+numbercomma(Number(StormWaterManageFac()[1]).toFixed()); 
-        document.getElementById("TotStormFC").innerHTML="$"+numbercomma(TotSM.toFixed());
+        document.getElementById("StormFC").innerHTML=numberleftblankcomma(Number(StormWaterManageFac()[0]).toFixed()); 
+        document.getElementById("StormUP").innerHTML="$"+numberleftblankcomma(Number(StormWaterManageFac()[1]).toFixed()); 
+        document.getElementById("TotStormFC").innerHTML="$"+numberleftblankcomma(TotSM.toFixed());
 
-        document.getElementById("SeedFC").innerHTML=numbercomma(Seeding().toFixed()); 
-        document.getElementById("SeedUP").innerHTML="$"+numbercomma(localStorage.getItem("s6")); 
-        document.getElementById("TotSeedFC").innerHTML="$"+numbercomma(TotS.toFixed());
+        document.getElementById("SeedFC").innerHTML=numberleftblankcomma(Seeding().toFixed()); 
+        document.getElementById("SeedUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("s6")); 
+        document.getElementById("TotSeedFC").innerHTML="$"+numberleftblankcomma(TotS.toFixed());
 
-        document.getElementById("TempFC").innerHTML=numbercomma(TempSiltFence().toFixed()); 
-        document.getElementById("TempUP").innerHTML="$"+numbercomma(localStorage.getItem("ts6")); 
-        document.getElementById("TotTempFC").innerHTML="$"+numbercomma(TotTS.toFixed());
+        document.getElementById("TempFC").innerHTML=numberleftblankcomma(TempSiltFence().toFixed()); 
+        document.getElementById("TempUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("ts6")); 
+        document.getElementById("TotTempFC").innerHTML="$"+numberleftblankcomma(TotTS.toFixed());
 
-        document.getElementById("CheckFC").innerHTML=numbercomma(CheckDamsTYlOrTYll().toFixed()); 
-        document.getElementById("CheckUP").innerHTML="$"+numbercomma(localStorage.getItem("cd6")); 
-        document.getElementById("TotCheckFC").innerHTML="$"+numbercomma(TotCD.toFixed());
+        document.getElementById("CheckFC").innerHTML=numberleftblankcomma(CheckDamsTYlOrTYll().toFixed()); 
+        document.getElementById("CheckUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("cd6")); 
+        document.getElementById("TotCheckFC").innerHTML="$"+numberleftblankcomma(TotCD.toFixed());
 
-        document.getElementById("ErosionSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
-        document.getElementById("ErosCon").innerHTML="%"+numbercomma(localStorage.getItem("ECPercent"));
-        document.getElementById("ErosionContin").innerHTML="$"+numbercomma(Cont.toFixed());
+        document.getElementById("ErosionSubTot").innerHTML="$"+numberleftblankcomma(SubTot.toFixed());
+        document.getElementById("ErosCon").innerHTML="%"+numberleftblankcomma(localStorage.getItem("ECPercent"));
+        document.getElementById("ErosionContin").innerHTML="$"+numberleftblankcomma(Cont.toFixed());
        return [TotSM,TotS,TotTS,TotCD,SubTot,Cont];
 }
 function UtilItems()
 {
    var TotSM = BelowGroundUtilities()*localStorage.getItem("bg7");
         Cont = (localStorage.getItem("UPercent")*TotSM)/100;
-    document.getElementById("BelowFC").innerHTML=numbercomma(BelowGroundUtilities().toFixed());
-    document.getElementById("BelowUP").innerHTML="$"+numbercomma(localStorage.getItem("bg7"));
-    document.getElementById("TotBelowFC").innerHTML="$"+numbercomma(TotSM.toFixed());
+    document.getElementById("BelowFC").innerHTML=numberleftblankcomma(BelowGroundUtilities().toFixed());
+    document.getElementById("BelowUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("bg7"));
+    document.getElementById("TotBelowFC").innerHTML="$"+numberleftblankcomma(TotSM.toFixed());
 
-    document.getElementById("UtilitiesSubTot").innerHTML="$"+numbercomma(TotSM.toFixed());
-    document.getElementById("UtilCon").innerHTML="%"+numbercomma(localStorage.getItem("UPercent"));
-    document.getElementById("UtilitiesContin").innerHTML="$"+numbercomma(Cont.toFixed());
+    document.getElementById("UtilitiesSubTot").innerHTML="$"+numberleftblankcomma(TotSM.toFixed());
+    document.getElementById("UtilCon").innerHTML="%"+numberleftblankcomma(localStorage.getItem("UPercent"));
+    document.getElementById("UtilitiesContin").innerHTML="$"+numberleftblankcomma(Cont.toFixed());
        return [TotSM,TotSM,Cont];
 }
 function TrafficandSafetyItems()
@@ -866,29 +866,29 @@ function TrafficandSafetyItems()
       SubTot = TotPS+TotPM+TotGR+TotET+TotGRF;
         Cont = (localStorage.getItem("TSPercent")*SubTot)/100;
 
-        document.getElementById("PermFC").innerHTML=numbercomma(Number(PermanentSignal()).toFixed());
-        document.getElementById("PermUP").innerHTML="$"+numbercomma(localStorage.getItem("ps8"));
-        document.getElementById("TotPermFC").innerHTML="$"+numbercomma(TotPS.toFixed());
+        document.getElementById("PermFC").innerHTML=numberleftblankcomma(Number(PermanentSignal()).toFixed());
+        document.getElementById("PermUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("ps8"));
+        document.getElementById("TotPermFC").innerHTML="$"+numberleftblankcomma(TotPS.toFixed());
 
-        document.getElementById("PaveFC").innerHTML=numbercomma(PavementMarkings().toFixed());
-        document.getElementById("PaveUP").innerHTML="$"+numbercomma(localStorage.getItem("pm8"));
-        document.getElementById("TotPaveFC").innerHTML="$"+numbercomma(TotPM.toFixed());
+        document.getElementById("PaveFC").innerHTML=numberleftblankcomma(PavementMarkings().toFixed());
+        document.getElementById("PaveUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("pm8"));
+        document.getElementById("TotPaveFC").innerHTML="$"+numberleftblankcomma(TotPM.toFixed());
 
-        document.getElementById("GuardFC").innerHTML=numbercomma(Number(GuardrailGR2()).toFixed());
-        document.getElementById("GuardUP").innerHTML="$"+numbercomma(localStorage.getItem("gg8"));
-        document.getElementById("TotGuardFC").innerHTML="$"+numbercomma(TotGR.toFixed());
+        document.getElementById("GuardFC").innerHTML=numberleftblankcomma(Number(GuardrailGR2()).toFixed());
+        document.getElementById("GuardUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("gg8"));
+        document.getElementById("TotGuardFC").innerHTML="$"+numberleftblankcomma(TotGR.toFixed());
 
-        document.getElementById("EndFC").innerHTML=numbercomma(Number(EndTreatmentGR9()).toFixed());
-        document.getElementById("EndUP").innerHTML="$"+numbercomma(localStorage.getItem("et8"));
-        document.getElementById("TotEndFC").innerHTML="$"+numbercomma(TotET.toFixed());
+        document.getElementById("EndFC").innerHTML=numberleftblankcomma(Number(EndTreatmentGR9()).toFixed());
+        document.getElementById("EndUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("et8"));
+        document.getElementById("TotEndFC").innerHTML="$"+numberleftblankcomma(TotET.toFixed());
 
-        document.getElementById("GRFC").innerHTML=numbercomma(Number(GRFOA()).toFixed());
-        document.getElementById("GRUP").innerHTML="$"+numbercomma(localStorage.getItem("gr8"));
-        document.getElementById("TotGRFC").innerHTML="$"+numbercomma(TotGRF.toFixed());
+        document.getElementById("GRFC").innerHTML=numberleftblankcomma(Number(GRFOA()).toFixed());
+        document.getElementById("GRUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("gr8"));
+        document.getElementById("TotGRFC").innerHTML="$"+numberleftblankcomma(TotGRF.toFixed());
 
-        document.getElementById("TrafficSSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
-        document.getElementById("TrafCon").innerHTML="%"+numbercomma(localStorage.getItem("TSPercent"));
-        document.getElementById("TrafficSContin").innerHTML="$"+numbercomma(Cont.toFixed());
+        document.getElementById("TrafficSSubTot").innerHTML="$"+numberleftblankcomma(SubTot.toFixed());
+        document.getElementById("TrafCon").innerHTML="%"+numberleftblankcomma(localStorage.getItem("TSPercent"));
+        document.getElementById("TrafficSContin").innerHTML="$"+numberleftblankcomma(Cont.toFixed());
        return [TotPS,TotPM,TotGR,TotET,TotGRF,SubTot,Cont];
 }
 function BridgeItems()
@@ -897,30 +897,30 @@ function BridgeItems()
        TotDB = DemolitionExistingBridge()*localStorage.getItem("de9");
       SubTot = TotNS+TotDB;
         Cont = (localStorage.getItem("BPercent")*SubTot)/100;
-        document.getElementById("NSFC").innerHTML=numbercomma(NSBridge().toFixed());
-        document.getElementById("NSUP").innerHTML="$"+numbercomma(localStorage.getItem("ns9"));
-        document.getElementById("TotNSFC").innerHTML="$"+numbercomma(TotNS.toFixed());
+        document.getElementById("NSFC").innerHTML=numberleftblankcomma(NSBridge().toFixed());
+        document.getElementById("NSUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("ns9"));
+        document.getElementById("TotNSFC").innerHTML="$"+numberleftblankcomma(TotNS.toFixed());
 
-        document.getElementById("DemoFC").innerHTML=numbercomma(DemolitionExistingBridge().toFixed());
-        document.getElementById("DemoUP").innerHTML="$"+numbercomma(localStorage.getItem("de9"));
-        document.getElementById("TotDemoFC").innerHTML="$"+numbercomma(TotDB.toFixed());
+        document.getElementById("DemoFC").innerHTML=numberleftblankcomma(DemolitionExistingBridge().toFixed());
+        document.getElementById("DemoUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("de9"));
+        document.getElementById("TotDemoFC").innerHTML="$"+numberleftblankcomma(TotDB.toFixed());
 
-        document.getElementById("BridgeSubTot").innerHTML="$"+numbercomma(SubTot.toFixed());
-        document.getElementById("BridCon").innerHTML="%"+numbercomma(localStorage.getItem("BPercent"));
-        document.getElementById("BridgeContin").innerHTML="$"+numbercomma(Cont.toFixed());
+        document.getElementById("BridgeSubTot").innerHTML="$"+numberleftblankcomma(SubTot.toFixed());
+        document.getElementById("BridCon").innerHTML="%"+numberleftblankcomma(localStorage.getItem("BPercent"));
+        document.getElementById("BridgeContin").innerHTML="$"+numberleftblankcomma(Cont.toFixed());
        return [TotNS,TotDB,SubTot,Cont];
 }
 function StreamWetlandMitigationItems()
 {
    var TotSM = StreamMitigation()*localStorage.getItem("sm0");
        TotWM = WetlandMitigation()*localStorage.getItem("wm0");
-        document.getElementById("StreamFC").innerHTML=numbercomma(Number(StreamMitigation()).toFixed());
-        document.getElementById("StreamUP").innerHTML="$"+numbercomma(localStorage.getItem("sm0"));
-        document.getElementById("TotStreamFC").innerHTML="$"+numbercomma(TotSM.toFixed());
+        document.getElementById("StreamFC").innerHTML=numberleftblankcomma(Number(StreamMitigation()).toFixed());
+        document.getElementById("StreamUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("sm0"));
+        document.getElementById("TotStreamFC").innerHTML="$"+numberleftblankcomma(TotSM.toFixed());
 
-        document.getElementById("WetlandFC").innerHTML=numbercomma(Number(WetlandMitigation()).toFixed());
-        document.getElementById("WetlandUP").innerHTML="$"+numbercomma(localStorage.getItem("wm0"));
-        document.getElementById("TotWetlandFC").innerHTML="$"+numbercomma(TotWM.toFixed());
+        document.getElementById("WetlandFC").innerHTML=numberleftblankcomma(Number(WetlandMitigation()).toFixed());
+        document.getElementById("WetlandUP").innerHTML="$"+numberleftblankcomma(localStorage.getItem("wm0"));
+        document.getElementById("TotWetlandFC").innerHTML="$"+numberleftblankcomma(TotWM.toFixed());
        return [TotSM,TotWM];
 }
 function MiscellaneousItems() {
@@ -931,35 +931,35 @@ function MiscellaneousItems() {
         TotMisc5=localStorage.getItem("misc5quan")*localStorage.getItem("misc5pric");
         TotMisc=TotMisc1+TotMisc2+TotMisc3+TotMisc4+TotMisc5;
 
-        document.getElementById("MiscI1I").innerHTML=Textcheck(localStorage.getItem("misc1item"));
-        document.getElementById("MiscI1Qu").innerHTML=Textcheck(localStorage.getItem("misc1unit"));
-        document.getElementById("MiscI1FC").innerHTML=numbercomma(Number(localStorage.getItem("misc1quan")));
-        document.getElementById("MiscI1UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc1pric")));
-        document.getElementById("TotMiscI1FC").innerHTML="$"+numbercomma(TotMisc1.toFixed());
+        document.getElementById("MiscI1I").innerHTML=textleftblank(localStorage.getItem("misc1item"));
+        document.getElementById("MiscI1Qu").innerHTML=textleftblank(localStorage.getItem("misc1unit"));
+        document.getElementById("MiscI1FC").innerHTML=numberleftblankcomma(Number(localStorage.getItem("misc1quan")));
+        document.getElementById("MiscI1UP").innerHTML="$"+numberleftblankcomma(Number(localStorage.getItem("misc1pric")));
+        document.getElementById("TotMiscI1FC").innerHTML="$"+numberleftblankcomma(TotMisc1.toFixed());
 
-        document.getElementById("MiscI2I").innerHTML=Textcheck(localStorage.getItem("misc2item"));
-        document.getElementById("MiscI2Qu").innerHTML=Textcheck(localStorage.getItem("misc2unit"));
-        document.getElementById("MiscI2FC").innerHTML=numbercomma(Number(localStorage.getItem("misc2quan")));
-        document.getElementById("MiscI2UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc2pric")));
-        document.getElementById("TotMiscI2FC").innerHTML="$"+numbercomma(TotMisc2.toFixed());
+        document.getElementById("MiscI2I").innerHTML=textleftblank(localStorage.getItem("misc2item"));
+        document.getElementById("MiscI2Qu").innerHTML=textleftblank(localStorage.getItem("misc2unit"));
+        document.getElementById("MiscI2FC").innerHTML=numberleftblankcomma(Number(localStorage.getItem("misc2quan")));
+        document.getElementById("MiscI2UP").innerHTML="$"+numberleftblankcomma(Number(localStorage.getItem("misc2pric")));
+        document.getElementById("TotMiscI2FC").innerHTML="$"+numberleftblankcomma(TotMisc2.toFixed());
 
-        document.getElementById("MiscI3I").innerHTML=Textcheck(localStorage.getItem("misc3item"));
-        document.getElementById("MiscI3Qu").innerHTML=Textcheck(localStorage.getItem("misc3unit"));
-        document.getElementById("MiscI3FC").innerHTML=numbercomma(Number(localStorage.getItem("misc3quan")));
-        document.getElementById("MiscI3UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc3pric")));
-        document.getElementById("TotMiscI3FC").innerHTML="$"+numbercomma(TotMisc3.toFixed());
+        document.getElementById("MiscI3I").innerHTML=textleftblank(localStorage.getItem("misc3item"));
+        document.getElementById("MiscI3Qu").innerHTML=textleftblank(localStorage.getItem("misc3unit"));
+        document.getElementById("MiscI3FC").innerHTML=numberleftblankcomma(Number(localStorage.getItem("misc3quan")));
+        document.getElementById("MiscI3UP").innerHTML="$"+numberleftblankcomma(Number(localStorage.getItem("misc3pric")));
+        document.getElementById("TotMiscI3FC").innerHTML="$"+numberleftblankcomma(TotMisc3.toFixed());
 
-        document.getElementById("MiscI4I").innerHTML=Textcheck(localStorage.getItem("misc4item"));
-        document.getElementById("MiscI4Qu").innerHTML=Textcheck(localStorage.getItem("misc4unit"));
-        document.getElementById("MiscI4FC").innerHTML=numbercomma(Number(localStorage.getItem("misc4quan")));
-        document.getElementById("MiscI4UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc4pric")));
-        document.getElementById("TotMiscI4FC").innerHTML="$"+numbercomma(TotMisc4.toFixed());
+        document.getElementById("MiscI4I").innerHTML=textleftblank(localStorage.getItem("misc4item"));
+        document.getElementById("MiscI4Qu").innerHTML=textleftblank(localStorage.getItem("misc4unit"));
+        document.getElementById("MiscI4FC").innerHTML=numberleftblankcomma(Number(localStorage.getItem("misc4quan")));
+        document.getElementById("MiscI4UP").innerHTML="$"+numberleftblankcomma(Number(localStorage.getItem("misc4pric")));
+        document.getElementById("TotMiscI4FC").innerHTML="$"+numberleftblankcomma(TotMisc4.toFixed());
 
-        document.getElementById("MiscI5I").innerHTML=Textcheck(localStorage.getItem("misc5item"));
-        document.getElementById("MiscI5Qu").innerHTML=Textcheck(localStorage.getItem("misc5unit"));
-        document.getElementById("MiscI5FC").innerHTML=numbercomma(Number(localStorage.getItem("misc5quan")));
-        document.getElementById("MiscI5UP").innerHTML="$"+numbercomma(Number(localStorage.getItem("misc5pric")));
-        document.getElementById("TotMiscI5FC").innerHTML="$"+numbercomma(TotMisc5.toFixed());
+        document.getElementById("MiscI5I").innerHTML=textleftblank(localStorage.getItem("misc5item"));
+        document.getElementById("MiscI5Qu").innerHTML=textleftblank(localStorage.getItem("misc5unit"));
+        document.getElementById("MiscI5FC").innerHTML=numberleftblankcomma(Number(localStorage.getItem("misc5quan")));
+        document.getElementById("MiscI5UP").innerHTML="$"+numberleftblankcomma(Number(localStorage.getItem("misc5pric")));
+        document.getElementById("TotMiscI5FC").innerHTML="$"+numberleftblankcomma(TotMisc5.toFixed());
 
         return TotMisc;
 }
@@ -982,13 +982,13 @@ function SubGrandTotals()
     }
     var    PreGrandTot = GrandSubTotal+ContTot+ConSurvey+Mobile;
 
-    document.getElementById("MobileFC").innerHTML="$"+numbercomma(Mobile.toFixed());
-    document.getElementById("TotMobileFC").innerHTML="$"+numbercomma(Mobile.toFixed());
-    document.getElementById("ConstructFC").innerHTML="$"+numbercomma(ConSurvey.toFixed());
-    document.getElementById("TotConstructFC").innerHTML="$"+numbercomma(ConSurvey.toFixed());
-    document.getElementById("ContingencyFC").innerHTML="$"+numbercomma(ContTot.toFixed());
-    document.getElementById("SubTotalsFC").innerHTML="$"+numbercomma(GrandSubTotal.toFixed());
-    document.getElementById("PreGrandTotalsFC").innerHTML="$"+numbercomma(PreGrandTot.toFixed());   
+    document.getElementById("MobileFC").innerHTML="$"+numberleftblankcomma(Mobile.toFixed());
+    document.getElementById("TotMobileFC").innerHTML="$"+numberleftblankcomma(Mobile.toFixed());
+    document.getElementById("ConstructFC").innerHTML="$"+numberleftblankcomma(ConSurvey.toFixed());
+    document.getElementById("TotConstructFC").innerHTML="$"+numberleftblankcomma(ConSurvey.toFixed());
+    document.getElementById("ContingencyFC").innerHTML="$"+numberleftblankcomma(ContTot.toFixed());
+    document.getElementById("SubTotalsFC").innerHTML="$"+numberleftblankcomma(GrandSubTotal.toFixed());
+    document.getElementById("PreGrandTotalsFC").innerHTML="$"+numberleftblankcomma(PreGrandTot.toFixed());   
 
     return [Mobile,ConSurvey,ContTot,GrandSubTotal,PreGrandTot];
 
@@ -1004,9 +1004,9 @@ function CEIContigency()
             ProContin = SubGrandTotals()[3]*0.1;
     }
     document.getElementById("MainPercent").innerHTML=numberleftblank(localStorage.getItem("pcei"))+"%";
-    document.getElementById("CEIPercentSum").innerHTML="$"+numbercomma(CEI.toFixed());
+    document.getElementById("CEIPercentSum").innerHTML="$"+numberleftblankcomma(CEI.toFixed());
     document.getElementById("TierNum").innerHTML=ContinTier;
-    document.getElementById("ProjectContin").innerHTML="$"+numbercomma(ProContin.toFixed(2));
+    document.getElementById("ProjectContin").innerHTML="$"+numberleftblankcomma(ProContin.toFixed(2));
     return [ContinTier,CEI,ProContin]
 }
 function GrandTotal()
@@ -1015,12 +1015,17 @@ var CurtYear = localStorage.getItem("CurrentYear");
     PropYear = localStorage.getItem("ProposedAdDateYear");
     FinalGrandTotal=Math.ceil(((CEIContigency()[1]+CEIContigency()[2]+SubGrandTotals()[4])*(Math.pow((1+0.015),(PropYear-CurtYear))))/10000)*10000;
     curtime()
-    document.getElementById("ProjectNum").innerHTML=Textcheck(localStorage.getItem("projectnum"));
-    document.getElementById("UPCid").innerHTML=Textcheck(localStorage.getItem("upcid"));
-    document.getElementById("Estname").innerHTML=Textcheck(localStorage.getItem("estname"));
-    document.getElementById("GrandtotalFC").innerHTML="$"+numbercomma(FinalGrandTotal);
+    document.getElementById("ProjectNum").innerHTML=textleftblank(localStorage.getItem("projectnum"));
+    document.getElementById("UPCid").innerHTML=textleftblank(localStorage.getItem("upcid"));
+    document.getElementById("Estname").innerHTML=textleftblank(localStorage.getItem("estname"));
+    document.getElementById("GrandtotalFC").innerHTML="$"+numberleftblankcomma(FinalGrandTotal);
     MiscellaneousItems();
     return FinalGrandTotal;
+}
+function curtime() {
+    var CurrentTime= new Date();
+    document.getElementById('time').innerHTML = CurrentTime;
+    return CurrentTime;
 }
 //
 //
@@ -1037,7 +1042,7 @@ function numberleftblank (num) {
     };
 }
 
-function numbercomma (num) {
+function numberleftblankcomma (num) {
     if (num) {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
@@ -1046,7 +1051,7 @@ function numbercomma (num) {
     }
 }
 
-function Textcheck (Tex) {
+function textleftblank (Tex) {
     if (Tex) 
     {
         return Tex;
@@ -1054,17 +1059,4 @@ function Textcheck (Tex) {
     else {
         return 'Not Entered';
     }
-}
-function curtime() {
-    var CurrentTime= new Date();
-    document.getElementById('time').innerHTML = CurrentTime;
-    return CurrentTime;
-}
-window.onload = function () {
-    $("#calc").click( function () {
-        GrandTotal();
-    })
-    $("#prnt").click(function () {
-        window.print()
-    })
 }

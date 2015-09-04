@@ -6,12 +6,12 @@ module.exports=function (grunt) {
 			},
 			minipagecompress: {
 				files: {
-					'build/js/minipages.min.js': ['js/localmemory.js','js/mechanisms.js']
+					'build/js/minipages.min.js': ['js/localmemory.js','js/minipages.mechanisms.js']
 				}
 			},
 			braincompress: {
 				files: {
-					'build/js/receipt.min.js':['js/brains.js','js/PDFDriver.js']
+					'build/js/receipt.min.js':['js/brains.js','js/PDFDriver.js','js/receipt.mechanisms.js']
 				}
 			}
 		},
@@ -27,11 +27,11 @@ module.exports=function (grunt) {
 		},
 		watch: {
 			minipagescripts: {
-				files: ['js/localmemory.js','js/mechanisms.js'],
+				files: ['js/localmemory.js','js/minipages.mechanisms.js'],
 				tasks: ['uglify:minipagecompress']
 			},
 			brainsscripts: {
-				files: ['js/brains.js','js/PDFDriver.js'],
+				files: ['js/brains.js','js/PDFDriver.js','js/receipt.mechanisms.js'],
 				tasks: ['uglify:braincompress']
 			},
 			sass: {

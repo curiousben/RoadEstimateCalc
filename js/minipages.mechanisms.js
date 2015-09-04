@@ -1,7 +1,7 @@
 $('#resetbutton').click(function() {
 	$('#ResetAllData').modal('show');
 });
- $('#memclrchoice').click(function() {
+$('#memclrchoice').click(function() {
 	$('#ResetAllData').modal('hide');
 	resetallestimatedata();
 	});
