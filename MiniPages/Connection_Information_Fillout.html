@@ -6,27 +6,136 @@
     <script type="text/javascript" src='/RoadEstimateCalc/Frameworks/jQuery/jquery-2.1.4.js'></script>
     <link href="/RoadEstimateCalc/Frameworks/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/RoadEstimateCalc/build/css/style.css" rel="stylesheet" />
-<!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/style.css"> -->
+<!--<link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/style.css"> -->
 </head>
 <body>
     <div class="container-fluid" id="Road_Estimate_Tool">
         <div class="row">
             <div class="col-xs-12" id="header">Connections Information Fillout</div>
         </div>
-        <div class="row_type_1">
-            <div class="col-xs-12 col-sm-6">
-                <label for="ConnectionOneLength">Connection 1 Length (ft)</label>
-                <input type="number" id="ConnectionOneLength" value="" class="form-control">
+        <div class="row">
+            <div>
+                <div class="col-xs-12" id="subheader">Does the max connection length exceed 400 ft?</div>
             </div>
+            <div class="col-xs-12">
+                <label class="btn btn-default connectbutton">
+                    <input type="checkbox" id="SCI2"> Yes
+                </label>
+            </div>
+            <div class="col-xs-12">
+                <label class="btn btn-default connectbutton">
+                    <input type="checkbox" id="CI1"> No
+                </label>
+            </div>
+        </div>
+        </div>
+        <div id="checkbox1">
+            <div class="row_type_1">
+                <div class="col-xs-12 col-sm-6">
+                    <label for="ConnectionOneLength">Connection 1 Length (ft)</label>
+                    <input type="number" id="ConnectionOneLength" value="" class="form-control">
+                </div>
 
-            <div class="col-xs-12 col-sm-6">
-                <label for="ConnectionTwoLength">Connection 2 Length</label>
-                <input type="number" id="ConnectionTwoLength" value="" class="form-control">
+                <div class="col-xs-12 col-sm-6">
+                    <label for="ConnectionTwoLength">Connection 2 Length</label>
+                    <input type="number" id="ConnectionTwoLength" value="" class="form-control">
+                </div>
+                <div class="col-xs-12">*Length is added to Mainline Length</div>
             </div>
-            <div class="col-xs-12">*Length is added to Mainline Length</div>
+        </div>
+        <div id="checkbox2">
+            <div class="col-xs-12" id="subheader">How many Connertor Roads?</div>
+            <div class="row" id="subconnectionselection">
+                <div class="col-xs-12 col-sm-4">
+                    <label class="btn btn-default connectbutton">
+                        <input type="checkbox" id="SC1"> 1 Road(s)
+                    </label>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <label class="btn btn-default connectbutton">
+                        <input type="checkbox" id="SC2"> 2 Road(s)
+                    </label>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <label class="btn btn-default connectbutton">
+                        <input type="checkbox" id="SC3"> 3 Road(s)
+                    </label>
+                </div>
+            </div>
+            <div id="subcheckboxinput">
+                <div id="subcheckbox1">
+                    <div class="row">
+                        <div class="col-xs-12" id="subheader">Connecting-Road Section 1</div>
+                    </div>
+                    <div class="toggle_even_row">
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCl1">Length (ft)</label>
+                            <input type="number" id="SCl1" value="" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCw1">Width (ft)</label>
+                            <input type="number" id="SCw1" value="" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCd1">Distance (ft)</label>
+                            <input type="number" id="SCd1" value="" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCs1">Shoulder Width (ft)</label>
+                            <input type="number" id="SCs1" value="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div id="subcheckbox2">
+                    <div class="row">
+                        <div class="col-xs-12" id="subheader">Connecting-Road Section 2</div>
+                    </div>
+                    <div class="toggle_odd_row">
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCl2">Length (ft)</label>
+                            <input type="number" id="SCl2" value="" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCw2">Width (ft)</label>
+                            <input type="number" id="SCw2" value="" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCd2">Distance (ft)</label>
+                            <input type="number" id="SCd2" value="" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCs2">Shoulder Width (ft)</label>
+                            <input type="number" id="SCs2" value="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div id="subcheckbox3">
+                    <div class="row">
+                        <div class="col-xs-12" id="subheader">Connecting-Road Section 3</div>
+                    </div>
+                    <div class="toggle_even_row">
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCl3">Length (ft)</label>
+                            <input type="number" id="SCl3" value="" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCw3">Width (ft)</label>
+                            <input type="number" id="SCw3" value="" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCd3">Distance (ft)</label>
+                            <input type="number" id="SCd3" value="" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <label for="SCs3">Shoulder Width (ft)</label>
+                            <input type="number" id="SCs3" value="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="/RoadEstimateCalc/build/js/minipages.min.js"></script>
-<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/minipages.min.js"></script> -->
+<!--<script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/minipages.min.js"></script> -->
 </html>

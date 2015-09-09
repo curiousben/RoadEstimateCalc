@@ -4,6 +4,9 @@
     <title>Unit Prices</title>
     <meta charset="utf-8">
     <script type="text/javascript" src='/RoadEstimateCalc/Frameworks/jQuery/jquery-2.1.4.js'></script>
+    <link rel="stylesheet" type="text/css" href="/RoadEstimateCalc/Frameworks/jQuery/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+    <script type="text/javascript" src="/RoadEstimateCalc/Frameworks/jQuery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/RoadEstimateCalc/Frameworks/jQuery/jquery-ui-touch-punch-master/jquery.ui.touch-punch.min.js"></script>
     <link href="/RoadEstimateCalc/Frameworks/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/RoadEstimateCalc/build/css/style.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/style.css"> -->
@@ -13,7 +16,7 @@
         <div class="row">
             <div class="col-xs-12" id="header">Unit Prices</div>
         </div>
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12" id="InfoBox">
                     <label for="Label_Me">Common Region Prices</label>
                     <div class="input-group" id="Label_Me">
@@ -25,7 +28,7 @@
                             <option value="Fredericksburg, Richmond, Culpepper">Fredericksburg, Richmond, Culpepper</option>
                         </select>
                         <span class="input-group-btn" id="UnitPricebutton">
-                            <button class="btn btn-default" id="reset" onclick="resetdata()">Region Default Prices</button>
+                            <button class="btn btn-default" id="reset" id="regionreset">Region Default Prices</button>
                         </span>
                     </div>
                 </div>
@@ -33,7 +36,7 @@
             <div class="row">
                 <div class="col-xs-12" id="subheader">Grading Items</div>
             </div>
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="cr1">Clearing and Grubbing ($)</label>
                     <input type="number" id="cr1" value="0" class="form-control">
@@ -67,7 +70,7 @@
             <div class="row">
                 <div class="col-xs-12" id="subheader">Drainage Items</div>
             </div>
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="pu2">Pipes Under 36" ($)</label>
                     <input type="number" id="pu2" value="0" class="form-control">
@@ -96,7 +99,7 @@
             <div class="row">
                 <div class="col-xs-12" id="subheader">Pavement Items</div>
             </div>
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="sc3">Surface Course ($)</label>
                     <input type="number" id="sc3" value="0" class="form-control">
@@ -127,7 +130,7 @@
                 <div class="col-xs-12" id="subheader">Incidental Items</div>
             </div>
 
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="rw4">Retaining Walls (Conc) ($)</label>
                     <input type="number" id="rw4" value="0" class="form-control">
@@ -153,7 +156,7 @@
                 <div class="col-xs-12" id="subheader">Protective Items</div>
             </div>
 
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="fo5">Field Office ($)</label>
                     <input type="number" id="fo5" value="0" class="form-control">
@@ -167,7 +170,7 @@
             <div class="row">
                 <div class="col-xs-12" id="subheader">Erosion Items</div>
             </div>
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="s6">Seeding ($)</label>
                     <input type="number" id="s6" value="0" class="form-control">
@@ -186,7 +189,7 @@
             <div class="row">
                 <div class="col-xs-12" id="subheader">Utilities</div>
             </div>
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="bg7">Below Ground Utilities (Lump Sum $$$$) ($)</label>
                     <input type="number" id="bg7" value="0" class="form-control">
@@ -197,7 +200,7 @@
                 <div class="col-xs-12" id="subheader">Traffic and Safety</div>
             </div>
 
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="ps8">Permanent Signal (Lump Sum) ($)</label>
                     <input type="number" id="ps8" value="0" class="form-control">
@@ -228,7 +231,7 @@
                 <div class="col-xs-12" id="subheader">Bridge</div>
             </div>
 
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="ns9">NS Bridge (Lump Sum $)(Use $300 Per Square Foot) ($)</label>
                     <input type="number" id="ns9" value="0" class="form-control">
@@ -244,7 +247,7 @@
                 <div class="col-xs-12" id="subheader">Stream/Wetland Mitigation that is included in Construction</div>
             </div>
 
-            <div class="row_type_2">
+            <div class="unit_price_row">
                 <div class="col-xs-12">
                     <label for="sm0">Stream Mitigation ($)</label>
                     <input type="number" id="sm0" value="0" class="form-control">
@@ -259,14 +262,16 @@
             <div class="row">
                 <div class="col-xs-12" id="subheader">CEI & Contingency</div>
             </div>
-            <div class="row_type_2">
-                <div class="col-xs-12">
-                    <label for="pcei">CEI of lump Sum Item    <span id="pceiShow">1</span>  (%)</label>
-                    <input type="range" id="pcei" min="20" max="100" step="1" value="20" class="form-control">
+            <div class="unit_price_row">
+                <div class="col-xs-12" id="Perslider">
+                    <label for="pceiinput">CEI of lump Sum Item:</label>
+                    <input type="text" id="pceiinput">
+                    <div id="pcei"></div>
                 </div>
             </div>
         </div>
 </body>
 <script type="text/javascript" src="/RoadEstimateCalc/build/js/minipages.min.js"></script>
+<script type="text/javascript" src="/RoadEstimateCalc/js/MinipagesOther/unitprices.slider.js"></script>
 <!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/minipages.min.js"></script> -->
 </html>

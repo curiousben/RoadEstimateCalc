@@ -14,8 +14,8 @@ function expandTextarea(num) {
         this.style.height = this.scrollHeight + 'px';
     }, false);
 }
-function resetdata() {
-var		dataidarr=[];
+$('#regionreset').click(function() {
+	var	dataidarr=[];
 
 			$('#Road_Estimate_Tool input').each(function(){
 					dataidarr.push($(this).attr('id'));
@@ -60,7 +60,8 @@ var		dataidarr=[];
 			default:
 				break;
 		}
-}		//switch for different preferences that uses the input ID array and zips it up with the preset values of the specified areas
+		//switch for different preferences that uses the input ID array and zips it up with the preset values of the specified areas
+});
 function checkboxhide (curr,prev) {
 
 	if (prev) {
@@ -70,9 +71,21 @@ function checkboxhide (curr,prev) {
 		};
 	};
 	while (curr>=1) {
-			$('#checkbox'+curr).toggle('swing');
-			curr--;
+		$('#checkbox'+curr).toggle('swing');
+		curr--;
+	};
+}
+function subcheckboxhide (curr,prev) {
+	if (prev) {
+		while (prev>=1) {
+			$('#subcheckbox'+prev).toggle(false);
+			prev--;
 		};
+	};
+	while (curr>=1) {
+		$('#subcheckbox'+curr).toggle('swing');
+		curr--;
+	}
 }
 function resetallestimatedata () {
 	localStorage.clear();

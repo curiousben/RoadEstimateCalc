@@ -1,17 +1,24 @@
-module.exports=function (grunt) {
+module.exports=function (grunt) 
+{
 	grunt.initConfig({
 		uglify: {
 			options: {
-				manage: false
+				manage: true
 			},
 			minipagecompress: {
 				files: {
-					'build/js/minipages.min.js': ['js/localmemory.js','js/minipages.mechanisms.js']
+					'build/js/minipages.min.js': ['js/Minipages/*.js']
+				}
+			},
+			minipagecompressothers:{
+				files: {
+					'build/js/contingency.sliders.min.js': ['js/MinipagesOther/contingency.sliders.js'],
+					'build/js/proposedroadway.slider.min.js': ['js/MinipagesOther/proposedroadway.slider.js']
 				}
 			},
 			braincompress: {
 				files: {
-					'build/js/receipt.min.js':['js/brains.js','js/PDFDriver.js','js/receipt.mechanisms.js']
+					'build/js/receipt.min.js':['js/Receipt/*.js']
 				}
 			}
 		},
@@ -27,11 +34,15 @@ module.exports=function (grunt) {
 		},
 		watch: {
 			minipagescripts: {
-				files: ['js/localmemory.js','js/minipages.mechanisms.js'],
+				files: ['js/Minipages/*.js'],
 				tasks: ['uglify:minipagecompress']
 			},
+			minipagescriptsother: {
+				files: ['js/MinipagesOther/*.js'],
+				tasks: ['uglify:minipagecompressothers']
+			},
 			brainsscripts: {
-				files: ['js/brains.js','js/PDFDriver.js','js/receipt.mechanisms.js'],
+				files: ['js/Receipt/*.js'],
 				tasks: ['uglify:braincompress']
 			},
 			sass: {

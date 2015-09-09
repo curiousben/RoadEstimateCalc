@@ -1,3 +1,10 @@
+#Perslider {
+    padding:18px;
+}
+#GIPercent,#DIPercent,#PavIPercent,#IIPercent,#ProIPercent,#ECPercent,#UPercent,#TSPercent,#BPercent,#NewHorizontalAlignment{
+    padding-bottom: 1px;
+}
+
 #subheader {
     color: $black; 
     background-color: $lightgray;
@@ -11,7 +18,11 @@
     text-align: center;
     font-size: 14pt;
 }
-
+#checkbox1,#checkbox2,#checkbox3,
+#checkbox4,#checkbox5,#checkbox6,
+#subcheckbox1,#subcheckbox2,#subcheckbox3 {
+    display: none;
+}
 .row {
     &.MOT_even_row {
         background-color:$MOTTableOrange;
@@ -27,29 +38,21 @@
     }
 }
 
-.row_type_1,.earthwork_even_row div:nth-child(even){
+.row_type_1 div:nth-child(even),
+.unit_price_row div:nth-child(even),
+.toggle_even_row div:nth-child(even),
+.toggle_even_row div{
 	@include even_row;
 }
 
-.row_type_1,.earthwork_odd_row div:nth-child(odd){
+.row_type_1 div:nth-child(odd),
+.unit_price_row div:nth-child(odd),
+.toggle_odd_row div:nth-child(odd),
+.toggle_odd_row div{
 	@include odd_row;
 }
-
-
-.earthwork_even_row div{
-    @include even_row;
-}
-.earthwork_odd_row div{
-    @include odd_row;
-}
-@media (max-width: 767px) {
-    .earthwork_even_row div:nth-child(even){
-        @include even_row;
-    }
-    .earthwork_odd_row div:nth-child(odd){
-        @include odd_row;
-    }
-
+.connectbutton {
+    width: 100%;
 }
 
 @media (min-width: 768px) and (max-width: 991px) { 
