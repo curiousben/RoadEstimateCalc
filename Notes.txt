@@ -1,0 +1,1 @@
+SET DEBUG=RoadEstimateCalc:* & npm start

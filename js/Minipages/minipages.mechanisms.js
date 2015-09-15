@@ -3,7 +3,7 @@ $('#resetbutton').click(function() {
 });
 $('#memclrchoice').click(function() {
 	$('#ResetAllData').modal('hide');
-	resetallestimatedata();
+	localStorage.clear();
 	});
 function expandTextarea(num) {
     var $element = $('.misclass').get(num);
@@ -25,37 +25,45 @@ $('#regionreset').click(function() {
 		switch (document.getElementById('choice').value)
 		{
 			case 'Bristol, Salem, Lynchburg, Staunton':
-				var districtone=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000,25];
+				var districtone=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000];
 
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					localStorage.setItem(dataidarr[i],districtone[i]);
 					document.getElementById(dataidarr[i]).value=districtone[i];
 				};
-				document.getElementById("pceiShow").innerText=localStorage.getItem("pcei");
+				localStorage.setItem("pcei",25);
+				$("#pcei").slider("option", "value", 25);
+				$('#pceiinput').val($('#pcei').slider("value"));
 				break;
 			case 'NOVA':
-				var districttwo=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,51];
+				var districttwo=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					localStorage.setItem(dataidarr[i],districttwo[i]);
 					document.getElementById(dataidarr[i]).value=districttwo[i];
 				};
-				document.getElementById("pceiShow").innerText=localStorage.getItem("pcei");
+				localStorage.setItem("pcei",51);
+				$("#pcei").slider("option", "value", 51);
+				$('#pceiinput').val($('#pcei').slider("value"));
 				break;
 			case 'Hampton Roads':
-				var districtthree=[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,52];
+				var districtthree=[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2];
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					localStorage.setItem(dataidarr[i],districtthree[i]);
 					document.getElementById(dataidarr[i]).value=districtthree[i];
 				};
-				document.getElementById("pceiShow").innerText=localStorage.getItem("pcei");
+				localStorage.setItem("pcei",52);
+				$("#pcei").slider("option", "value", 52);
+				$('#pceiinput').val($('#pcei').slider("value"));
 				break;
 			case 'Fredericksburg, Richmond, Culpepper':
-					districtfour=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,53];
+					districtfour=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					localStorage.setItem(dataidarr[i],districtfour[i]);
 					document.getElementById(dataidarr[i]).value=districtfour[i];
 				};
-				document.getElementById("pceiShow").innerText=localStorage.getItem("pcei");
+				localStorage.setItem("pcei",53);
+				$("#pcei").slider("option", "value", 53);
+				$('#pceiinput').val($('#pcei').slider("value"));
 				break;
 			default:
 				break;
@@ -86,7 +94,4 @@ function subcheckboxhide (curr,prev) {
 		$('#subcheckbox'+curr).toggle('swing');
 		curr--;
 	}
-}
-function resetallestimatedata () {
-	localStorage.clear();
 }

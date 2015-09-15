@@ -13,7 +13,8 @@ module.exports=function (grunt)
 			minipagecompressothers:{
 				files: {
 					'build/js/contingency.sliders.min.js': ['js/MinipagesOther/contingency.sliders.js'],
-					'build/js/proposedroadway.slider.min.js': ['js/MinipagesOther/proposedroadway.slider.js']
+					'build/js/proposedroadway.slider.min.js': ['js/MinipagesOther/proposedroadway.slider.js'],
+					'build/js/unitprices.slider.min.js' :['js/MinipagesOther/unitprices.slider.js']
 				}
 			},
 			braincompress: {

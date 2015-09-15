@@ -1,10 +1,24 @@
+/* These rules help define the themes found in this web application*/
+
+// These ID rules help counter little discrepancies found in bootstrap style rules that throw off the style
+#InfoBox {
+    padding-top: 5px;
+}
+#Divboxtweak{
+    padding-bottom: 9px;
+}
+
+// These ID rules help keep silder styles inline with the box right next to it
 #Perslider {
     padding:18px;
 }
-#GIPercent,#DIPercent,#PavIPercent,#IIPercent,#ProIPercent,#ECPercent,#UPercent,#TSPercent,#BPercent,#NewHorizontalAlignment{
+#GIPercent,#DIPercent,#PavIPercent,
+#IIPercent,#ProIPercent,#ECPercent,
+#UPercent,#TSPercent,#BPercent,
+#NewHorizontalAlignment,#pcei{
     padding-bottom: 1px;
 }
-
+// These give the styles to headers and subheaders
 #subheader {
     color: $black; 
     background-color: $lightgray;
@@ -23,6 +37,9 @@
 #subcheckbox1,#subcheckbox2,#subcheckbox3 {
     display: none;
 }
+
+// These styles rules help with the theme styles of each pages where there are alternating backgrounds
+
 .row {
     &.MOT_even_row {
         background-color:$MOTTableOrange;
@@ -50,9 +67,6 @@
 .toggle_odd_row div:nth-child(odd),
 .toggle_odd_row div{
 	@include odd_row;
-}
-.connectbutton {
-    width: 100%;
 }
 
 @media (min-width: 768px) and (max-width: 991px) { 

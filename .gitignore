@@ -28,24 +28,23 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 
-# Thumbnails
+#Thumbnails
 ._*
 
-# Files that might appear on external disk
+#Files that might appear on external disk
 .Spotlight-V100
 .Trashes
 
-# Directories potentially created on remote AFP share
+#Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
 Network Trash Folder
 Temporary Items
 .apdisk
 
-#foundation
+# Frameworks
 node_modules/
+bower_components/
 
-#Misc
+# Misc
 .sass-cache/
-Frameworks/
-MiniPages/Potential.html

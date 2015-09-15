@@ -1,23 +1,34 @@
 #MOTTable, #MOTrefbutton {
-	padding: 14.25px;
+	padding: 14px;
 }
+
+.connectbutton {
+    width: 100%;
+}
+
 @media (max-width: 480px) { 
     #UnitPricebutton {
     display: inline;
 	}
-	#reset {
+	#regionreset {
 		width: 100%;
 	}
 	.wholechkboxstyl{
 		width: 100%;
 	}
+	#PDFButton{
+    	display: none;
+    }
+    #PrintButton {
+    	display: none;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 676px) {
     #UnitPricebutton {
     display: inline;
 	}
-	#reset {
+	#regionreset {
 		width: 100%;
 	}
 }

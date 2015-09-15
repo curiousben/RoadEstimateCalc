@@ -3,11 +3,11 @@
 <head>
     <title>Unit Prices</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src='/RoadEstimateCalc/Frameworks/jQuery/jquery-2.1.4.js'></script>
-    <link rel="stylesheet" type="text/css" href="/RoadEstimateCalc/Frameworks/jQuery/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-    <script type="text/javascript" src="/RoadEstimateCalc/Frameworks/jQuery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/RoadEstimateCalc/Frameworks/jQuery/jquery-ui-touch-punch-master/jquery.ui.touch-punch.min.js"></script>
-    <link href="/RoadEstimateCalc/Frameworks/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src='/RoadEstimateCalc/bower_components/jquery/dist/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="/RoadEstimateCalc/bower_components/jquery-ui/themes/base/jquery-ui.min.css">
+    <script type="text/javascript" src="/RoadEstimateCalc/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/RoadEstimateCalc/bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <link href="/RoadEstimateCalc/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/RoadEstimateCalc/build/css/style.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/style.css"> -->
 </head>
@@ -28,7 +28,7 @@
                             <option value="Fredericksburg, Richmond, Culpepper">Fredericksburg, Richmond, Culpepper</option>
                         </select>
                         <span class="input-group-btn" id="UnitPricebutton">
-                            <button class="btn btn-default" id="reset" id="regionreset">Region Default Prices</button>
+                            <button class="btn btn-default" id="regionreset">Region Default Prices</button>
                         </span>
                     </div>
                 </div>
@@ -258,7 +258,8 @@
                     <input type="number" id="wm0" value="0" class="form-control">
                 </div>
             </div>
-
+        </div>
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12" id="subheader">CEI & Contingency</div>
             </div>
@@ -272,6 +273,6 @@
         </div>
 </body>
 <script type="text/javascript" src="/RoadEstimateCalc/build/js/minipages.min.js"></script>
-<script type="text/javascript" src="/RoadEstimateCalc/js/MinipagesOther/unitprices.slider.js"></script>
+<script type="text/javascript" src="/RoadEstimateCalc/build/js/unitprices.slider.min.js"></script>
 <!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/minipages.min.js"></script> -->
 </html>
