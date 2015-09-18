@@ -1,11 +1,12 @@
 {
   "name": "RoadEstimateCalc",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
     "jquery-ui": "jqueryui#~1.11.4",
     "jquery-ui-touch-punch": "*",
-    "jquery": "~2.1.4"
+    "pdfmake": "~0.1.18"
   }
 }

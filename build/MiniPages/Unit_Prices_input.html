@@ -4,6 +4,7 @@
     <title>Unit Prices</title>
     <meta charset="utf-8">
     <script type="text/javascript" src='/jquery/dist/jquery.min.js'></script>
+    <script type="text/javascript" src='/bootstrap/dist/js/bootstrap.min.js'></script>
     <link rel="stylesheet" type="text/css" href="/jquery-ui/themes/base/jquery-ui.min.css">
     <script type="text/javascript" src="/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
@@ -12,6 +13,46 @@
     <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/style.css"> -->
 </head>
 <body>
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="/">Vdot Logo</a>
+            </div>
+            <div class="navbar-collapse collapse in" id="navbar" aria-expanded="true">
+                <ul class="nav navbar-nav">
+                    <li><a href="AdministerInformation">Administration Data</a></li>
+                    <li><a href="ExistingRoadway">Existing Road</a></li>
+                    <li><a href="ExistingBridge">Existing Bridge</a></li>
+                    <li><a href="ProposedRoad">Proposed Road</a></li>
+                    <li><a href="ProposedBridge">Proposed Bridge</a></li>
+                    <li><a href="Connections">Connections</a></li>
+                    <li><a href="EarthworkCut">Earthwork:Cut</a></li>
+                    <li><a href="EarthworkFill">Earthwork:Fill</a></li>
+                    <li><a href="UnisuitableMaterial">Unisuitable Material</a></li>
+                    <li><a href="CommercialRockFills">Commercial Rock</a></li>
+                    <li><a href="Drainage">Drainage</a></li>
+                    <li><a href="SWMFacility">SWM Facility</a></li>
+                    <li><a href="Traffic">Traffic</a></li>
+                    <li><a href="Entrances">Entrances</a></li>
+                    <li><a href="UtilityImpacts">Utility Impacts</a></li>
+                    <li><a href="RW3">Retaining Wall RW-3</a></li>
+                    <li><a href="Sidewalk">Sidewalk</a></li>
+                    <li><a href="Mitigation">Mitigation</a></li>
+                    <li><a href="MiscellaneousItems">Miscellaneous Items</a></li>
+                    <li class="active"><a href="UnitPrices">Unit Prices</a></li>
+                    <li><a href="Contingency">Contingency</a></li>
+                    <li><a href="Receipt">Receipt</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid" id="Road_Estimate_Tool">
         <div class="row">
             <div class="col-xs-12" id="header">Unit Prices</div>
@@ -22,10 +63,10 @@
                     <div class="input-group" id="Label_Me">
                         <select id="choice" class="form-control">
                             <option value="">Please Select</option>
-                            <option value="Bristol, Salem, Lynchburg, Staunton">Bristol, Salem, Lynchburg, Staunton</option>
+                            <option value="Bristol, Salem, Lynchburg, Staunton, Culpepper">Bristol, Salem, Lynchburg, Staunton, Culpepper</option>
                             <option value="NOVA">NOVA</option>
                             <option value="Hampton Roads">Hampton Roads</option>
-                            <option value="Fredericksburg, Richmond, Culpepper">Fredericksburg, Richmond, Culpepper</option>
+                            <option value="Fredericksburg, Richmond">Fredericksburg, Richmond</option>
                         </select>
                         <span class="input-group-btn" id="UnitPricebutton">
                             <button class="btn btn-default" id="regionreset">Region Default Prices</button>

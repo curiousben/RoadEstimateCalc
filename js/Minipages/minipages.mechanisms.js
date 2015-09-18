@@ -24,7 +24,7 @@ $('#regionreset').click(function() {
 
 		switch (document.getElementById('choice').value)
 		{
-			case 'Bristol, Salem, Lynchburg, Staunton':
+			case 'Bristol, Salem, Lynchburg, Staunton, Culpepper':
 				var districtone=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000];
 
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
@@ -55,7 +55,7 @@ $('#regionreset').click(function() {
 				$("#pcei").slider("option", "value", 52);
 				$('#pceiinput').val($('#pcei').slider("value"));
 				break;
-			case 'Fredericksburg, Richmond, Culpepper':
+			case 'Fredericksburg, Richmond':
 					districtfour=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
 				for (var i = dataidarr.length - 1; i >= 0; i--) {
 					localStorage.setItem(dataidarr[i],districtfour[i]);

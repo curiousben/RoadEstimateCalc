@@ -135,9 +135,9 @@ function checkboxmemory () {
 	   	$(this).prop('checked',false);
 	   	localStorage.setItem($(this).prop('id'),false);
   	});
-  	if (options=='C') {
+  	if (options == 'C' || options == 'F') {
   		checkboxhide(currentcheck,previouscheck);
-  	} 
+  	}
   	else{
   		$('#checkbox1').toggle(false);
   		$('#checkbox2').toggle('swing');
