@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SWM Facility Information Fillout</title>
+    <title>Drainage Information Fillout</title>
     <meta charset="utf-8">
     <script type="text/javascript" src='/jquery/dist/jquery.min.js'></script>
     <script type="text/javascript" src='/bootstrap/dist/js/bootstrap.min.js'></script>
@@ -22,7 +22,7 @@
                 </button>
                 <a class="navbar-brand" href="/">Vdot Logo</a>
             </div>
-            <div class="navbar-collapse collapse in" id="navbar" aria-expanded="true">
+            <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
                 <ul class="nav navbar-nav">
                     <li><a href="AdministerInformation">Administration Data</a></li>
                     <li><a href="ExistingRoadway">Existing Road</a></li>
@@ -34,8 +34,8 @@
                     <li><a href="EarthworkFill">Earthwork:Fill</a></li>
                     <li><a href="UnisuitableMaterial">Unisuitable Material</a></li>
                     <li><a href="CommercialRockFills">Commercial Rock</a></li>
-                    <li><a href="Drainage">Drainage</a></li>
-                    <li class="active"><a href="SWMFacility">SWM Facility</a></li>
+                    <li class="active"><a href="Drainage">Drainage</a></li>
+                    <li><a href="SWMFacility">SWM Facility</a></li>
                     <li><a href="Traffic">Traffic</a></li>
                     <li><a href="Entrances">Entrances</a></li>
                     <li><a href="UtilityImpacts">Utility Impacts</a></li>
@@ -52,55 +52,60 @@
     </div>
     <div class="container-fluid" id="Road_Estimate_Tool">
         <div class="row">
-            <div class="col-xs-12" id="header">SWM Facility</div>
+            <div class="col-xs-12" id="header">Drainage</div>
         </div>
         <div class="row_type_1">
-            <div class="col-xs-12 col-sm-6" id="InfoBox">
-                <label for="Label_Me">How many Drainage Breaks are on the Project?</label>
-                <div class="input-group" id="Label_Me">  
-                    <select id="HMDBAOTP" class="form-control">
-                        <option value="">Please Select</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Pipes 18"-36" (LF)</label>
+                <div class="input-group" id="Label_Me">
+                    <input type="number" id="OnePipesSix" value="" class="form-control">
                     <span class="input-group-btn">
-                        <button class="btn btn-info" data-toggle="modal" data-target="#DBreakInfo">&#63;</button>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#PInfo">&#63;</button>
                     </span>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6" id="InfoBox">
-                <label for="Label_Me">Can SWM Facilities be Avoided?</label>
+        
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Pipes > 36" (LF)</label>
                 <div class="input-group" id="Label_Me">
-                    <select id="CanSWMFacAvoid" class="form-control">
-                            <option value="">Please Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                    </select>
+                    <input type="number" id="PipesSix" value="" class="form-control">
                     <span class="input-group-btn">
-                        <button class="btn btn-info" data-toggle="modal" data-target="#SWMAvoid">&#63;</button>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#PInfo">&#63;</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="EndWallsforPipesOverSix">End Walls for Pipes Over 36" (ea)</label>
+                <input type="number" id="EndWallsforPipesOverSix" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <label for="DropInlets">Drop Inlets (ea)</label>
+                <input type="number" id="DropInlets" value="" class="form-control">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">
+                <label for="Label_Me">Concrete Box Culvert ($)</label>
+                <div class="input-group" id="Label_Me">
+                    <input type="number" id="ConcreteBoxCulvert" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#CBCInfo">&#63;</button>
                     </span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Modal for How many Drainage Breaks are on the Project? -->
-    <div class="modal fade" id="DBreakInfo" tabindex="-1" role="dialog" aria-labelledby="DBreakInfoLabel">
+    <!-- Modal for OnePipesSix and PipesSix -->
+    <div class="modal fade" id="PInfo" tabindex="-1" role="dialog" aria-labelledby="PInfoLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
             <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="DBreakInfoLabel">SWM Facilities Avoided</h4>
+            <h4 class="modal-title" id="PInfoLabel">Pipes 18" and up</h4>
           </div>
             <div class="modal-body">
-            Drainage break exceeds 2,000', add an additional drainage break.
+            Drainage Pipe Length to Include Entrance Pipes, Cross Pipes, and Storm Sewer Pipes
           </div>
           <div class="modal-footer">
             <button class="btn btn-default" data-dismiss="modal">Close</button>
@@ -108,16 +113,16 @@
         </div>
         </div>
     </div>
-    <!-- Modal for Can SWM Facilities be Avoided -->
-    <div class="modal fade" id="SWMAvoid" tabindex="-1" role="dialog" aria-labelledby="SWMAvoidLabel">
+    <!-- Modal for ConcreteBoxCulvert -->
+    <div class="modal fade" id="CBCInfo" tabindex="-1" role="dialog" aria-labelledby="CBCInfoLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
             <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="SWMAvoidLabel">Drainage Break Information</h4>
+            <h4 class="modal-title" id="CBCInfoLabel">Concrete Box Colvert</h4>
           </div>
             <div class="modal-body">
-            If "Yes" is selcted the unit price for SWM Facility will be $0.<br><br>IF a SWM facility will be required in conjunction with the purchase of Nutrient Credits, or Nutrient Creidts cannot be purchased Select "No". <br><br> Nurtrient Credit cost will be included in PE cost. Assume $35,000/acre of disturbance for scoping purposes (See the LD-453 for guidance)
+            Click on the Header to access the Seperate Concrete Box Culvert.
           </div>
           <div class="modal-footer">
             <button class="btn btn-default" data-dismiss="modal">Close</button>

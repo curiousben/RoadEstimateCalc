@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Earthwork:Cut Information Fillout</title>
+    <title>Earthwork:Fill Information Fillout</title>
     <meta charset="utf-8">
     <script type="text/javascript" src='/jquery/dist/jquery.min.js'></script>
     <script type="text/javascript" src='/bootstrap/dist/js/bootstrap.min.js'></script>
@@ -22,7 +22,7 @@
                 </button>
                 <a class="navbar-brand" href="/">Vdot Logo</a>
             </div>
-            <div class="navbar-collapse collapse in" id="navbar" aria-expanded="true">
+            <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
                 <ul class="nav navbar-nav">
                     <li><a href="AdministerInformation">Administration Data</a></li>
                     <li><a href="ExistingRoadway">Existing Road</a></li>
@@ -30,8 +30,8 @@
                     <li><a href="ProposedRoad">Proposed Road</a></li>
                     <li><a href="ProposedBridge">Proposed Bridge</a></li>
                     <li><a href="Connections">Connections</a></li>
-                    <li class="active"><a href="EarthworkCut">Earthwork:Cut</a></li>
-                    <li><a href="EarthworkFill">Earthwork:Fill</a></li>
+                    <li><a href="EarthworkCut">Earthwork:Cut</a></li>
+                    <li class="active"><a href="EarthworkFill">Earthwork:Fill</a></li>
                     <li><a href="UnisuitableMaterial">Unisuitable Material</a></li>
                     <li><a href="CommercialRockFills">Commercial Rock</a></li>
                     <li><a href="Drainage">Drainage</a></li>
@@ -52,13 +52,13 @@
     </div>
     <div class="container-fluid" id="Road_Estimate_Tool">
         <div class="row">
-            <div class="col-xs-12" id="header">Earthwork:Cut</div>
+            <div class="col-xs-12" id="header">Earthwork:Fill</div>
         </div>
         <div class="row">
             <!--'https://s3.amazonaws.com/libapps/accounts/52949/images/image1.png'-->
-            <div class="col-xs-6"><img src="/images/image1.png" class="img-responsive" width="342" height="221"></div>
+            <div class="col-xs-6"><img src="images/image1.png" class="img-responsive" width="342" height="221"></div>
             <!--'https://s3.amazonaws.com/libapps/accounts/52949/images/image2.png'-->
-            <div class="col-xs-6"><img src="/images/image2.png" class="img-responsive" width="347" height="236"></div>
+            <div class="col-xs-6"><img src="images/image2.png" class="img-responsive" width="347" height="236"></div>
             <div class="col-xs-12 col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading"><b>Length:</b></div>
@@ -81,32 +81,32 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-2">
                 <label class="btn btn-default wholechkboxstyl">
-                    <input type="checkbox" id="CCB1"> 1 Section(s)
+                    <input type="checkbox" id="FCB1"> 1 Section(s)
                 </label>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
                 <label class="btn btn-default wholechkboxstyl">
-                    <input type="checkbox" id="CCB2"> 2 Section(s)
+                    <input type="checkbox" id="FCB2"> 2 Section(s)
                 </label>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
                 <label class="btn btn-default wholechkboxstyl">
-                    <input type="checkbox" id="CCB3"> 3 Section(s)
+                    <input type="checkbox" id="FCB3"> 3 Section(s)
                 </label>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
                 <label class="btn btn-default wholechkboxstyl">
-                    <input type="checkbox" id="CCB4"> 4 Section(s)
+                    <input type="checkbox" id="FCB4"> 4 Section(s)
                 </label>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
                 <label class="btn btn-default wholechkboxstyl">
-                    <input type="checkbox" id="CCB5"> 5 Section(s)
+                    <input type="checkbox" id="FCB5"> 5 Section(s)
                 </label>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
                 <label class="btn btn-default wholechkboxstyl">
-                    <input type="checkbox" id="CCB6"> 6 Section(s)
+                    <input type="checkbox" id="FCB6"> 6 Section(s)
                 </label>
             </div>
         </div>
@@ -116,16 +116,16 @@
             </div>
             <div class="toggle_even_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL1l">Length (ft)</label>
-                    <input type="number" id="CL1l" value="" class="form-control">
+                    <label for="FL1l">Length (ft)</label>
+                    <input type="number" id="FL1l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL1w">Width (ft)</label>
-                    <input type="number" id="CL1w" value="" class="form-control">
+                    <label for="FL1w">Width (ft)</label>
+                    <input type="number" id="FL1w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL1d">Distance (ft)</label>
-                    <input type="number" id="CL1d" value="" class="form-control">
+                    <label for="FL1d">Distance (ft)</label>
+                    <input type="number" id="FL1d" value="" class="form-control">
                 </div>
             </div>
 
@@ -134,16 +134,16 @@
             </div>
             <div class="toggle_odd_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM1l">Length (ft)</label>
-                    <input type="number" id="CM1l" value="" class="form-control">
+                    <label for="FM1l">Length (ft)</label>
+                    <input type="number" id="FM1l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM1w">Width (ft)</label>
-                    <input type="number" id="CM1w" value="" class="form-control">
+                    <label for="FM1w">Width (ft)</label>
+                    <input type="number" id="FM1w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM1d">Distance (ft)</label>
-                    <input type="number" id="CM1d" value="" class="form-control">
+                    <label for="FM1d">Distance (ft)</label>
+                    <input type="number" id="FM1d" value="" class="form-control">
                 </div>
             </div>
 
@@ -152,35 +152,36 @@
             </div>
             <div class="toggle_even_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR1l">Length (ft)</label>
-                    <input type="number" id="CR1l" value="" class="form-control">
+                    <label for="FR1l">Length (ft)</label>
+                    <input type="number" id="FR1l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR1w">Width (ft)</label>
-                    <input type="number" id="CR1w" value="" class="form-control">
+                    <label for="FR1w">Width (ft)</label>
+                    <input type="number" id="FR1w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR1d">Distance (ft)</label>
-                    <input type="number" id="CR1d" value="" class="form-control">
+                    <label for="FR1d">Distance (ft)</label>
+                    <input type="number" id="FR1d" value="" class="form-control">
                 </div>
             </div>
         </div>
+
         <div id="checkbox2">
             <div class="row">
                 <div class="col-xs-12" id="subheader">Left Section 2</div>
             </div>
             <div class="toggle_odd_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL2l">Length (ft)</label>
-                    <input type="number" id="CL2l" value="" class="form-control">
+                    <label for="FL2l">Length (ft)</label>
+                    <input type="number" id="FL2l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL2w">Width (ft)</label>
-                    <input type="number" id="CL2w" value="" class="form-control">
+                    <label for="FL2w">Width (ft)</label>
+                    <input type="number" id="FL2w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL2d">Distance (ft)</label>
-                    <input type="number" id="CL2d" value="" class="form-control">
+                    <label for="FL2d">Distance (ft)</label>
+                    <input type="number" id="FL2d" value="" class="form-control">
                 </div>
             </div>
 
@@ -189,16 +190,16 @@
             </div>
             <div class="toggle_even_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM2l">Length (ft)</label>
-                    <input type="number" id="CM2l" value="" class="form-control">
+                    <label for="FM2l">Length (ft)</label>
+                    <input type="number" id="FM2l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM2w">Width (ft)</label>
-                    <input type="number" id="CM2w" value="" class="form-control">
+                    <label for="FM2w">Width (ft)</label>
+                    <input type="number" id="FM2w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM2d">Distance (ft)</label>
-                    <input type="number" id="CM2d" value="" class="form-control">
+                    <label for="FM2d">Distance (ft)</label>
+                    <input type="number" id="FM2d" value="" class="form-control">
                 </div>
             </div>
 
@@ -207,35 +208,36 @@
             </div>
             <div class="toggle_odd_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR2l">Length (ft)</label>
-                    <input type="number" id="CR2l" value="" class="form-control">
+                    <label for="FR2l">Length (ft)</label>
+                    <input type="number" id="FR2l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR2w">Width (ft)</label>
-                    <input type="number" id="CR2w" value="" class="form-control">
+                    <label for="FR2w">Width (ft)</label>
+                    <input type="number" id="FR2w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR2d">Distance (ft)</label>
-                    <input type="number" id="CR2d" value="" class="form-control">
+                    <label for="FR2d">Distance (ft)</label>
+                    <input type="number" id="FR2d" value="" class="form-control">
                 </div>
             </div>
         </div>
+
         <div id="checkbox3">
             <div class="row">
                 <div class="col-xs-12" id="subheader">Left Section 3</div>
             </div>
-            <div class="toggle_even_row" >
+            <div class="toggle_even_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL3l">Length (ft)</label>
-                    <input type="number" id="CL3l" value="" class="form-control">
+                    <label for="FL3l">Length (ft)</label>
+                    <input type="number" id="FL3l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL3w">Width (ft)</label>
-                    <input type="number" id="CL3w" value="" class="form-control">
+                    <label for="FL3w">Width (ft)</label>
+                    <input type="number" id="FL3w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL3d">Distance (ft)</label>
-                    <input type="number" id="CL3d" value="" class="form-control">
+                    <label for="FL3d">Distance (ft)</label>
+                    <input type="number" id="FL3d" value="" class="form-control">
                 </div>
             </div>
 
@@ -244,16 +246,16 @@
             </div>
             <div class="toggle_odd_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM3l">Length (ft)</label>
-                    <input type="number" id="CM3l" value="" class="form-control">
+                    <label for="FM3l">Length (ft)</label>
+                    <input type="number" id="FM3l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM3w">Width (ft)</label>
-                    <input type="number" id="CM3w" value="" class="form-control">
+                    <label for="FM3w">Width (ft)</label>
+                    <input type="number" id="FM3w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM3d">Distance (ft)</label>
-                    <input type="number" id="CM3d" value="" class="form-control">
+                    <label for="FM3d">Distance (ft)</label>
+                    <input type="number" id="FM3d" value="" class="form-control">
                 </div>
             </div>
 
@@ -262,16 +264,16 @@
             </div>
             <div class="toggle_even_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR3l">Length (ft)</label>
-                    <input type="number" id="CR3l" value="" class="form-control">
+                    <label for="FR3l">Length (ft)</label>
+                    <input type="number" id="FR3l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR3w">Width (ft)</label>
-                    <input type="number" id="CR3w" value="" class="form-control">
+                    <label for="FR3w">Width (ft)</label>
+                    <input type="number" id="FR3w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR3d">Distance (ft)</label>
-                    <input type="number" id="CR3d" value="" class="form-control">
+                    <label for="FR3d">Distance (ft)</label>
+                    <input type="number" id="FR3d" value="" class="form-control">
                 </div>
             </div>
         </div>
@@ -282,16 +284,16 @@
             </div>
             <div class="toggle_odd_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL4l">Length (ft)</label>
-                    <input type="number" id="CL4l" value="" class="form-control">
+                    <label for="FL4l">Length (ft)</label>
+                    <input type="number" id="FL4l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL4w">Width (ft)</label>
-                    <input type="number" id="CL4w" value="" class="form-control">
+                    <label for="FL4w">Width (ft)</label>
+                    <input type="number" id="FL4w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL4d">Distance (ft)</label>
-                    <input type="number" id="CL4d" value="" class="form-control">
+                    <label for="FL4d">Distance (ft)</label>
+                    <input type="number" id="FL4d" value="" class="form-control">
                 </div>
             </div>
 
@@ -300,16 +302,16 @@
             </div>
             <div class="toggle_even_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM4l">Length (ft)</label>
-                    <input type="number" id="CM4l" value="" class="form-control">
+                    <label for="FM4l">Length (ft)</label>
+                    <input type="number" id="FM4l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM4w">Width (ft)</label>
-                    <input type="number" id="CM4w" value="" class="form-control">
+                    <label for="FM4w">Width (ft)</label>
+                    <input type="number" id="FM4w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM4d">Distance (ft)</label>
-                    <input type="number" id="CM4d" value="" class="form-control">
+                    <label for="FM4d">Distance (ft)</label>
+                    <input type="number" id="FM4d" value="" class="form-control">
                 </div>
             </div>
 
@@ -318,16 +320,16 @@
             </div>
             <div class="toggle_odd_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR4l">Length (ft)</label>
-                    <input type="number" id="CR4l" value="" class="form-control">
+                    <label for="FR4l">Length (ft)</label>
+                    <input type="number" id="FR4l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR4w">Width (ft)</label>
-                    <input type="number" id="CR4w" value="" class="form-control">
+                    <label for="FR4w">Width (ft)</label>
+                    <input type="number" id="FR4w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR4d">Distance (ft)</label>
-                    <input type="number" id="CR4d" value="" class="form-control">
+                    <label for="FR4d">Distance (ft)</label>
+                    <input type="number" id="FR4d" value="" class="form-control">
                 </div>
             </div>
         </div>
@@ -336,18 +338,18 @@
             <div class="row">
                 <div class="col-xs-12" id="subheader">Left Section 5</div>
             </div>
-            <div class="toggle_even_row" >
+            <div class="toggle_even_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL5l">Length (ft)</label>
-                    <input type="number" id="CL5l" value="" class="form-control">
+                    <label for="FL5l">Length (ft)</label>
+                    <input type="number" id="FL5l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL5w">Width (ft)</label>
-                    <input type="number" id="CL5w" value="" class="form-control">
+                    <label for="FL5w">Width (ft)</label>
+                    <input type="number" id="FL5w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL5d">Distance (ft)</label>
-                    <input type="number" id="CL5d" value="" class="form-control">
+                    <label for="FL5d">Distance (ft)</label>
+                    <input type="number" id="FL5d" value="" class="form-control">
                 </div>
             </div>
 
@@ -356,16 +358,16 @@
             </div>
             <div class="toggle_odd_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM5l">Length (ft)</label>
-                    <input type="number" id="CM5l" value="" class="form-control">
+                    <label for="FM5l">Length (ft)</label>
+                    <input type="number" id="FM5l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM5w">Width (ft)</label>
-                    <input type="number" id="CM5w" value="" class="form-control">
+                    <label for="FM5w">Width (ft)</label>
+                    <input type="number" id="FM5w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM5d">Distance (ft)</label>
-                    <input type="number" id="CM5d" value="" class="form-control">
+                    <label for="FM5d">Distance (ft)</label>
+                    <input type="number" id="FM5d" value="" class="form-control">
                 </div>
             </div>
 
@@ -374,16 +376,16 @@
             </div>
             <div class="toggle_even_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR5l">Length (ft)</label>
-                    <input type="number" id="CR5l" value="" class="form-control">
+                    <label for="FR5l">Length (ft)</label>
+                    <input type="number" id="FR5l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR5w">Width (ft)</label>
-                    <input type="number" id="CR5w" value="" class="form-control">
+                    <label for="FR5w">Width (ft)</label>
+                    <input type="number" id="FR5w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR5d">Distance (ft)</label>
-                    <input type="number" id="CR5d" value="" class="form-control">
+                    <label for="FR5d">Distance (ft)</label>
+                    <input type="number" id="FR5d" value="" class="form-control">
                 </div>
             </div>
         </div>
@@ -394,16 +396,16 @@
             </div>
             <div class="toggle_odd_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL6l">Length (ft)</label>
-                    <input type="number" id="CL6l" value="" class="form-control">
+                    <label for="FL6l">Length (ft)</label>
+                    <input type="number" id="FL6l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL6w">Width (ft)</label>
-                    <input type="number" id="CL6w" value="" class="form-control">
+                    <label for="FL6w">Width (ft)</label>
+                    <input type="number" id="FL6w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CL6d">Distance (ft)</label>
-                    <input type="number" id="CL6d" value="" class="form-control">
+                    <label for="FL6d">Distance (ft)</label>
+                    <input type="number" id="FL6d" value="" class="form-control">
                 </div>
             </div>
 
@@ -412,33 +414,34 @@
             </div>
             <div class="toggle_even_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM6l">Length (ft)</label>
-                    <input type="number" id="CM6l" value="" class="form-control">
+                    <label for="FM6l">Length (ft)</label>
+                    <input type="number" id="FM6l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM6w">Width (ft)</label>
-                    <input type="number" id="CM6w" value="" class="form-control">
+                    <label for="FM6w">Width (ft)</label>
+                    <input type="number" id="FM6w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CM6d">Distance (ft)</label>
-                    <input type="number" id="CM6d" value="" class="form-control">
+                    <label for="FM6d">Distance (ft)</label>
+                    <input type="number" id="FM6d" value="" class="form-control">
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-xs-12" id="subheader">Right Section 6</div>
             </div>
             <div class="toggle_odd_row">
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR6l">Length (ft)</label>
-                    <input type="number" id="CR6l" value="" class="form-control">
+                    <label for="FR6l">Length (ft)</label>
+                    <input type="number" id="FR6l" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR6w">Width (ft)</label>
-                    <input type="number" id="CR6w" value="" class="form-control">
+                    <label for="FR6w">Width (ft)</label>
+                    <input type="number" id="FR6w" value="" class="form-control">
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <label for="CR6d">Distance (ft)</label>
-                    <input type="number" id="CR6d" value="" class="form-control">
+                    <label for="FR6d">Distance (ft)</label>
+                    <input type="number" id="FR6d" value="" class="form-control">
                 </div>
             </div>
         </div>
