@@ -6,13 +6,21 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var routes = require('./routes/index');
+var mongoose = require('mongoose');
 var app = express();
+
+
+//to connect to any localhost Database 'mongod://127.0.0.1/mydb'
+
+//connection to local Mongo Database
+mongoose.connect('mongodb://127.0.0.1/secondevoDB');
 
 
 app.use(favicon(__dirname+'/build/favicon.ico'));
 app.use(logger('dev'));
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'build'),
   dest: path.join(__dirname, 'build'),
