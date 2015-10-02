@@ -3,11 +3,11 @@
 <head>
     <title>Miscellaneous Information Fillout</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src='/jquery/dist/jquery.min.js'></script>
     <script type="text/javascript" src='/bootstrap/dist/js/bootstrap.min.js'></script>
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" type="text/css" href="//s3.amazonaws.com/libapps/sites/5231/include/style.css"> -->
 </head>
 <body>
     <div class="navbar navbar-default navbar-static-top" role="navigation">
@@ -18,8 +18,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-
                 </button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle databasebutton-position" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Database <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="CreateRecord">Create a Record</a></li>
+                        <li><a href="UpdateRecord">Update a Record</a></li>
+                        <li><a href="RetrieveRecord">Retrieve a Record</a></li>
+                    </ul>
+                </div>
                 <a class="navbar-brand" href="/">Vdot Logo</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
@@ -52,13 +60,23 @@
     </div>
     <div class="container-fluid" id="Road_Estimate_Tool">
         <div class="row">
-            <div class="col-xs-12" id="header">Miscellaneous Items</div>
+            <div class="col-xs-12" id="header">
+                <div class="col-xs-3">
+                    <a href="Mitigation"><button class="btn btn-info pull-left"><i class="glyphicon glyphicon-menu-left glyphicon-spacing"></i>Prev</button></a>
+                </div>
+                <div class="col-xs-6">
+                    Miscellaneous Items
+                </div>
+                <div class="col-xs-3">
+                    <a href="UnitPrices"><button class="btn btn-info pull-right">Next<i class="glyphicon glyphicon-menu-right gyphicon-spacing"></i></button></a>
+                </div>
+            </div>
         </div>
         <div class="row default_even_row">
             <div class="col-xs-4">Item</div>
             <div class="col-xs-2">Unit</div>
-            <div class="col-xs-3">Quantity(ea)</div>
-            <div class="col-xs-3">Unit Price($)</div>
+            <div class="col-xs-3">Quantity (ea)</div>
+            <div class="col-xs-3">Unit Price ($)</div>
         </div>
         <div class="row default_odd_row">
             <div class="col-xs-4"><textarea id="misc1item" placeholder="Enter Discription" class="misclass form-control"></textarea></div>
@@ -94,6 +112,5 @@
     </div>
 </body>
 <script type="text/javascript" src="/js/minipages.min.js"></script>
-<!-- <script type="text/javascript" src="//s3.amazonaws.com/libapps/sites/5231/include/minipages.min.js"></script> -->
 
 </html>

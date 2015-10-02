@@ -2,8 +2,12 @@
 <html>
 <head>
 	<title>Data Entry</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src='/jquery/dist/jquery.min.js'></script>
+    <script type="text/javascript" src='/bootstrap/dist/js/bootstrap.min.js'></script>
 	<link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link href="/css/style.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
@@ -14,8 +18,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-
                 </button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle databasebutton-position" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Database <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="CreateRecord">Create a Record</a></li>
+                        <li class="active"><a href="UpdateRecord">Update a Record</a></li>
+                        <li><a href="RetrieveRecord">Retrieve a Record</a></li>
+                    </ul>
+                </div>
                 <a class="navbar-brand" href="/">Vdot Logo</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
@@ -46,33 +58,7 @@
             </div>
         </div>
     </div>
-<div class="container" id="Road_Estimate_Tool">
-
-	<div class="col-sm-6 col-sm-offset-3">
-
-		<h1><span class="fa fa-sign-in"></span> Signup</h1>
-
-		<!-- LOGIN FORM -->
-		<form action="/CreateUpdate" method="post">
-			<div class="form-group">
-				<label>Email</label>
-				<input type="text" class="form-control" name="email">
-			</div>
-			<div class="form-group">
-				<label>Password</label>
-				<input type="password" class="form-control" name="password">
-			</div>
-
-			<button type="submit" class="btn btn-warning btn-lg">Signup</button>
-		</form>
-
-		<hr>
-
-		<p>Already have an account? <a href="/login">Login</a></p>
-		<p>Or go <a href="/">home</a>.</p>
-
-	</div>
-
-</div>
+    <div class="container" id="Road_Estimate_Tool">
+    </div>
 </body>
 </html>

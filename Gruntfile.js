@@ -14,7 +14,9 @@ module.exports=function (grunt)
 				files: {
 					'build/js/contingency.sliders.min.js': ['js/MinipagesOther/contingency.sliders.js'],
 					'build/js/proposedroadway.slider.min.js': ['js/MinipagesOther/proposedroadway.slider.js'],
-					'build/js/unitprices.slider.min.js' :['js/MinipagesOther/unitprices.slider.js']
+					'build/js/unitprices.slider.min.js' :['js/MinipagesOther/unitprices.slider.js'],
+					'build/js/databasedata.min.js' :['js/MinipagesOther/databasedata.js'],
+					'build/js/global.min.js' :['js/MinipagesOther/global.js']
 				}
 			},
 			braincompress: {

@@ -13,7 +13,11 @@ var app = express();
 //to connect to any localhost Database 'mongod://127.0.0.1/mydb'
 
 //connection to local Mongo Database
-mongoose.connect('mongodb://127.0.0.1/secondevoDB');
+mongoose.connect('mongodb://127.0.0.1/secondevoDB', function(err, db){
+	if (!err) {
+		console.log("Mongo Server port: Connected to App");
+	};
+});
 
 
 app.use(favicon(__dirname+'/build/favicon.ico'));

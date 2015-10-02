@@ -3,6 +3,7 @@
 <head>
     <title>Drainage Information Fillout</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src='/jquery/dist/jquery.min.js'></script>
     <script type="text/javascript" src='/bootstrap/dist/js/bootstrap.min.js'></script>
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -18,8 +19,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-
                 </button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle databasebutton-position" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Database <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="CreateRecord">Create a Record</a></li>
+                        <li><a href="UpdateRecord">Update a Record</a></li>
+                        <li><a href="RetrieveRecord">Retrieve a Record</a></li>
+                    </ul>
+                </div>
                 <a class="navbar-brand" href="/">Vdot Logo</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
@@ -52,7 +61,11 @@
     </div>
     <div class="container-fluid" id="Road_Estimate_Tool">
         <div class="row">
-            <div class="col-xs-12" id="header">Drainage</div>
+            <div class="col-xs-12" id="header">
+                <a href="CommercialRockFills"><button class="btn btn-info pull-left"><i class="glyphicon glyphicon-menu-left glyphicon-spacing"></i>Prev</button></a>
+                Drainage
+                <a href="SWMFacility"><button class="btn btn-info pull-right">Next<i class="glyphicon glyphicon-menu-right gyphicon-spacing"></i></button></a>
+            </div>
         </div>
         <div class="row_type_1">
             <div class="col-xs-12 col-sm-6 col-md-4" id="InfoBox">

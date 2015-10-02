@@ -4,7 +4,7 @@
   "description": "This project is a Web application for VDOT for Road Estimations. It's actual live version can be found here <http://virginiadot.libguides.com/ben/set>",
   "private": true,
   "scripts": {
-    "start": "nodemon start.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "mongoose": "^4.1.8",
     "morgan": "~1.6.1",
     "node-sass-middleware": "0.8.0",
+    "passport": "^0.3.0",
     "serve-favicon": "~2.3.0"
   }
 }
