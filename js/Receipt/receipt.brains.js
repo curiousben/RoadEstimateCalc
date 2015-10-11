@@ -1,3 +1,5 @@
+//auto resize text (font size) when resizing window?
+
 //
 //
 //
@@ -376,7 +378,7 @@ var prl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
      im = numberleftblank(localStorage.getItem("IntermediateMix"));
     col = numberleftblank(localStorage.getItem("ConnectionOneLength"));
     ctl = numberleftblank(localStorage.getItem("ConnectionTwoLength"));
-    if (pst == "Surface Mix Only") {
+    if (pst == "SurfaceMixOnly") {
         return (((((parseFloat(prl,10)+parseFloat(col,10)+parseFloat(ctl,10))*prw)/9)*(im*115))/2000);
     } else {
       return ((((parseFloat(prl,10)+parseFloat(col,10)+parseFloat(ctl,10))*(parseFloat(prw,10)+(psw*2)))/9)*(im*115)/2000);
@@ -391,7 +393,7 @@ var prl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
      bm = numberleftblank(localStorage.getItem("BaseMix"));
     col = numberleftblank(localStorage.getItem("ConnectionOneLength"));
     ctl = numberleftblank(localStorage.getItem("ConnectionTwoLength"));
-    if (pst == "Surface Mix Only") {
+    if (pst == "SurfaceMixOnly") {
         return (((((parseFloat(prl,10)+parseFloat(col,10)+parseFloat(ctl,10))*prw)/9)*(bm*115))/2000);
     } else {
       return ((((parseFloat(prl,10)+parseFloat(col,10)+parseFloat(ctl,10))*(parseFloat(prw,10)+(psw*2)))/9)*(bm*115)/2000);
@@ -411,7 +413,7 @@ var prl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
     col = numberleftblank(localStorage.getItem("ConnectionOneLength"));
     ctl = numberleftblank(localStorage.getItem("ConnectionTwoLength"));
 
-    if (pst == "Surface Mix Only") {
+    if (pst == "SurfaceMixOnly") {
       return (((((parseFloat(prl,10)+parseFloat(col,10)+parseFloat(ctl,10))*(parseFloat(prw,10)+(tsw*2))*(n21s/12))+(prl*((parseFloat(sm,10)+parseFloat(im,10)+parseFloat(bm,10))/12)*(tsw*2)))/27)*2.025);
     } else {
       return (((((parseFloat(prl,10)+parseFloat(col,10)+parseFloat(ctl,10))*(parseFloat(prw,10)+(tsw*2))*(n21s/12))+(prl*((parseFloat(sm,10)+parseFloat(im,10)+parseFloat(bm,10))/12)*((parseFloat(tsw,10)-parseFloat(psw,10))*2)))/27)*2.025);

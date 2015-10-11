@@ -1,21 +1,15 @@
 /* These rules help define the themes found in this web application*/
-.gyphicon-spacing {
-  position: relative; }
+.recordform {
+  display: none; }
 
-#InfoBox {
-  padding-top: 5px; }
+.SelectedRow:hover {
+  background-color: #0066ff; }
 
-#Divboxtweak {
-  padding-bottom: 9px; }
+a.linkshowEsti {
+  color: #000000; }
 
-#Perslider {
-  padding: 18px; }
-
-#GIPercent, #DIPercent, #PavIPercent,
-#IIPercent, #ProIPercent, #ECPercent,
-#UPercent, #TSPercent, #BPercent,
-#NewHorizontalAlignment, #pcei {
-  padding-bottom: 1px; }
+#ReceiptBanner {
+  font-size: 300%; }
 
 #subheader {
   color: #000000;
@@ -83,6 +77,24 @@
   .row_type_1 div:nth-child(6n-3), .row_type_1 div:nth-child(6n-4), .row_type_1 div:nth-child(6n-5) {
     background-color: #aaaaaa; } }
 
+.gyphicon-spacing {
+  position: relative; }
+
+#InfoBox {
+  padding-top: 5px; }
+
+#Divboxtweak {
+  padding-bottom: 9px; }
+
+#Perslider {
+  padding: 18px; }
+
+#GIPercent, #DIPercent, #PavIPercent,
+#IIPercent, #ProIPercent, #ECPercent,
+#UPercent, #TSPercent, #BPercent,
+#NewHorizontalAlignment, #pcei {
+  padding-bottom: 1px; }
+
 #MOTTable, #MOTrefbutton {
   padding: 14px; }
 
@@ -123,6 +135,26 @@
     display: none; }
   #PrintButton {
     display: none; } }
+
+@media (max-width: 420px) {
+  .button-center-form {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    float: left;
+    width: 100%; } }
+
+@media (min-width: 421px) {
+  .button-center-form {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 50%; } }
 
 input {
   max-width: 100%; }

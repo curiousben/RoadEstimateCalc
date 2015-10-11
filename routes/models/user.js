@@ -1,9 +1,9 @@
 // How its stored in mongodb
 var mongoose = require('mongoose');
 var userSchema = mongoose.Schema({
-		username: String,
-		password: String,
-		localstoretest: Array
+		firstname: String,
+		lastname: String,
+		password: String
 })
 
 module.exports = mongoose.model('User', userSchema);

@@ -1,27 +1,23 @@
 /* These rules help define the themes found in this web application*/
 
-// These ID rules help counter little discrepancies found in bootstrap style rules that throw off the style
-.gyphicon-spacing{
-    position: relative;
+ .recordform{
+    display: none;
+ }
+
+// Selection of rows
+
+.SelectedRow:hover {
+    background-color:$SelectionBlue;
 }
 
-#InfoBox {
-    padding-top: 5px;
-}
-#Divboxtweak{
-    padding-bottom: 9px;
+a.linkshowEsti {
+    color: $black;
 }
 
-// These ID rules help keep silder styles inline with the box right next to it
-#Perslider {
-    padding:18px;
+#ReceiptBanner {
+    font-size: 300%;
 }
-#GIPercent,#DIPercent,#PavIPercent,
-#IIPercent,#ProIPercent,#ECPercent,
-#UPercent,#TSPercent,#BPercent,
-#NewHorizontalAlignment,#pcei{
-    padding-bottom: 1px;
-}
+
 // These give the styles to headers and subheaders
 #subheader {
     color: $black; 
@@ -36,12 +32,16 @@
     text-align: center;
     font-size: 14pt;
 }
+
+//Hides the checkboxs
+
 #checkbox1,#checkbox2,#checkbox3,
 #checkbox4,#checkbox5,#checkbox6,
 #subcheckbox1,#subcheckbox2,#subcheckbox3 {
     display: none;
 }
-
+//
+// ========================== Table Row Themes =============================================//
 // These styles rules help with the theme styles of each pages where there are alternating backgrounds
 
 .row {

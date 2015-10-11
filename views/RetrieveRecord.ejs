@@ -23,8 +23,7 @@
                     <button type="button" class="btn btn-info dropdown-toggle databasebutton-position" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Database <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="CreateRecord">Create a Record</a></li>
-                        <li><a href="UpdateRecord">Update a Record</a></li>
+                        <li><a href="CreateUpdateRecord">Create/Update a Record</a></li>
                         <li class="active"><a href="RetrieveRecord">Retrieve a Record</a></li>
                     </ul>
                 </div>
@@ -59,39 +58,79 @@
         </div>
     </div>
     <div class="container" id="Road_Estimate_Tool">
-        <div class="col-xs-12">
-            <div class="panel panel-success">
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-primary">
                 <div class="panel-heading"> Load Record from Database</div>
                 <div class="panel-body">
-                    <form action="/RetrieveRecord" method="form">
-                        <div class="form-group">
-                            <label>Project ID</label>
-                            <input type="number" class="form-control" name="RetrieveProjectID">
+                    <div class="form-group">
+                        <label>UPC</label>
+                        <input type="number" class="form-control" id="SearchUPC">
+                    </div>
+                    <div class="form-group">
+                        <label>Estimator</label>
+                        <input type="text" class="form-control" id="SearchEstimator">
+                    </div>
+                    <div class="form-group">
+                        <label>Road Number</label>
+                        <input type="text" class="form-control" id="SearchRoadNumber">
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-info btn-md" id="SearchButton">Search</button>
+                </div>
+            </div>
+        </div>        
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> Search Results from Database</div>
+                <div class="panel-body">
+                    <div id="SearchResultsTable"></div>
+                        <div class="col-xs-12" id="subheader">
+                            <div class="col-xs-4">Estimator</div>
+                            <div class="col-xs-4">UPC</div>
+                            <div class="col-xs-4">Road Number</div>
                         </div>
-                        <div class="form-group">
-                            <label>UPC</label>
-                            <input type="number" class="form-control" name="RetrieveUPC">
+                        <div id="SearchResultsfromQuery"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="panel panel-success">
+                <div class="panel-heading"> Information of Record</div>
+                <div class="panel-body">
+                    <div id="SearchResultsTable"></div>
+                        <div class="col-xs-12" id="subheader">
+                            <div class="col-xs-4" id="loadEstimator">Estimator</div>
+                            <div class="col-xs-4" id="loadUPC">UPC</div>
+                            <div class="col-xs-4" id="loadRoadNumber">Road Number</div>
                         </div>
-                        <div class="form-group">
-                            <label>Estimator</label>
-                            <input type="text" class="form-control" name="RetrieveEstimator">
-                        </div>
-                        <div class="form-group">
-                            <label>Proposed Ad Year</label>
-                            <input type="number" class="form-control" name="RetrieveProposedAdYear">
-                        </div>
-                        <div>
-                            <label>Construction Duration</label>
-                            <input type="number" class="form-control" name="RetrieveConstructionDuration">
-                        </div>
-                        <div class="form-group">
-                            <input type="hidden" class="form-control" name="RetrieveDataArray" id="CreateDataArray">
-                        </div>
-                        <button type="submit" class="btn btn-warning btn-md">Retreive Record</button>
-                    </form>
+                        <div id="SearchResultsfromQuery"></div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#ImportDataModal"id="importdatamodal">Import Record</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ImportDataModal" tabindex="-1" role="dialog" aria-labelledby="ImportDataModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="ImportDataModalLabel">Reset</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                        This button imports a datarecord in this web app and in doing so erases all data that is on this device locally for this web app. If you haven't saved the data on this device please do so by creating a new record.
+                        </p>
+                        <button class="btn btn-danger" data-dismiss="modal" id="ImportDatarecord">Import Record</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="/js/global.min.js"></script>
 </body>
 </html>
