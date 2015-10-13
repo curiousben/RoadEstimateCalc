@@ -8,6 +8,8 @@ router.post('/CreateRecord', function (req,res){
 	newDataRecord.UPC = req.body.CreateUPC;
 	newDataRecord.RoadNumber = req.body.CreateRoadNumber;
 	newDataRecord.DataArray = req.body.CreateDataArray;
+	newDataRecord.DateCreated = req.body.CreateCTime;
+	newDataRecord.DateUpdated = req.body.CreateUTime;
 	newDataRecord.save(function(err){
 		if (err){
 			throw err;
@@ -22,6 +24,7 @@ router.put('/UpdateRecord', function (req,res) {
 			throw err;
 		};
 		dataset.DataArray = req.body.UpdateDataArray;
+		dataset.DateUpdated = req.body.UpdateTimeStamp;
 		dataset.save(function(err){
 			if (err){
 				throw err;

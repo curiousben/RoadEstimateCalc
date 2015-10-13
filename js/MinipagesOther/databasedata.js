@@ -6,8 +6,11 @@ $(document).ready(function(){
 			Data=localStorage.getItem(localStorage.key(i))
 			DataArray[Key] = Data;
 		};
+	document.getElementsByName('CreateCTime')[0].value= new Date();
+	document.getElementsByName('CreateUTime')[0].value= new Date();
 	document.getElementsByName('CreateDataArray')[0].value=JSON.stringify(DataArray);
 	document.getElementsByName('UpdateDataArray')[0].value=JSON.stringify(DataArray);
+	document.getElementsByName('UpdateTimeStamp')[0].value= new Date();
 	$('#CreateFormButton').click(function(event) {
 		if (windowdown==2 || windowdown==0) {
 			$('#CreateRecordForm').toggle('swing');

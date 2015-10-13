@@ -9,7 +9,9 @@ window.onload = function () {
         pdfg();
     });
     $(window).bind('resize', function() {
-        ScreenResize();
+        if ($(window).width()<=600) {
+            ScreenResize();    
+        };
     }).trigger('resize');
 }
 function ScreenResize() {

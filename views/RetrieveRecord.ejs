@@ -63,12 +63,12 @@
                 <div class="panel-heading"> Load Record from Database</div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <label>UPC</label>
-                        <input type="number" class="form-control" id="SearchUPC">
-                    </div>
-                    <div class="form-group">
                         <label>Estimator</label>
                         <input type="text" class="form-control" id="SearchEstimator">
+                    </div>
+                    <div class="form-group">
+                        <label>UPC</label>
+                        <input type="number" class="form-control" id="SearchUPC">
                     </div>
                     <div class="form-group">
                         <label>Road Number</label>
@@ -99,12 +99,26 @@
                 <div class="panel-heading"> Information of Record</div>
                 <div class="panel-body">
                     <div id="SearchResultsTable"></div>
-                        <div class="col-xs-12" id="subheader">
-                            <div class="col-xs-4" id="loadEstimator">Estimator</div>
-                            <div class="col-xs-4" id="loadUPC">UPC</div>
-                            <div class="col-xs-4" id="loadRoadNumber">Road Number</div>
+                        <div class="col-xs-12 toggle_odd_row">
+                            <div class="col-xs-12"><b><i>Extimator:</i></b></div>
+                            <div class="col-xs-12" id="loadEstimator"></div>
                         </div>
-                        <div id="SearchResultsfromQuery"></div>
+                        <div class="col-xs-12 toggle_even_row">
+                            <div class="col-xs-12"><b><i>UPC:</i></b></div>
+                            <div class="col-xs-12" id="loadUPC"></div>
+                        </div>
+                        <div class="col-xs-12 toggle_odd_row">
+                            <div class="col-xs-12"><b><i>Road Number:</i></b></div>
+                            <div class="col-xs-12" id="loadRoadNumber"></div>
+                        </div>
+                        <div class="col-xs-12 toggle_even_row">
+                            <div class="col-xs-12"><b><i>Date Created:</i></b></div>
+                            <div class="col-xs-12" id='loadDateCreated'></div>
+                        </div>
+                        <div class="col-xs-12 toggle_odd_row">
+                            <div class="col-xs-12"><b><i>Last Updated:</i></b></div>
+                            <div class="col-xs-12" id='loadDateUpdated'></div>
+                        </div>
                 </div>
                 <div class="panel-footer">
                     <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#ImportDataModal"id="importdatamodal">Import Record</button>

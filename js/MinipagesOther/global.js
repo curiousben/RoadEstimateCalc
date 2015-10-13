@@ -140,9 +140,11 @@ function loadDataRecordInfo (event) {
 	};
 
 	//Populate Temp box
-	$('#loadUPC').text(thisEstiObject.UPC);
 	$('#loadEstimator').text(thisEstiObject.Estimator);
+	$('#loadUPC').text(thisEstiObject.UPC);
 	$('#loadRoadNumber').text(thisEstiObject.RoadNumber);
+	$('#loadDateCreated').text(thisEstiObject.DateCreated)
+	$('#loadDateUpdated').text(thisEstiObject.DateUpdated)
 }
 
 function importDataRecord (event) {

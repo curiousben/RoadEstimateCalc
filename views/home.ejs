@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Road Estimate Tool</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src='/jquery/dist/jquery.min.js'></script>
+    <script type="text/javascript" src='/bootstrap/dist/js/bootstrap.min.js'></script>
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="/images/14916.ico">-->
+</head>
+<body>
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle databasebutton-position" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Database <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="CreateUpdateRecord">Create/Update a Record</a></li>
+                        <li><a href="RetrieveRecord">Retrieve a Record</a></li>
+                    </ul>
+                </div>
+                <a class="navbar-brand" href="/">Vdot Logo</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
+                <ul class="nav navbar-nav">
+                    <li><a href="AdministerInformation">Administration Data</a></li>
+                    <li><a href="ExistingRoadway">Existing Road</a></li>
+                    <li><a href="ExistingBridge">Existing Bridge</a></li>
+                    <li><a href="ProposedRoad">Proposed Road</a></li>
+                    <li><a href="ProposedBridge">Proposed Bridge</a></li>
+                    <li><a href="Connections">Connections</a></li>
+                    <li><a href="EarthworkCut">Earthwork:Cut</a></li>
+                    <li><a href="EarthworkFill">Earthwork:Fill</a></li>
+                    <li><a href="UnisuitableMaterial">Unisuitable Material</a></li>
+                    <li><a href="CommercialRockFills">Commercial Rock</a></li>
+                    <li><a href="Drainage">Drainage</a></li>
+                    <li><a href="SWMFacility">SWM Facility</a></li>
+                    <li><a href="Traffic">Traffic</a></li>
+                    <li><a href="Entrances">Entrances</a></li>
+                    <li><a href="UtilityImpacts">Utility Impacts</a></li>
+                    <li><a href="RW3">Retaining Wall RW-3</a></li>
+                    <li><a href="Sidewalk">Sidewalk</a></li>
+                    <li><a href="Mitigation">Mitigation</a></li>
+                    <li><a href="MiscellaneousItems">Miscellaneous Items</a></li>
+                    <li><a href="UnitPrices">Unit Prices</a></li>
+                    <li><a href="Contingency">Contingency</a></li>
+                    <li><a href="Receipt">Receipt</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="Road_Estimate_Tool">
+        <div class="col-xs-12">
+            <!--panel-->
+            <div class="panel panel-info">
+                <div class="panel-heading">Bristol District L&D Scoping Estimaing Tool</div>
+                <div class="panel-body"><p>This is a tool dependent on quality engineering estimates of quantities. <u><b>This tool should NOT be used as a substitute for field oberservation estimate.</b></u> The overall cost of a project can be modified by adjusting the itemized contingency percentages in the Contingency Tab. Also, the Earthwork Quantity formulas are conservative estimates. If you have any questions regarding the estimating tool contact Chase Buchanan at 276-645-4878</p></div>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="panel panel-success">
+                <div class="panel-heading"><i>Instructions for this Web Application</i></div>
+                <div class="panel-body">
+                    <li>
+                        Contingency % can be adjusted based on your comfort level with item quanity in the Contingnency tab.
+                    </li>
+                    <li>
+                        Unit prices can be adjusted on the Unit prices tab near the receipt tab. Use current unit prices as a guide.
+                    </li>
+                    <li>
+                        CEI % can be adjusted in the Unit prices tabs.
+                    </li>
+                    <li>
+                        Add any additional items that are important in the Misc Information tab.
+                    </li>
+                    <li>
+                        Data input fields with this button <button class="btn btn-info">&#63;</button> shows comments for clarifications.
+                    </li>
+                    <li>
+                        PE or RW cost is not included in this estimate tool.
+                    </li>
+                    <li>
+                        The "Proposed Roadway" header is hyperlinked to the Road Designed Manual.
+                    </li>
+                    <li>
+                        The "Proposed Bridge" header is hyperlinked to Structure and Bridge Vol. V - Part 2 Geometrics.
+                    </li>
+                    <li>
+                        The "Concrete Box Culvert" in the "Drainage" box is hyperlinked to "Box Culvert Computation V4.1".
+                    </li>
+                    <li>
+                        Earthwork inputs will require field data.
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <button class="btn btn-danger btn-block" id="resetbutton">Reset All Data</button>
+        </div>
+        <!-- Modal for ResetAllData -->
+        <div class="modal fade" id="ResetAllData" tabindex="-1" role="dialog" aria-labelledby="ResetAllDataLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="ResetAllDataLabel">Reset</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                        This resets all data found in this road estimate tool: <b><u>THERE IS NO UNDO</u></b>
+                        </p>
+                        <button class="btn btn-danger" id="memclrchoice">Clear All Data</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="/js/minipages.min.js"></script>
+</html>

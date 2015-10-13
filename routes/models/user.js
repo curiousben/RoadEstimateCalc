@@ -1,9 +1,11 @@
-// How its stored in mongodb
-var mongoose = require('mongoose');
-var userSchema = mongoose.Schema({
-		firstname: String,
-		lastname: String,
-		password: String
-})
 
-module.exports = mongoose.model('User', userSchema);
+var mongoose = require('mongoose');
+
+module.exports = mongoose.model('User',{
+	id: String,
+	username: String,
+	password: String,
+	email: String,
+	firstName: String,
+	lastName: String
+});
