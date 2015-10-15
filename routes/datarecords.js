@@ -15,6 +15,7 @@ router.post('/CreateRecord', function (req,res){
 			throw err;
 		}
 	})
+	req.flash('Create','Your datarecord has been successfully added!');
 	res.redirect('/CreateUpdateRecord');
 });
 
@@ -29,6 +30,7 @@ router.put('/UpdateRecord', function (req,res) {
 			if (err){
 				throw err;
 			}
+			req.flash('Update','Your datarecord has been successfully updated!');
 			res.redirect('/CreateUpdateRecord');
 		});
 	});

@@ -6,7 +6,8 @@ var dataSchema = mongoose.Schema({
 	RoadNumber: String,
 	DataArray: String,
 	DateCreated: String,
-	DateUpdated: String
-})
+	DateUpdated: String,
+	expiresAt:{type: Date, expires: '7776000s', default: Date.now}
+});
 
 module.exports = mongoose.model('DataRecord', dataSchema);

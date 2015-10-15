@@ -95,3 +95,7 @@ function subcheckboxhide (curr,prev) {
 		curr--;
 	}
 }
+// Uncomment to include backup local copy of bootstrap css
+/*if ($('#TestsIfCDNBootstrapLoadsProperly').is(':visible') === true) {
+    $('<link type="text/css" href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />').appendTo('head');
+};*/

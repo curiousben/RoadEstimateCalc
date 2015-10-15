@@ -8,19 +8,19 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 //to connect to any localhost Database 'mongod://127.0.0.1/mydb'
 //connection to local Mongo Database
-mongoose.connect('mongodb://127.0.0.1/secondevoDB', function(err, db){
-	if (!err) {
-		console.log("Mongo Server port: Connected to App");
+mongoose.connect('mongodb://bsmith13:Sm159293820@apollo.modulusmongo.net:27017/isyve6bA', function(err, db){
+	if (err) {
+		throw err;
 	};
 });
 var port = process.env.PORT || 3000;
+var methodOverride = require('method-override');
 
 var app = express();
 
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-var methodOverride = require('method-override');
 app.use(favicon(__dirname+'/build/favicon.ico'));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
@@ -32,16 +32,12 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(__dirname+'/bower_components'));
 
 //Configuring Passport
-var passport= require('passport');
 var session = require('express-session');
+var flash = require('connect-flash');
 
 app.use(session({secret: 'RoadE5t1mateT00L',
 				saveUninitialized: true,
 				resave: false}));
-app.use(passport.initialize());
-app.use(passport.session());
-
-var flash = require('connect-flash');
 app.use(flash());
 
 app.use(require('node-sass-middleware')({
@@ -50,10 +46,8 @@ app.use(require('node-sass-middleware')({
   debug:true,
 }));
 
-var initPassport = require('./passport/init');
-initPassport(passport);
 
-var routes = require('./routes/index')(passport);
+var routes = require('./routes/index');
 var datarecords = require('./routes/datarecords');
 
 app.use('/', routes);

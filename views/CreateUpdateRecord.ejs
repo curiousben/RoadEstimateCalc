@@ -4,8 +4,10 @@
 	<title>Data Entry</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src='/jquery/dist/jquery.min.js'></script>
-    <script type="text/javascript" src='/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="/jquery/dist/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="https://maxcdn.bootstrap.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
 	<link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
@@ -28,7 +30,7 @@
                         <li><a href="RetrieveRecord">Retrieve a Record</a></li>
                     </ul>
                 </div>
-                <a class="navbar-brand" href="/">Vdot Logo</a>
+                <a class="navbar-brand" href="/">Home</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
                 <ul class="nav navbar-nav">
@@ -61,13 +63,13 @@
     <div class="container" id="Road_Estimate_Tool">
         <div class="col-xs-12">
             <div class='panel panel-primary'>
-                <div class='panel-heading'> User Choice</div>
+                <div class='panel-heading'> Datarecord Management </div>
                 <div class='panel-body'>
                     <div class='button-center-form text-center'>
-                        <button type='button' class='btn btn-warning btn-md' id="CreateFormButton">Create Record <i class="fa fa-plus"></i> </button>
+                        <button type='button' class='btn btn-warning btn-md' id="CreateFormButton"> Create Record <i class="fa fa-plus"></i> </button>
                     </div>
                     <div class='button-center-form text-center'>
-                        <button type='button' class="btn btn-warning btn-md" id='UpdateFormButton'>Update Record <i class='fa fa-pencil'></i></button>
+                        <button type='button' class="btn btn-warning btn-md" id='UpdateFormButton'> Update Record <i class='fa fa-pencil'></i></button>
                     </div>
                 </div>
             </div>
@@ -98,6 +100,11 @@
                             </div>
                             <button type="submit" class="btn btn-warning btn-md">Create Record</button>
                         </form>
+                    <% if (messageC.length > 0) { %>
+                        <div class='panel-footer'>
+                            <%= messageC %>
+                        </div>               
+                    <% } %>
                     </div>
                 </div>
             </div>
@@ -127,6 +134,11 @@
                             </div>
                             <button type="submit" class="btn btn-warning btn-md">Update Record</button>
                         </form>
+                    <% if (messageU.length > 0) { %>
+                        <div class='panel-footer'>
+                            <%= messageU %>
+                        </div>               
+                    <% } %>
                     </div>
                 </div>
             </div>

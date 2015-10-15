@@ -1,6 +1,6 @@
 {
   "name": "roadestimatecalc",
-  "version": "1.0.0",
+  "version": "0.2.2",
   "description": "This project is a Web application for VDOT for Road Estimations. It's actual live version can be found here <http://virginiadot.libguides.com/ben/set>",
   "private": true,
   "scripts": {

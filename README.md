@@ -1,6 +1,4 @@
 # RoadEstimateCalc
-This project is a Web application for VDOT for Road Estimations. It's actual live version can be found here <http://virginiadot.libguides.com/ben/set>
+This project is a Web application for VDOT for Road Estimations. In field engineers and surveyers can use tool to help estimate prices on the fly and can store datarecords for 3 months. A live test version is in the works.
 
-The main idea for the project is to provide engineers in the field a reliable tool for road cost estimmation ranging from Administration
-information, like project number, down to acres moved for road construction. The creator can be reached at 
-benjamin.smith@vdot.virginia.gov
+The web application creator can be reached at: benjamin.smith@VDOT.virginia.gov and the designer/slash creator of this form can be reached at: Chase.Buchanan@VDOT.virginia.gov
