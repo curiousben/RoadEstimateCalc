@@ -9,8 +9,8 @@ var mongoose = require('mongoose');
 //to connect to any localhost Database 'mongod://127.0.0.1/mydb'
 //connection to local Mongo Database
 mongoose.connect('mongodb://bsmith13:Sm159293820@apollo.modulusmongo.net:27017/isyve6bA', function(err, db){
-	if (err) {
-		throw err;
+	if (!err) {
+		console.log("Mongo Server port: Connected to App");
 	};
 });
 var port = process.env.PORT || 3000;
