@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 //to connect to any localhost Database 'mongod://127.0.0.1/mydb'
 //connection to local Mongo Database
-mongoose.connect('mongodb://bsmith13:Sm159293820@ds039404.mongolab.com:39404/roadesttool', function(err, db){
+mongoose.connect('mongodb://127.0.0.1/RoadTestDB', function(err, db){
 	if (!err) {
 		console.log("Mongo Server port: Connected to App");
 	};
