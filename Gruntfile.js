@@ -25,6 +25,16 @@ module.exports=function (grunt)
 				}
 			}
 		},
+		sass:{
+			dist: {
+				options: {
+					style: 'compressed'
+				},
+				files: {
+					'build/css/style.css' : ['scss/style.scss']
+				}
+			}
+		},
 		watch: {
 			minipagescripts: {
 				files: ['js/Minipages/*.js'],
@@ -38,10 +48,14 @@ module.exports=function (grunt)
 				files: ['js/Receipt/*.js'],
 				tasks: ['uglify:braincompress']
 			},
+			sasscompile: {
+				files: ['scss/style.scss'],
+				tasks: ['sass']
+			},
 		},
 	});
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-
-	grunt.registerTask('default', ['uglify','watch']);
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.registerTask('default', ['uglify','sass','watch']);
 };

@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 //to connect to any localhost Database 'mongod://127.0.0.1/mydb'
 //connection to local Mongo Database
-mongoose.connect('mongodb://bsmith13:Sm159293820@apollo.modulusmongo.net:27017/isyve6bA', function(err, db){
+mongoose.connect('mongodb://bsmith13:Sm159293820@ds039404.mongolab.com:39404/roadesttool', function(err, db){
 	if (!err) {
 		console.log("Mongo Server port: Connected to App");
 	};
@@ -39,12 +39,6 @@ app.use(session({secret: 'RoadE5t1mateT00L',
 				saveUninitialized: true,
 				resave: false}));
 app.use(flash());
-
-app.use(require('node-sass-middleware')({
-  src: path.join(__dirname, 'build'),
-  dest: path.join(__dirname, 'build'),
-  debug:true,
-}));
 
 
 var routes = require('./routes/index');
