@@ -13,7 +13,7 @@ mongoose.connect('mongodb://127.0.0.1/RoadTestDB', function(err, db){
 		console.log("Mongo Server port: Connected to App");
 	};
 });
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 3000;
 var methodOverride = require('method-override');
 
 var app = express();
