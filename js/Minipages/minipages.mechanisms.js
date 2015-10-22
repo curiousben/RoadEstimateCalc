@@ -92,33 +92,33 @@ $('#regionreset').click(function() {
 			$('#pceiinput').val($('#pcei').slider("value"));
 			break;
 		case 'NOVA':
-			var districttwo=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+			var districttwo=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000];
 			for (var i = dataidarr.length - 1; i >= 0; i--) {
 				localStorage.setItem(dataidarr[i],districttwo[i]);
 				document.getElementById(dataidarr[i]).value=districttwo[i];
 			};
-			localStorage.setItem("pcei",51);
-			$("#pcei").slider("option", "value", 51);
+			localStorage.setItem("pcei",20);
+			$("#pcei").slider("option", "value", 20);
 			$('#pceiinput').val($('#pcei').slider("value"));
 			break;
 		case 'HamptonRoads':
-			var districtthree=[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2];
+			var districtthree=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000];
 			for (var i = dataidarr.length - 1; i >= 0; i--) {
 				localStorage.setItem(dataidarr[i],districtthree[i]);
 				document.getElementById(dataidarr[i]).value=districtthree[i];
 			};
-			localStorage.setItem("pcei",52);
-			$("#pcei").slider("option", "value", 52);
+			localStorage.setItem("pcei",20);
+			$("#pcei").slider("option", "value", 20);
 			$('#pceiinput').val($('#pcei').slider("value"));
 			break;
 		case 'FredericksburgRichmond':
-				districtfour=[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3];
+				districtfour=[20000,17,15,17,20,40,125,250,300,4000,35,110,100,90,20,25,400,2000,5000,10000,2000,90,15,4,500,75,300000,0,25,2500,2000,300,18,700,75000];
 			for (var i = dataidarr.length - 1; i >= 0; i--) {
 				localStorage.setItem(dataidarr[i],districtfour[i]);
 				document.getElementById(dataidarr[i]).value=districtfour[i];
 			};
-			localStorage.setItem("pcei",53);
-			$("#pcei").slider("option", "value", 53);
+			localStorage.setItem("pcei",20);
+			$("#pcei").slider("option", "value", 20);
 			$('#pceiinput').val($('#pcei').slider("value"));
 			break;
 		default:

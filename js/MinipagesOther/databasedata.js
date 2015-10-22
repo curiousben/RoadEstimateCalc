@@ -90,6 +90,7 @@ $(document).ready(function(){
 			CreateDA=document.getElementsByName('CreateDataArray')[0].value;
 
 		$.ajax({
+			async: false,
 			url: '/datarecords',
 			type: 'POST',
 			dataType: 'application/json',
@@ -124,6 +125,7 @@ $(document).ready(function(){
 			UpdateDA=document.getElementsByName('UpdateDataArray')[0].value;
 
 		$.ajax({
+			async: false,
 			url: '/datarecords/Estimator='+UpdateEsti+'&&UPC='+UpdateUPC+'&&RoadNumber='+UpdateRoadNumber+'',
 			type: 'PUT',
 			dataType: 'application/json',
