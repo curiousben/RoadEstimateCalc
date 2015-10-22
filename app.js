@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var helmet = require('helmet');
 
 var mongoose = require('mongoose');
 //to connect to any localhost Database 'mongod://127.0.0.1/mydb'
@@ -14,7 +15,6 @@ mongoose.connect('mongodb://127.0.0.1/RoadTestDB', function(err, db){
 	};
 });
 var port = process.env.PORT || 3000;
-var methodOverride = require('method-override');
 
 var app = express();
 
@@ -22,7 +22,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(favicon(__dirname+'/build/favicon.ico'));
-app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -39,7 +38,7 @@ app.use(session({secret: 'RoadE5t1mateT00L',
 				saveUninitialized: true,
 				resave: false}));
 app.use(flash());
-
+app.use(helmet());
 
 var routes = require('./routes/index');
 var datarecords = require('./routes/datarecords');

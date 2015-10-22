@@ -8,6 +8,8 @@
     <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="/jquery/dist/jquery.min.js"><\/script>')</script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
 	<link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
@@ -79,7 +81,7 @@
                 <div class="panel panel-success">
                     <div class="panel-heading">Create a Road Estimate Record</div>
                     <div class="panel-body">
-                        <form action="/datarecords/CreateRecord" method="POST">
+                        <form id='CreateForm'>
                             <div class="form-group">
                                 <!-- type=hidden && readonly input Attribute as well as div with id of user -->
                                 <label>Estimator</label>
@@ -99,6 +101,7 @@
                                 <input type="hidden" name="CreateUTime" required>
                             </div>
                             <button type="submit" class="btn btn-warning btn-md">Create Record</button>
+                            <button class='btn btn-primary' type='button' data-toggle="modal" data-target="#FormQA"><span>&#63;</span></button>
                         </form>
                     <% if (messageC.length > 0) { %>
                         <div class='panel-footer'>
@@ -114,7 +117,7 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">Update a Road Estimate Record</div>
                     <div class="panel-body">
-                        <form action="/datarecords/UpdateRecord?_method=PUT" method="POST">
+                        <form id='UpdateForm'>
                             <div class="form-group">
                                 <!-- type=hidden && readonly input Attribute as well as div with id of user -->
                                 <label>Estimator</label>
@@ -133,6 +136,7 @@
                                 <input type="hidden" name="UpdateTimeStamp" required>
                             </div>
                             <button type="submit" class="btn btn-warning btn-md">Update Record</button>
+                            <button class='btn btn-primary' type='button' data-toggle="modal" data-target="#FormQA"><span>&#63;</span></button>
                         </form>
                     <% if (messageU.length > 0) { %>
                         <div class='panel-footer'>
@@ -142,6 +146,23 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- Modal for Proposed Year -->
+    <div class="modal fade" id="FormQA" tabindex="-1" role="dialog" aria-labelledby="FormQALabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="FormQALabel">Create/Update Form</h4>
+          </div>
+            <div class="modal-body">
+            When you Create or Update a form a snapshot of the data you have entered is then gathered and stored in the database with your name, UPC number, and Route number. This record is stored on the database for 3 months and then it is automatically deleted. Make sure to fill out ALL of the information on each form.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
         </div>
     </div>
 </body>

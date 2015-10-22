@@ -1,10 +1,16 @@
+//
+//================ Sliders that use jQuery UI ================//
+//
+
+// Incase of a blank value in localStorage so the slider doesn't read null
 function numberleftblank (num) {
     if (num) {
         return num;
     } else{
-        return 1;
+        return 5;
     };
 }
+
 $(function () {
 	$('#GIPercent').slider({
 		value: numberleftblank(localStorage.getItem('GIPercent')),

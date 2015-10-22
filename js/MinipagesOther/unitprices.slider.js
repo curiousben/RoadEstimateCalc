@@ -1,3 +1,15 @@
+//
+//================ Sliders that use jQuery UI for Unit Prices Page ================//
+//
+
+function numberleftblank (num) {
+    if (num) {
+        return num;
+    } else{
+        return 1;
+    };
+}
+
 $(function () {	
 	$('#pcei').slider({
 		value: numberleftblank(localStorage.getItem('pcei')),

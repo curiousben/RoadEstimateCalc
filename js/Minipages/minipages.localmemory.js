@@ -1,3 +1,7 @@
+//
+//================ How the App prefills input boxes with data ================
+//
+
 $(document).ready(function(){
 
 	var inp_pres = $.contains(document.body,$("#Road_Estimate_Tool input")[0]),
@@ -29,36 +33,9 @@ $(document).ready(function(){
 				if (jQuery.inArray(inp_dat_arr[i],che_dat_arr)>=0) {
 					// If the particular master array element is same as the checkbox input type then this gets executed
 					if (localStorage.getItem(inp_dat_arr[i])=='true') {
-						document.getElementById(inp_dat_arr[i]).checked=true;
 						// Only the checkbox that are checked in the local storage then the DOM checkbox gets updated
-						if (inp_dat_arr[i]=='SCI2') {
-							var sub_che_dat_arr=[];//An array of sub checkboxs
-							$('#checkbox1').toggle(false);
-							$('#checkbox2').toggle('swing')
-							$('#checkbox2 input[type="checkbox"]').each(function() {
-								//Gathers all of the sub checkboxs
-								if (localStorage.getItem($(this).attr('id'))=='true') {
-									$(this).prop('checked',true);
-									$('#checkbox2 input[type="checkbox"]').not(this).prop('checked', function (){
-										$(this).prop('checked',false);
-									});
-									//Pulls only the checkbox that is checked and makes all the others false
-									var checkedsubbox=$(this).attr('id');
-									subcheckboxhide(checkedsubbox.slice(-1),false);
-									//Takes the checked subcheckbox and takes the last letter of it's id (how many boxes it needs to unvail) and uses
-									//that in the checkbox hide function.
-								};
-							});
-							var sub_inp_dat_arr=[];
-							$('#subcheckboxinput input').each(function() {
-								document.getElementById($(this).attr('id')).value=localStorage.getItem($(this).attr('id'));
-							});
-						} 
-						// This true block is for the sub selection in the connections tab it is hardwired to hide the first checkbox window and find the only checked checkbox and makes all other checkboxs not checked
-						else {
-							checkboxhide(inp_dat_arr[i].slice(-1),false);
-						};
-						
+						document.getElementById(inp_dat_arr[i]).checked=true;
+						checkboxhide(inp_dat_arr[i].slice(-1),false);
 					}
 					else
 					{
@@ -109,67 +86,3 @@ $(document).ready(function(){
 		//Gos through the array of all TEXTAREA ID's and looks to see if there exists data attached to that ID. If not it moves on to the next one
 	};
 })
-
-function numberleftblank (num) {
-    if (num) {
-        return num;
-    } else{
-        return 1;
-    };
-}
-
-function basicinputmemory () {
-	localStorage.setItem(this.id,this.value);
-}
-
-function checkboxmemory () {
-	var previouscheck,currentcheck;
-		currentcheck=($(this).prop('id')).slice(-1);
-		options=($(this).prop('id')).slice(0,1);
-		localStorage.setItem($(this).prop('id'),$(this).prop('checked'));
-
-    $('#Road_Estimate_Tool input[type="checkbox"]').not(this).prop('checked', function () {
-		if ($(this).prop('checked')) {
-			previouscheck=($(this).prop('id')).slice(-1);
-		};   	
-	   	$(this).prop('checked',false);
-	   	localStorage.setItem($(this).prop('id'),false);
-  	});
-  	if (options == 'C' || options == 'F') {
-  		checkboxhide(currentcheck,previouscheck);
-  	}
-  	else{
-  		$('#checkbox1').toggle(false);
-  		$('#checkbox2').toggle('swing');
-  	};
-		
-}
-function subcheckboxmemory () {
-	var previouscheck,currentcheck;
-		currentcheck=($(this).prop('id')).slice(-1);
-		localStorage.setItem($(this).prop('id'),$(this).prop('checked'));
-
-    $('#subconnectionselection input[type="checkbox"]').not(this).prop('checked', function () {
-		if ($(this).prop('checked')) {
-			previouscheck=($(this).prop('id')).slice(-1);
-		};   	
-	   	$(this).prop('checked',false);
-	   	localStorage.setItem($(this).prop('id'),false);
-  	});
-  	subcheckboxhide(currentcheck,previouscheck);
-}
-//what function is called when the INPUT and SELECT type of inputs are interacted with
-
-$( "#Road_Estimate_Tool input" ).bind('keyup mouseup', basicinputmemory);
-
-$( "#Road_Estimate_Tool textarea" ).bind('keyup mouseup', basicinputmemory);
-
-$( "#Road_Estimate_Tool select" ).bind('change',function () {
-	localStorage.setItem(this.id,this.options[this.selectedIndex].value);
-});
-
-$('#Road_Estimate_Tool input[type="checkbox"]').on('change',checkboxmemory);
-
-$('#subconnectionselection input[type="checkbox"]').on('change', subcheckboxmemory);
-
-$("#subcheckboxinput input").bind('keyup mouseup', basicinputmemory);

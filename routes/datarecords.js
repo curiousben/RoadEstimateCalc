@@ -2,7 +2,7 @@ var DataRecord = require('./models/datarecord');
 var express = require('express');
 var router = express.Router();
 
-router.post('/CreateRecord', function (req,res){
+router.post('/', function (req,res){
 	var newDataRecord = new DataRecord();
 	newDataRecord.Estimator = req.body.CreateEstimator;
 	newDataRecord.UPC = req.body.CreateUPC;
@@ -19,8 +19,8 @@ router.post('/CreateRecord', function (req,res){
 	res.redirect('/CreateUpdateRecord');
 });
 
-router.put('/UpdateRecord', function (req,res) {
-	DataRecord.findOne({'Estimator': req.body.UpdateEstimator,'UPC': req.body.UpdateUPC, 'RoadNumber': req.body.UpdateRoadNumber}, function (err, dataset){
+router.put('/Estimator=:Estimator&&UPC=:UPC&&RoadNumber=:RoadNumber', function (req,res) {
+	DataRecord.findOne({'Estimator': req.params.Estimator,'UPC': req.params.UPC, 'RoadNumber': req.params.RoadNumber}, function (err, dataset){
 		if (err) {
 			throw err;
 		};
@@ -46,7 +46,7 @@ router.get('/',function (req,res){
 	});
 });
 
-router.get('/Estimator/:Estimator', function (req,res){
+router.get('/Estimator=:Estimator', function (req,res){
 	DataRecord.find({"Estimator":req.params.Estimator}).exec(function (err, datasets) {
 		if (err) {
 			throw err;
@@ -55,7 +55,7 @@ router.get('/Estimator/:Estimator', function (req,res){
 	})
 })
 
-router.get('/UPC/:UPC', function (req,res){
+router.get('/UPC=:UPC', function (req,res){
 	DataRecord.find({"UPC":req.params.UPC}).exec(function (err, datasets) {
 		if (err) {
 			throw err;
@@ -64,7 +64,7 @@ router.get('/UPC/:UPC', function (req,res){
 	})
 })
 
-router.get('/RoadNumber/:RoadNumber', function (req, res){
+router.get('/RoadNumber=:RoadNumber', function (req, res){
 	DataRecord.find({"RoadNumber":req.params.RoadNumber}).exec(function (err, datasets) {
 		if (err) {
 			throw err;
@@ -73,7 +73,7 @@ router.get('/RoadNumber/:RoadNumber', function (req, res){
 	});
 });
 
-router.get('/Estimator&&UPC/:Estimator&&:UPC', function (req, res){
+router.get('/Estimator=:Estimator&&UPC=:UPC', function (req, res){
 	DataRecord.find({"Estimator":req.params.Estimator,"UPC":req.params.UPC}).exec(function (err, datasets) {
 		if (err) {
 			throw err;
@@ -82,7 +82,7 @@ router.get('/Estimator&&UPC/:Estimator&&:UPC', function (req, res){
 	});
 });
 
-router.get('/UPC&&RoadNumber/:UPC&&:RoadNumber', function (req,res){
+router.get('/UPC=:UPC&&RoadNumber=:RoadNumber', function (req,res){
 	DataRecord.find({'UPC': req.params.UPC, 'RoadNumber':req.params.RoadNumber}).exec(function (err, datasets) {
 		if (err) {
 			throw err;
@@ -91,7 +91,7 @@ router.get('/UPC&&RoadNumber/:UPC&&:RoadNumber', function (req,res){
 	});
 });
 
-router.get('/Estimator&&RoadNumber/:Estimator&&:RoadNumber', function (req,res){
+router.get('/Estimator=:Estimator&&RoadNumber=:RoadNumber', function (req,res){
 	DataRecord.find({'Estimator': req.params.Estimator, 'RoadNumber': req.params.RoadNumber}).exec(function (err, datasets){
 		if (err) {
 			throw err;
@@ -100,7 +100,7 @@ router.get('/Estimator&&RoadNumber/:Estimator&&:RoadNumber', function (req,res){
 	});
 });
 
-router.get('/Estimator&&UPC&&RoadNumber/:Estimator&&:UPC&&:RoadNumber', function (req,res){
+router.get('/Estimator=:Estimator&&UPC=:UPC&&RoadNumber=:RoadNumber', function (req,res){
 	DataRecord.find({'Estimator': req.params.Estimator,'UPC': req.params.UPC, 'RoadNumber': req.params.RoadNumber}).exec(function (err, datasets){
 		if (err) {
 			throw err;

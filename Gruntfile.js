@@ -49,7 +49,7 @@ module.exports=function (grunt)
 				tasks: ['uglify:braincompress']
 			},
 			sasscompile: {
-				files: ['scss/style.scss'],
+				files: ['scss/style.scss','scss/partials/*.scss'],
 				tasks: ['sass']
 			},
 		},

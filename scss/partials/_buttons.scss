@@ -44,8 +44,18 @@
 	.wholechkboxstyl{
 		width: 100%;
 	}
+
+    #CalcButton {
+        width: 50%;
+    }
+
 	#PDFButton{
-    	display: none;
+    	position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        float: left;
+        width: 50%;
     }
     #PrintButton {
     	display: none;
@@ -54,7 +64,12 @@
 @media (min-width: 768px) and (max-width: 991px) { 
 
 	#PDFButton{
-    	display: none;
+    	position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        float: left;
+        width: 50%;
     }
     #PrintButton {
     	display: none;

@@ -1,3 +1,15 @@
+//
+//================ Sliders that use jQuery UI for ProposedRoadway Page ================//
+//
+
+function numberleftblank (num) {
+    if (num) {
+        return num;
+    } else{
+        return 1;
+    };
+}
+
 $(function () {	
 	$('#NewHorizontalAlignment').slider({
 		value: numberleftblank(localStorage.getItem('NewHorizontalAlignment')),
