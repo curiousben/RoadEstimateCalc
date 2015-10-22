@@ -35,7 +35,7 @@ $(document).ready(function(){
 	}
 
 //
-//================ Create and Update Window Mechanism ================//
+//================ Create and Update Window Mechanism and Last Imported Record Info================//
 //
 
 	var windowdown=0;
@@ -55,6 +55,12 @@ $(document).ready(function(){
 		};
 	});
 
+	$('#LastImportInfo').click(function(event) {
+		document.getElementsByName('UpdateEstimator')[0].value=localStorage.getItem('UpdateEstimator');
+		document.getElementsByName('UpdateUPC')[0].value=localStorage.getItem('UpdateUPC');
+		document.getElementsByName('UpdateRoadNumber')[0].value=localStorage.getItem('UpdateRoadNumber');
+	});
+
 //
 //================ This prefills hidden form input boxes for the Creation of a record ================//
 //
@@ -67,9 +73,6 @@ $(document).ready(function(){
 //================ This prefills form input boxes for Updating record ================//
 //
 
-	document.getElementsByName('UpdateEstimator')[0].value=localStorage.getItem('UpdateEstimator');
-	document.getElementsByName('UpdateUPC')[0].value=localStorage.getItem('UpdateUPC');
-	document.getElementsByName('UpdateRoadNumber')[0].value=localStorage.getItem('UpdateRoadNumber');
 	document.getElementsByName('UpdateTimeStamp')[0].value=TimeStamp();
 	document.getElementsByName('UpdateDataArray')[0].value=JSON.stringify(DataArray);
 

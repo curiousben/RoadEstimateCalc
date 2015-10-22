@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var helmet = require('helmet');
 
 var mongoose = require('mongoose');
-//to connect to any localhost Database 'mongod://127.0.0.1/mydb'
 //connection to local Mongo Database
 mongoose.connect('mongodb://127.0.0.1/RoadTestDB', function(err, db){
 	if (!err) {

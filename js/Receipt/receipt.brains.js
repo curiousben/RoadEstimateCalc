@@ -1,5 +1,3 @@
-//auto resize text (font size) when resizing window?
-
 //
 //
 //
