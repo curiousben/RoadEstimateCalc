@@ -511,8 +511,10 @@ function MainofTraffic()
         return 1000000;
     } else if (x == "9") {
         return 2000000;
-    } else {
+    } else if (x == "10"){
         return 4000000;
+    } else {
+        return 0;
     }
 }
 function FieldOffice()

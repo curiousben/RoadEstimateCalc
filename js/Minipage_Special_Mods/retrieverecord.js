@@ -164,6 +164,4 @@ var EstimatorListData = [],
 			localStorage.setItem('UpdateRoadNumber',thisEstiObject.RoadNumber);
 		};
 	});
-
-
 });

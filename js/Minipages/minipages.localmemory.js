@@ -74,9 +74,11 @@ $(document).ready(function(){
 
 		$('#Road_Estimate_Tool textarea').each(function(){
 			tex_dat_arr.push($(this).attr('id'));
-			expandTextarea(tex_dat_arr.length-1,$(this).attr('id'));
 		});
 		//Grabs each TEXTAREA data type ID
+		
+		// Adds 5 eventlisteners to textareas so they are responsive
+		expandTextarea(tex_dat_arr.length-1);
 
 		for (var i = tex_dat_arr.length - 1; i >= 0; i--) {
 			if (localStorage.getItem(tex_dat_arr[i])!= null) {

@@ -7,16 +7,18 @@ module.exports=function (grunt)
 			},
 			minipagecompress: {
 				files: {
-					'build/js/minipages.min.js': ['js/Minipages/*.js']
+					'build/js/minipages.min.js' :['js/Minipages/*.js']
 				}
 			},
-			minipagecompressothers:{
+			minipagespecialmodcompress:{
 				files: {
-					'build/js/contingency.sliders.min.js': ['js/MinipagesOther/contingency.sliders.js'],
-					'build/js/proposedroadway.slider.min.js': ['js/MinipagesOther/proposedroadway.slider.js'],
-					'build/js/unitprices.slider.min.js' :['js/MinipagesOther/unitprices.slider.js'],
-					'build/js/databasedata.min.js' :['js/MinipagesOther/databasedata.js'],
-					'build/js/global.min.js' :['js/MinipagesOther/global.js']
+					'build/js/minipage.contingency.min.js' :['js/Minipage_Special_Mods/contingency.sliders.js'],
+					'build/js/minipage.proposedroadway.min.js' :['js/Minipage_Special_Mods/proposedroadway.slider.js','js/Minipages/*.js'],
+					'build/js/minipage.unitprices.min.js' :['js/Minipage_Special_Mods/unitprices.slider.js','js/Minipage_Special_Mods/unitprices.regionalprices.js','js/Minipages/*.js'],
+					'build/js/minipage.traffic.min.js' :['js/Minipage_Special_Mods/traffic.window.resize.js','js/Minipages/*.js'],
+					'build/js/minipage.miscellaneous.min.js' :['js/Minipage_Special_Mods/miscellaneous.window.resize.js','js/Minipages/*.js'],
+					'build/js/createupdaterecord.min.js' :['js/Minipage_Special_Mods/createupdaterecord.js'],
+					'build/js/retrieverecord.min.js' :['js/Minipage_Special_Mods/retrieverecord.js']
 				}
 			},
 			braincompress: {
@@ -41,8 +43,8 @@ module.exports=function (grunt)
 				tasks: ['uglify:minipagecompress']
 			},
 			minipagescriptsother: {
-				files: ['js/MinipagesOther/*.js'],
-				tasks: ['uglify:minipagecompressothers']
+				files: ['js/Minipage_Special_Mods/*.js'],
+				tasks: ['uglify:minipagespecialmodcompress']
 			},
 			brainsscripts: {
 				files: ['js/Receipt/*.js'],
