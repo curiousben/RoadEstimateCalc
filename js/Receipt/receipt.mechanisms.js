@@ -1,4 +1,4 @@
-window.onload = function () {
+$(document).ready(function() {
     $("#calc").click( function () {
         GrandTotal();
     })
@@ -8,4 +8,4 @@ window.onload = function () {
     $('#pdfdown').click(function() {
         pdfg();
     });    
-}
+});
