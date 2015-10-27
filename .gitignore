@@ -44,5 +44,5 @@ Temporary Items
 
 # Frameworks
 node_modules/
-bower_components/
+build/components/
 .sass-cache/
