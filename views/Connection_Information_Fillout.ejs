@@ -8,10 +8,16 @@
     <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="/jquery/dist/jquery.min.js"><\/script>')</script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
-    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="hide" id="TestsIfCDNBootstrapLoadsProperly"></div>
+    <script type="text/javascript">
+    if ($('#TestsIfCDNBootstrapLoadsProperly').is(':visible') === true) {
+        $('<link type="text/css" href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />').appendTo('head');
+    };
+    </script>
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">

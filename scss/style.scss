@@ -9,7 +9,12 @@ input {
 }
 
 a {
-	color: $white;
+	&.link {
+		color: $white;
+	}
+	&.label_link {
+		color: $labelgrey;
+	}
 }
 
 #Label_Me {

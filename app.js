@@ -25,11 +25,13 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-//App is able to grab javascript packages locally
+
+//App is able to grab javscript, css, and images
 app.use(express.static(path.join(__dirname, 'build')));
+
+//App is able to grab javascript packages locally like jQuery, bootstrap, etc. if the CDN fails
 app.use(express.static(__dirname+'/bower_components'));
 
-//Configuring Passport
 var session = require('express-session');
 var flash = require('connect-flash');
 

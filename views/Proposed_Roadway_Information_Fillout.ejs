@@ -12,10 +12,16 @@
     <script type="text/javascript" src="/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
-    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="hide" id="TestsIfCDNBootstrapLoadsProperly"></div>
+    <script type="text/javascript">
+    if ($('#TestsIfCDNBootstrapLoadsProperly').is(':visible') === true) {
+        $('<link type="text/css" href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />').appendTo('head');
+    };
+    </script>
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -70,7 +76,7 @@
                     <a href="ExistingBridge"><button class="btn btn-info pull-left"><i class="glyphicon glyphicon-menu-left glyphicon-spacing"></i>Prev</button></a>
                 </div>
                 <div class="col-xs-6">
-                    <a href="http://www.extranet.vdot.state.va.us/locdes/Electronic_Pubs/2005%20RDM/appenda.pdf">Proposed Roadway</a> 
+                    <a class='link' href="http://www.extranet.vdot.state.va.us/locdes/Electronic_Pubs/2005%20RDM/appenda.pdf">Proposed Roadway</a> 
                 <button class="btn btn-default" data-toggle="modal" data-target="#PropRHeader">&#63;</button>
                 </div>
                 <div class="col-xs-3">

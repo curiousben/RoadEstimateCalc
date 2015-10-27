@@ -1,5 +1,17 @@
+/*
+*
+* DISCLAIMER:
+* The contents of this web application do not nessarily reflect the offical 
+* views or policies of the Virginia Department of Transportation, the 
+* Commonwealth Transportation Board, or the Federal Highway Administration.
+* This weeb app does not constitue a standard, specification, or regulation.
+* Any inclusion of manufacturer names, trade names, or trademarksis for 
+* identification purposes only and is not to be considered an endorsement.
+* 
+*/
+
 //
-//================ All types of input that the User can interact and their associated functions ================//
+// <================ All types of input that the User can interact and their associated functions ================>
 //
 
 $( "#Road_Estimate_Tool input" ).bind('keyup mouseup', basicinputmemory);
@@ -57,15 +69,10 @@ function expandTextarea(num) {
 }
 
 //
-//================ The final button that clears the whole device of data on index.ejs within the modal window ================//
+// <================ The final button that clears the whole device of data on index.ejs within the modal window ================>
 //
 
 $('#memclrchoice').click(function() {
 	$('#ResetAllData').modal('hide');
 	localStorage.clear();
 	});
-
-// Uncomment to include backup local copy of bootstrap css
-/*if ($('#TestsIfCDNBootstrapLoadsProperly').is(':visible') === true) {
-    $('<link type="text/css" href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />').appendTo('head');
-};*/

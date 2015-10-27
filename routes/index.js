@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-//=========================== Individual Page Paths for the Web App ===========================
+// <=========================== Individual Page Paths for the Web App ===========================>
 
 router.get('/', function (req,res){
 	res.render('index.ejs');

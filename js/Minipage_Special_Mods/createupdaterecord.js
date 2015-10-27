@@ -1,7 +1,18 @@
-$(document).ready(function(){
+/*
+*
+* DISCLAIMER:
+* The contents of this web application do not nessarily reflect the offical 
+* views or policies of the Virginia Department of Transportation, the 
+* Commonwealth Transportation Board, or the Federal Highway Administration.
+* This weeb app does not constitue a standard, specification, or regulation.
+* Any inclusion of manufacturer names, trade names, or trademarksis for 
+* identification purposes only and is not to be considered an endorsement.
+* 
+*/
 
+$(document).ready(function(){
 //
-//================ Calculations ================//
+// <================ Calculations ================>
 //
 
 	//The Data Record
@@ -35,7 +46,7 @@ $(document).ready(function(){
 	}
 
 //
-//================ Create and Update Window Mechanism and Last Imported Record Info================//
+// <================ Create and Update Window Mechanism and Last Imported Record Info ================>
 //
 
 	var windowdown=0;
@@ -62,7 +73,7 @@ $(document).ready(function(){
 	});
 
 //
-//================ This prefills hidden form input boxes for the Creation of a record ================//
+// <================ This prefills hidden form input boxes for the Creation of a record ================>
 //
 
 	document.getElementsByName('CreateCTime')[0].value=TimeStamp();
@@ -70,14 +81,14 @@ $(document).ready(function(){
 	document.getElementsByName('CreateDataArray')[0].value=JSON.stringify(DataArray);
 
 //
-//================ This prefills form input boxes for Updating record ================//
+// <================ This prefills form input boxes for Updating record ================>
 //
 
 	document.getElementsByName('UpdateTimeStamp')[0].value=TimeStamp();
 	document.getElementsByName('UpdateDataArray')[0].value=JSON.stringify(DataArray);
 
 //
-//================ Create Form AJAX call ================//
+// <================ Create Form AJAX call ================>
 //
 
 	$('#CreateForm').submit(function (e) {
@@ -113,7 +124,7 @@ $(document).ready(function(){
 		
 	});
 //
-//================ Update Form AJAX call ================//
+// <================ Update Form AJAX call ================>
 //
 
 	$('#UpdateForm').submit(function (e) {
@@ -144,7 +155,7 @@ $(document).ready(function(){
 	});
 
 //================ CHECK LIVE COPY WITH PHONE ================//
-//================ Required Attribute Not work in Safari Browser ================//
+// <================ Required Attribute Not work in Safari Browser ================>
 //
 //the check if the update holds {git pull origin master}
 //	console.log($('form'));

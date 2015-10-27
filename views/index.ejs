@@ -8,11 +8,16 @@
     <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="/jquery/dist/jquery.min.js"><\/script>')</script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
-    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="/images/14916.ico">-->
 </head>
 <body>
+    <div class="hide" id="TestsIfCDNBootstrapLoadsProperly"></div>
+    <script type="text/javascript">
+    if ($('#TestsIfCDNBootstrapLoadsProperly').is(':visible') === true) {
+        $('<link type="text/css" href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />').appendTo('head');
+    };
+    </script>
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -65,7 +70,7 @@
             <!--panel-->
             <div class="panel panel-info">
                 <div class="panel-heading">Bristol District L&D Scoping Estimaing Tool</div>
-                <div class="panel-body"><p>This is a tool dependent on quality engineering estimates of quantities. <u><b>This tool should NOT be used as a substitute for field oberservation estimate.</b></u> The overall cost of a project can be modified by adjusting the itemized contingency percentages in the Contingency Tab. Also, the Earthwork Quantity formulas are conservative estimates. If you have any questions regarding the estimating tool contact Chase Buchanan at 276-645-4878</p></div>
+                <div class="panel-body"><p>This is a tool dependent on quality engineering estimates of quantities. <u><b>This tool should NOT be used as a substitute for field oberservation estimate.</b></u> The overall cost of a project can be modified by adjusting the itemized contingency percentages in the Contingency Tab. Also, the Earthwork Quantity formulas are conservative estimates. If you have any questions regarding the estimating tool contact Chase Buchanan at 696-3251</p></div>
             </div>
         </div>
 

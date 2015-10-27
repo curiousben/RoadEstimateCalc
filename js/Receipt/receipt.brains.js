@@ -1,7 +1,23 @@
+/*
+*
+* DISCLAIMER:
+* The contents of this web application do not nessarily reflect the offical 
+* views or policies of the Virginia Department of Transportation, the 
+* Commonwealth Transportation Board, or the Federal Highway Administration.
+* This weeb app does not constitue a standard, specification, or regulation.
+* Any inclusion of manufacturer names, trade names, or trademarksis for 
+* identification purposes only and is not to be considered an endorsement.
+* 
+*/
+
+//
+// <================ The Hard Calculations that the Reciept consumes ================>
+//
+
 //
 //
 //
-// <================= Grading Items =================>
+// <================ Grading Items ================>
 //
 //
 //
@@ -316,7 +332,7 @@ var crml = numberleftblank(localStorage.getItem("CommercialRockMaterialLength"))
 //
 //
 //
-// <================= Drainage Items =================>
+// <================ Drainage Items ================>
 //
 //
 //
@@ -353,7 +369,7 @@ var lcg = numberleftblank(localStorage.getItem("LengthofCG"));
 //
 //
 //
-// <================= Pavement Items =================>
+// <================ Pavement Items ================>
 //
 //
 //
@@ -430,7 +446,7 @@ var prl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
 //
 //
 //
-// <================= Incidental Items =================>
+// <================ Incidental Items ================>
 //
 //
 //
@@ -486,7 +502,7 @@ var c = numberleftblank(localStorage.getItem("Commercial"));
 //
 //
 //
-// <================= Protective Items =================>
+// <================ Protective Items ================>
 //
 //
 //
@@ -531,7 +547,7 @@ var rwh = numberleftblank(localStorage.getItem("SidewalkLength"));
 //
 //
 //
-// <================= Erosion Control =================>
+// <================ Erosion Control ================>
 //
 //
 //
@@ -568,7 +584,7 @@ var prwl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
 //
 //
 //
-// <================= Utilies =================>
+// <================ Utilies ================>
 //
 //
 //
@@ -581,7 +597,7 @@ var uiw = numberleftblank(localStorage.getItem("UtilWater"));
 //
 //
 //
-// <================= Traffic and Safety =================>
+// <================ Traffic and Safety ================>
 //
 //
 //
@@ -613,7 +629,7 @@ var pbf = numberleftblank(localStorage.getItem("ProposedBridgeNoOfFOAs"));
 //
 //
 //
-// <================= Bridge =================>
+// <================ Bridge ================>
 //
 //
 //
@@ -632,7 +648,7 @@ var   bm = numberleftblank(localStorage.getItem("ExistingBridgeLength"));
 //
 //
 //
-// <================= Stream/Wetland Mitigation that is included in construction =================>
+// <================ Stream/Wetland Mitigation that is included in construction ================>
 //
 //
 //
@@ -649,7 +665,7 @@ var   mw = numberleftblank(localStorage.getItem("MitigationWetland"));
 //
 //
 //
-// <================= Sub-Totals =================>
+// <================ Sub-Totals ================>
 //
 //
 //
@@ -968,7 +984,7 @@ function MiscellaneousItems() {
 //
 //
 //
-// <================= Grand Totals =================>
+// <================ Grand Totals ================>
 //
 //
 //
@@ -1032,7 +1048,7 @@ function curtime() {
 //
 //
 //
-// <================= Miscellaneous functions =================>
+// <================ Miscellaneous functions ================>
 //
 //
 //

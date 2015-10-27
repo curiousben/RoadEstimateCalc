@@ -8,6 +8,7 @@ var dataSchema = mongoose.Schema({
 	DateCreated: String,
 	DateUpdated: String,
 	expiresAt:{type: Date, expires: '7776000s', default: Date.now}
+	// Each record lasts for 3 months
 });
 
 module.exports = mongoose.model('DataRecord', dataSchema);

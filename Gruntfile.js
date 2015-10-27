@@ -1,9 +1,10 @@
 module.exports=function (grunt) 
 {
 	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
 			options: {
-				manage: true
+				banner:'/* <%= pkg.name %> v<%= pkg.version %> | 2015 Virginia Transportation Research Council */\n'
 			},
 			minipagecompress: {
 				files: {

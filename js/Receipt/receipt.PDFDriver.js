@@ -1,3 +1,19 @@
+/*
+*
+* DISCLAIMER:
+* The contents of this web application do not nessarily reflect the offical 
+* views or policies of the Virginia Department of Transportation, the 
+* Commonwealth Transportation Board, or the Federal Highway Administration.
+* This weeb app does not constitue a standard, specification, or regulation.
+* Any inclusion of manufacturer names, trade names, or trademarksis for 
+* identification purposes only and is not to be considered an endorsement.
+* 
+*/
+
+//
+// <================ The PDF that the PDFMaker creates ================>
+//
+
 function pdfg() 
 {
 var roadestimate = 
@@ -111,7 +127,7 @@ var roadestimate =
                                              [{ text: 'Item', style: 'tableHeader', alignment: 'center'},{ text: 'Unit', style: 'tableHeader', alignment: 'center'}, { text: 'Quantity', style: 'tableHeader', alignment: 'center'},{ text: 'Percentage', style: 'tableHeader', alignment: 'center'},{ text: 'Amount', style: 'tableHeader', alignment: 'center'}],                                        
                                              ['CEI of at least 20% as a lump Sum Item','LS','1',''+numberleftblankcomma(localStorage.getItem("pcei"))+'%','$'+numberleftblankcomma(CEIContigency()[1].toFixed())+''],
                                              ['Project Contingency',{ colSpan: 3,text: ''+CEIContigency()[0]+''},'','','$'+numberleftblankcomma(CEIContigency()[2].toFixed())+''],
-                                             [{ text: 'GrandTotal', style: 'tableHeader', colSpan: 4, alignment: 'center' },{},{},{},{text:'$'+numberleftblankcomma(GrandTotal())+''}]
+                                             [{ text: 'GrandTotal', style: 'tableHeader', colSpan: 3, alignment: 'center' },{},{},{alignment: 'center',colSpan: 2, text:'$'+numberleftblankcomma(GrandTotal())+''},{}]
                                      ]
                              }
                      },
