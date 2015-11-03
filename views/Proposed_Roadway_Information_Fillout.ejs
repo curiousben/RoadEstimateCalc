@@ -4,16 +4,16 @@
     <title>Proposed Roadway Information Fillout</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/components/jquery-ui/themes/base/jquery-ui.min.css">
+    <link href="/css/style.css" rel="stylesheet" />
     <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
     <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="/components/jquery/dist/jquery.min.js"><\/script>')</script>
-    <link rel="stylesheet" type="text/css" href="/components/jquery-ui/themes/base/jquery-ui.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript">window.jQuery.ui || document.write('<script type="text/javascript" src="/components/jquery-ui/jquery-ui.min.js"><\/script>')</script>
     <script type="text/javascript" src="/components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
-    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/css/style.css" rel="stylesheet" />
 </head>
 <body>
     <div class="hide" id="TestsIfCDNBootstrapLoadsProperly"></div>
@@ -66,6 +66,35 @@
                     <li><a href="Contingency">Contingency</a></li>
                     <li><a href="Receipt">Receipt</a></li>
                 </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hide panel panel-danger" id='LoadedRecord'>
+        <div class="panel-heading">Record Currently Loaded</div>
+        <div class="panel-body">
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <div class='col-xs-4'><b><u>Estimator:</u></b></div>
+                    <div class='col-xs-4'><b><u>UPC:</u></b></div>
+                    <div class='col-xs-4'><b><u>RoadNumber:</u></b></div>
+                </div>
+                <div class='col-xs-12'>
+                    <div class='col-xs-4'>
+                        <span id='RecordEstimator'></span>
+                    </div>
+                    <div class='col-xs-4'>
+                        <span id='RecordUPC'></span>
+                    </div>
+                    <div class='col-xs-4'>
+                        <span id='RecordRoadNumber'></span>
+                    </div>
+                </div>
+                <div class='col-xs-6'>
+                    <button type="button" class='loadedrecord btn btn-warning' id='ImportLastloaded'>Import Record</button>
+                </div>
+                <div class='col-xs-6'>
+                    <button type="button" class='loadedrecord btn btn-warning' id='ReceiptOfLoaded'>Receipt Changes</button>
+                </div>
             </div>
         </div>
     </div>
@@ -348,5 +377,5 @@
         </div>
     </div>
 </body>
-<script type="text/javascript" src="/js/minipage.proposedroadway.min.js"></script>
+<script type="text/javascript" src="/js/pageinput.proposedroadway.min.js"></script>
 </html>

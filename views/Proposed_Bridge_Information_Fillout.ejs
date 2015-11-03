@@ -4,12 +4,12 @@
     <title>Proposed Bridge Information Fillout</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
     <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="/components/jquery/dist/jquery.min.js"><\/script>')</script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
-    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/css/style.css" rel="stylesheet" />
 </head>
 <body>
     <div class="hide" id="TestsIfCDNBootstrapLoadsProperly"></div>
@@ -65,6 +65,35 @@
             </div>
         </div>
     </div>
+    <div class="hide panel panel-danger" id='LoadedRecord'>
+        <div class="panel-heading">Record Currently Loaded</div>
+        <div class="panel-body">
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <div class='col-xs-4'><b><u>Estimator:</u></b></div>
+                    <div class='col-xs-4'><b><u>UPC:</u></b></div>
+                    <div class='col-xs-4'><b><u>RoadNumber:</u></b></div>
+                </div>
+                <div class='col-xs-12'>
+                    <div class='col-xs-4'>
+                        <span id='RecordEstimator'></span>
+                    </div>
+                    <div class='col-xs-4'>
+                        <span id='RecordUPC'></span>
+                    </div>
+                    <div class='col-xs-4'>
+                        <span id='RecordRoadNumber'></span>
+                    </div>
+                </div>
+                <div class='col-xs-6'>
+                    <button type="button" class='loadedrecord btn btn-warning' id='ImportLastloaded'>Import Record</button>
+                </div>
+                <div class='col-xs-6'>
+                    <button type="button" class='loadedrecord btn btn-warning' id='ReceiptOfLoaded'>Receipt Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid" id="Road_Estimate_Tool">
         <div class="row">
             <div class="col-xs-12" id="header">
@@ -115,5 +144,5 @@
         </div>
     </div>
 </body>
-<script type="text/javascript" src="/js/minipages.min.js"></script>
+<script type="text/javascript" src="/js/pageinput.min.js"></script>
 </html>

@@ -4,7 +4,7 @@
 * The contents of this web application do not nessarily reflect the offical 
 * views or policies of the Virginia Department of Transportation, the 
 * Commonwealth Transportation Board, or the Federal Highway Administration.
-* This weeb app does not constitue a standard, specification, or regulation.
+* This web app does not constitue a standard, specification, or regulation.
 * Any inclusion of manufacturer names, trade names, or trademarksis for 
 * identification purposes only and is not to be considered an endorsement.
 * 
@@ -21,9 +21,29 @@ function numberleftblank (num) {
     } else{
         return 5;
     };
-}
+};
 
-$(function () {
+function CurrentlyloadedRecord () {
+	if (localStorage.getItem('ImportEstimator') != null || localStorage.getItem('ImportUPC') != null || localStorage.getItem('ImportRoadNumber') != null) {
+		$('#LoadedRecord').removeClass('hide');
+		document.getElementById('RecordEstimator').innerHTML=localStorage.getItem('ImportEstimator');
+		document.getElementById('RecordUPC').innerHTML=localStorage.getItem('ImportUPC');
+		document.getElementById('RecordRoadNumber').innerHTML=localStorage.getItem('ImportRoadNumber');
+		
+		var	lastpageURL,
+			firstfwdslash=true,
+			fulllastpageURL=$(document)[0].URL;
+		for (var i = fulllastpageURL.length - 1; i >= 0; i--) {
+			if (fulllastpageURL.charAt(i)=='/' && firstfwdslash==true) {
+				lastpageURL=fulllastpageURL.slice(i, fulllastpageURL.length);
+				firstfwdslash=false;
+			};
+		};
+		localStorage.setItem('lastURL',lastpageURL);
+	};
+};
+
+function ContingencySlider() {
 	$('#GIPercent').slider({
 		value: numberleftblank(localStorage.getItem('GIPercent')),
 		min: 1,
@@ -158,4 +178,45 @@ $(function () {
 		$("#BPercent").slider("option", "value", $(this).val());
 	});
 	$('#BPercentinput').val($('#BPercent').slider("value"));
-});
+};
+
+function CurrentlyloadedRecord () {
+	if (localStorage.getItem('ImportEstimator') != null || localStorage.getItem('ImportUPC') != null || localStorage.getItem('ImportRoadNumber') != null) {
+		$('#LoadedRecord').removeClass('hide');
+		document.getElementById('RecordEstimator').innerHTML=localStorage.getItem('ImportEstimator');
+		document.getElementById('RecordUPC').innerHTML=localStorage.getItem('ImportUPC');
+		document.getElementById('RecordRoadNumber').innerHTML=localStorage.getItem('ImportRoadNumber');
+		
+		var	lastpageURL,
+			firstfwdslash=true,
+			fulllastpageURL=$(document)[0].URL;
+		for (var i = fulllastpageURL.length - 1; i >= 0; i--) {
+			if (fulllastpageURL.charAt(i)=='/' && firstfwdslash==true) {
+				lastpageURL=fulllastpageURL.slice(i, fulllastpageURL.length);
+				firstfwdslash=false;
+			};
+		};
+		localStorage.setItem('lastURL',lastpageURL);
+	};
+};
+
+function ImportCurrentlyLoadedRecord () {
+	Estimator=localStorage.getItem('ImportEstimator');
+	UPC=localStorage.getItem('ImportUPC');
+	RoadNumber=localStorage.getItem('ImportRoadNumber');
+	$.getJSON('/datarecords/Estimator&&UPC&&RoadNumber/'+Estimator+'&&'+UPC+'&&'+RoadNumber+'', function(datarecord) {
+		DataArrayObject=$.parseJSON((datarecord[0].DataArray));
+		localStorage.clear();
+		for(var i in DataArrayObject){
+			localStorage.setItem(i,DataArrayObject[i])
+		}
+		localStorage.setItem('ImportEstimator',datarecord[0].Estimator);
+		localStorage.setItem('ImportUPC',datarecord[0].UPC);
+		localStorage.setItem('ImportRoadNumber',datarecord[0].RoadNumber);
+		ContingencySlider();
+	});
+}
+
+function ReceiptLink () {
+	window.location='http://localhost:3000/Receipt';
+}

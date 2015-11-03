@@ -4,12 +4,12 @@
     <title>Road Estimate Tool</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
     <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="/components/jquery/dist/jquery.min.js"><\/script>')</script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
-    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <div class="hide" id="TestsIfCDNBootstrapLoadsProperly"></div>
@@ -65,16 +65,44 @@
             </div>
         </div>
     </div>
+    <div class="hide panel panel-danger" id='LoadedRecord'>
+        <div class="panel-heading">Record Currently Loaded</div>
+        <div class="panel-body">
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <div class='col-xs-4'><b><u>Estimator:</u></b></div>
+                    <div class='col-xs-4'><b><u>UPC:</u></b></div>
+                    <div class='col-xs-4'><b><u>RoadNumber:</u></b></div>
+                </div>
+                <div class='col-xs-12'>
+                    <div class='col-xs-4'>
+                        <span id='RecordEstimator'></span>
+                    </div>
+                    <div class='col-xs-4'>
+                        <span id='RecordUPC'></span>
+                    </div>
+                    <div class='col-xs-4'>
+                        <span id='RecordRoadNumber'></span>
+                    </div>
+                </div>
+                <div class='col-xs-6'>
+                    <button type="button" class='loadedrecord btn btn-warning' id='ImportLastloaded'>Import Record</button>
+                </div>
+                <div class='col-xs-6'>
+                    <button type="button" class='loadedrecord btn btn-warning' id='ReceiptOfLoaded'>Receipt Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container" id="Road_Estimate_Tool">
-        <div class="col-xs-12">
+
             <!--panel-->
             <div class="panel panel-info">
                 <div class="panel-heading">Bristol District L&D Scoping Estimaing Tool</div>
                 <div class="panel-body"><p>This is a tool dependent on quality engineering estimates of quantities. <u><b>This tool should NOT be used as a substitute for field oberservation estimate.</b></u> The overall cost of a project can be modified by adjusting the itemized contingency percentages in the Contingency Tab. Also, the Earthwork Quantity formulas are conservative estimates. If you have any questions regarding the estimating tool contact Chase Buchanan at 696-3251</p></div>
             </div>
-        </div>
 
-        <div class="col-xs-12">
+
             <div class="panel panel-success">
                 <div class="panel-heading"><i>Instructions for this Web Application</i></div>
                 <div class="panel-body">
@@ -110,9 +138,9 @@
                     </li>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12">
-            <button class="btn btn-danger btn-block" data-toggle='modal' data-target='#ResetAllData'>Reset All Data</button>
+            <div class="col-xs-12">
+                <button class="btn btn-danger btn-block" data-toggle='modal' data-target='#ResetAllData'>Reset All Data</button>
+            </div>
         </div>
         <!-- Modal for ResetAllData -->
         <div class="modal fade" id="ResetAllData" tabindex="-1" role="dialog" aria-labelledby="ResetAllDataLabel">
@@ -136,5 +164,10 @@
         </div>
     </div>
 </body>
-<script type="text/javascript" src="/js/minipages.min.js"></script>
+<script type="text/javascript">
+$('#memclrchoice').click(function() {
+    $('#ResetAllData').modal('hide');
+    localStorage.clear();
+});
+</script>
 </html>

@@ -4,8 +4,8 @@
 * The contents of this web application do not nessarily reflect the offical 
 * views or policies of the Virginia Department of Transportation, the 
 * Commonwealth Transportation Board, or the Federal Highway Administration.
-* This weeb app does not constitue a standard, specification, or regulation.
-* Any inclusion of manufacturer names, trade names, or trademarksis for 
+* This web app does not constitue a standard, specification, or regulation.
+* Any inclusion of manufacturer names, trade names, or trademarks is for 
 * identification purposes only and is not to be considered an endorsement.
 * 
 */
@@ -21,8 +21,9 @@
 //
 //
 //
-function ClearingGrubbing()
-{
+
+function ClearingGrubbing() {
+
 var cls1 = numberleftblank(localStorage.getItem("CL1l"));
     cds1 = numberleftblank(localStorage.getItem("CL1d"));
 
@@ -329,6 +330,7 @@ var crml = numberleftblank(localStorage.getItem("CommercialRockMaterialLength"))
     crmd = numberleftblank(localStorage.getItem("CommercialRockMaterialDistance"));
     return ((crml*crmw*crmd)/27)*2.025
 }
+
 //
 //
 //
@@ -336,6 +338,7 @@ var crml = numberleftblank(localStorage.getItem("CommercialRockMaterialLength"))
 //
 //
 //
+
 function ConcreteBoxCulvert()
 {
 var cbc = numberleftblank(localStorage.getItem("ConcreteBoxCulvert"));
@@ -366,6 +369,7 @@ function CurbGutterfc()
 var lcg = numberleftblank(localStorage.getItem("LengthofCG"));
     return lcg*2;
 }
+
 //
 //
 //
@@ -373,6 +377,7 @@ var lcg = numberleftblank(localStorage.getItem("LengthofCG"));
 //
 //
 //
+
 function SurfaceCourse()
 {
 var prl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
@@ -443,6 +448,7 @@ var prl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
     ctl = numberleftblank(localStorage.getItem("ConnectionTwoLength"));
     return ((((parseFloat(prl,10)+parseFloat(col,10)+parseFloat(ctl,10))*(parseFloat(prw,10)+(tsw*2))*(n1sd/12))/27)*2.025);
 }
+
 //
 //
 //
@@ -450,6 +456,7 @@ var prl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
 //
 //
 //
+
 function RetainingWalls()
 {
 var rwh = numberleftblank(localStorage.getItem("RetainingWallRW3AvgHeight"));
@@ -499,6 +506,7 @@ function CommEnt()
 var c = numberleftblank(localStorage.getItem("Commercial"));
     return c;
 }
+
 //
 //
 //
@@ -506,6 +514,7 @@ var c = numberleftblank(localStorage.getItem("Commercial"));
 //
 //
 //
+
 function MainofTraffic()
 {
     var x = parseFloat(numberleftblank(localStorage.getItem("HowComplexIsMOT")),10);
@@ -544,6 +553,7 @@ var rwh = numberleftblank(localStorage.getItem("SidewalkLength"));
     rwl = numberleftblank(localStorage.getItem("SidewalkWidth"));
     return rwh*rwl/9
 }
+
 //
 //
 //
@@ -551,6 +561,7 @@ var rwh = numberleftblank(localStorage.getItem("SidewalkLength"));
 //
 //
 //
+
 function StormWaterManageFac()
 {
 var hmd = Number(numberleftblank(localStorage.getItem("HMDBAOTP")));
@@ -581,6 +592,7 @@ function CheckDamsTYlOrTYll()
 var prwl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
     return prwl/50;
 }
+
 //
 //
 //
@@ -588,12 +600,14 @@ var prwl = numberleftblank(localStorage.getItem("ProposedRoadwayLength"));
 //
 //
 //
+
 function BelowGroundUtilities()
 {
 var uiw = numberleftblank(localStorage.getItem("UtilWater"));
     uis = numberleftblank(localStorage.getItem("UtilSewer"));
     return parseFloat(uiw,10)+parseFloat(uis,10);
 }
+
 //
 //
 //
@@ -601,6 +615,7 @@ var uiw = numberleftblank(localStorage.getItem("UtilWater"));
 //
 //
 //
+
 function PermanentSignal()
 {
 var pts = numberleftblank(localStorage.getItem("PermanentTrafficSignal"));
@@ -626,6 +641,7 @@ function GRFOA()
 var pbf = numberleftblank(localStorage.getItem("ProposedBridgeNoOfFOAs"));
     return pbf;
 }
+
 //
 //
 //
@@ -633,6 +649,7 @@ var pbf = numberleftblank(localStorage.getItem("ProposedBridgeNoOfFOAs"));
 //
 //
 //
+
 function NSBridge()
 {
 var pbl = numberleftblank(localStorage.getItem("ProposedBridgeLength"));
@@ -645,6 +662,7 @@ var   bm = numberleftblank(localStorage.getItem("ExistingBridgeLength"));
     n21s = numberleftblank(localStorage.getItem("ExistingBridgeWidth"));
     return bm*n21s;
 }
+
 //
 //
 //
@@ -652,6 +670,7 @@ var   bm = numberleftblank(localStorage.getItem("ExistingBridgeLength"));
 //
 //
 //
+
 function StreamMitigation()
 {
 var   ms = numberleftblank(localStorage.getItem("MitigationStream"));
@@ -662,6 +681,7 @@ function WetlandMitigation()
 var   mw = numberleftblank(localStorage.getItem("MitigationWetland"));
     return mw;
 }
+
 //
 //
 //
@@ -669,6 +689,7 @@ var   mw = numberleftblank(localStorage.getItem("MitigationWetland"));
 //
 //
 //
+
 function GradingItems()
 {
     var  TotCG = ClearingGrubbing()*localStorage.getItem("cr1");
@@ -981,6 +1002,7 @@ function MiscellaneousItems() {
 
         return TotMisc;
 }
+
 //
 //
 //
@@ -988,6 +1010,7 @@ function MiscellaneousItems() {
 //
 //
 //
+
 function SubGrandTotals()
 {   
     var GrandSubTotal = parseFloat(GradingItems()[6],10)+parseFloat(DrainageItems()[6],10)+parseFloat(PavementItems()[5],10)+parseFloat(IncidentalItems()[4],10)+parseFloat(ProtectiveItems()[3],10)+parseFloat(ErosionItems()[4],10)+parseFloat(UtilItems()[1],10)+parseFloat(TrafficandSafetyItems()[5],10)+parseFloat(BridgeItems()[2],10)+parseFloat(StreamWetlandMitigationItems()[0],10)+parseFloat(StreamWetlandMitigationItems()[1],10)+parseFloat(MiscellaneousItems(),10);
@@ -1045,6 +1068,7 @@ function curtime() {
     document.getElementById('time').innerHTML = CurrentTime;
     return CurrentTime;
 }
+
 //
 //
 //
@@ -1052,6 +1076,7 @@ function curtime() {
 //
 //
 //
+
 function numberleftblank (num) {
     if (num) {
         return num;

@@ -4,7 +4,7 @@
 * The contents of this web application do not nessarily reflect the offical 
 * views or policies of the Virginia Department of Transportation, the 
 * Commonwealth Transportation Board, or the Federal Highway Administration.
-* This weeb app does not constitue a standard, specification, or regulation.
+* This web app does not constitue a standard, specification, or regulation.
 * Any inclusion of manufacturer names, trade names, or trademarksis for 
 * identification purposes only and is not to be considered an endorsement.
 * 
@@ -14,8 +14,7 @@
 // <================ How the App prefills input boxes with data ================>
 //
 
-$(document).ready(function(){
-
+function Pageload() {
 	var inp_pres = $.contains(document.body,$("#Road_Estimate_Tool input")[0]),
 		sel_pres = $.contains(document.body,$("#Road_Estimate_Tool select")[0]),
 		tex_pres = $.contains(document.body,$("#Road_Estimate_Tool textarea")[0]);
@@ -55,6 +54,9 @@ $(document).ready(function(){
 					};
 				};
 				document.getElementById(inp_dat_arr[i]).value=localStorage.getItem(inp_dat_arr[i]);
+			}else {
+				// If the initial local storage is empty then it get filled with a null value since the value doesn't exist in the record.
+				document.getElementById(inp_dat_arr[i]).value=null;
 			};
 		};
 		//Gos through the array of all INPUT ID's and looks to see if there exists data attached to that ID. If not it moves on to the next one
@@ -95,8 +97,10 @@ $(document).ready(function(){
 		for (var i = tex_dat_arr.length - 1; i >= 0; i--) {
 			if (localStorage.getItem(tex_dat_arr[i])!= null) {
 				document.getElementById(tex_dat_arr[i]).value=localStorage.getItem(tex_dat_arr[i]);
+			} else {
+				document.getElementById(tex_dat_arr[i]).value=null;
 			};
 		};
 		//Gos through the array of all TEXTAREA ID's and looks to see if there exists data attached to that ID. If not it moves on to the next one
 	};
-})
+};
