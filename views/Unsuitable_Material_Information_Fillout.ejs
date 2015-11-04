@@ -47,8 +47,8 @@
                     <li><a href="Connections">Connections</a></li>
                     <li><a href="EarthworkCut">Earthwork:Cut</a></li>
                     <li><a href="EarthworkFill">Earthwork:Fill</a></li>
-                    <li class="active"><a href="UnisuitableMaterial">Unisuitable Material</a></li>
-                    <li><a href="CommercialRockFills">Commercial Rock</a></li>
+                    <li class="active"><a href="UnsuitableMaterial">Unsuitable Material</a></li>
+                    <li><a href="RipRapSlopes">Rip Rap Slopes</a></li>
                     <li><a href="Drainage">Drainage</a></li>
                     <li><a href="SWMFacility">SWM Facility</a></li>
                     <li><a href="Traffic">Traffic</a></li>
@@ -104,8 +104,13 @@
                     Unsuitable Material
                 </div>
                 <div class="col-xs-3">
-                    <a href="CommercialRockFills"><button class="btn btn-info pull-right">Next<i class="glyphicon glyphicon-menu-right gyphicon-spacing"></i></button></a>
+                    <a href="RipRapSlopes"><button class="btn btn-info pull-right">Next<i class="glyphicon glyphicon-menu-right gyphicon-spacing"></i></button></a>
                 </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-xs-12'>
+                <img src="images/UnsuitableMat.jpg" class="img-responsive" width="2550" height="1800">
             </div>
         </div>
         <div class="toggle_even_row">
@@ -117,9 +122,31 @@
                 <label for="UnsuitableMaterialWidth">Width (ft)</label>
                 <input type="number" id="UnsuitableMaterialWidth" value="" class="form-control">
             </div>
-            <div class="col-xs-12 col-sm-4">
-                <label for="UnsuitableMaterialDepth">Distance (ft)</label>
-                <input type="number" id="UnsuitableMaterialDepth" value="" class="form-control">
+            <div class="col-xs-12 col-sm-4" id='InfoBox'>
+                <label for="Label_Me">Distance (ft)</label>
+                <div class="input-group" id="Label_Me">
+                    <input type="number" id="UnsuitableMaterialDepth" value="" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" data-toggle="modal" data-target="#UnsuitMatDis">&#63;</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Unsuitable Distance -->
+    <div class="modal fade" id="UnsuitMatDis" tabindex="-1" role="dialog" aria-labelledby="UnsuitMatDisLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="UnsuitMatDisLabel">Unsuitable Material Distance</h4>
+                </div>
+                <div class="modal-body">
+                    The distance is typically between 2'-3'
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>

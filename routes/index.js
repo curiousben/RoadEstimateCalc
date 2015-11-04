@@ -42,11 +42,11 @@ router.get('/EarthworkCut', function (req,res){
 router.get('/EarthworkFill', function (req,res){
 	res.render('Earthwork_Fill_Information_Fillout');
 });
-router.get('/UnisuitableMaterial', function (req,res){
+router.get('/UnsuitableMaterial', function (req,res){
 	res.render('Unsuitable_Material_Information_Fillout');
 });
-router.get('/CommercialRockFills', function (req,res){
-	res.render('Commercial_Rock_Material_Information_Fillout');
+router.get('/RipRapSlopes', function (req,res){
+	res.render('Rip_Rap_Slopes_Information_Fillout');
 });
 router.get('/Drainage', function (req,res){
 	res.render('Drainage_Information_Fillout');
