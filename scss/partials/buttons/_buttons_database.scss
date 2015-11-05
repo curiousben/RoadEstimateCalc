@@ -1,0 +1,41 @@
+//
+// <================ Button on CreateUpdateRecord.ejs ================>
+//
+
+.loadedrecord.btn.btn-warning {
+    padding:6px;
+    width:100%;
+}
+
+//
+// <================ Button Spacing for CreateRecord and UpdateRecord ================>
+//
+
+@media (max-width: 420px){
+    .button-center-form{
+        //col-xs-12
+        position: relative;
+        min-height: 1px;
+        float: left;
+        width: 100%;
+        padding:{
+            right: 15px;
+            left: 15px;
+            top: 7.5px;
+            bottom: 7.5px;
+        }
+    }
+}
+@media (min-width: 421px){
+    .button-center-form{
+        //col-xs-6
+        position: relative;
+        min-height: 1px;
+        float: left;
+        width: 50%;
+        padding: {
+            right: 15px;
+            left: 15px;
+        }
+    }
+}

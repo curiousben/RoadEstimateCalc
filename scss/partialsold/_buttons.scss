@@ -1,11 +1,20 @@
+//
+// <================ Button on CreateUpdateRecord.ejs ================>
+//
+
 .loadedrecord.btn.btn-warning {
     padding:6px;
     width:100%;
 }
 
-#MOTTable, #MOTrefbutton {
+//
+// <================ Button for MOT Button on Traffic.ejs ================>
+//
+
+#MOTrefbutton {
 	padding: 14px;
 }
+
 
 .databasebutton-position{
     margin:8px;
@@ -15,66 +24,74 @@
     width: 100%;
 }
 
+
+
+
+
 @media (max-width: 480px) { 
     #UnitPricebutton {
     display: inline;
-	}
-	#regionreset {
-		width: 100%;
-	}
-	.wholechkboxstyl{
-		width: 100%;
-	}
+    }
+    #regionreset {
+        width: 100%;
+    }
+    .wholechkboxstyl{
+        width: 100%;
+    }
     #PrintButton {
-    	display: none;
+        display: none;
     }
 }
 
 @media (min-width: 481px) and (max-width: 676px) {
     #UnitPricebutton {
     display: inline;
-	}
-	#regionreset {
-		width: 100%;
-	}
+    }
+    #regionreset {
+        width: 100%;
+    }
 }
 //button responsive style
 
 @media (min-width: 481px) and (max-width: 767px) {
-	.wholechkboxstyl{
-		width: 100%;
-	}
+    .wholechkboxstyl{
+        width: 100%;
+    }
 
     #CalcButton {
         width: 50%;
     }
 
-	
+    
     #PrintButton {
-    	display: none;
+        display: none;
     }
 }
 @media (min-width: 768px) and (max-width: 991px) { 
 
-	
+    
     #PrintButton {
-    	display: none;
+        display: none;
     }
 }
 
-//====== Database record button format for resizing 
+//
+// <================ Button Spacing for CreateRecord and UpdateRecord ================>
+//
 
 @media (max-width: 420px){
     .button-center-form{
         //col-xs-12
         position: relative;
         min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
-        padding-top: 7.5px;
-        padding-bottom: 7.5px;
         float: left;
         width: 100%;
+        padding:{
+            right: 15px;
+            left: 15px;
+            top: 7.5px;
+            bottom: 7.5px;
+        }
     }
 }
 @media (min-width: 421px){
@@ -82,9 +99,11 @@
         //col-xs-6
         position: relative;
         min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
         float: left;
-        width: 50%
+        width: 50%;
+        padding: {
+            right: 15px;
+            left: 15px;
+        }
     }
 }

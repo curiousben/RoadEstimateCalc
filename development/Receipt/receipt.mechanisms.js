@@ -55,3 +55,43 @@ function ScreenResize() {
     var newFontSize = Math.floor(fontsize * percentage) -1;
     $('#Road_Estimate_Tool_Receipt ').css('font-size', newFontSize);
 };
+
+function curtime() {
+    var CurrentTime= new Date();
+    document.getElementById('time').innerHTML = CurrentTime;
+    return CurrentTime;
+}
+function numberleftblank (num) {
+    if (num) {
+        return num;
+    } else{
+        return 0;
+    };
+}
+
+function numberleftblankContingency (num) {
+    if (num) {
+        return num;
+    } else{
+        return 5;
+    };
+}
+
+function numberleftblankcomma (num) {
+    if (num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    else {
+        return 0;
+    }
+}
+
+function textleftblank (Tex) {
+    if (Tex) 
+    {
+        return Tex;
+    }
+    else {
+        return 'Not Entered';
+    }
+}

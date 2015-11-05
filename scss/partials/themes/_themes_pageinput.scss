@@ -1,0 +1,139 @@
+//
+// <================ Themes for PageInput page ================>
+//
+
+// These give the styles to headers and subheaders
+
+#subheader {
+    color: $black; 
+    background-color: $lightgray;
+    padding: 10px 10px;
+    text-align: center;
+}
+#header {
+    color: $white; 
+    background-color: $black;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 14pt;
+}
+
+//
+// ========================== Table Row Themes =============================================//
+// These styles rules help with the theme styles of each pages where there are alternating backgrounds
+
+.row {
+    &.MOT_even_row {
+        background-color:$MOTTableOrange;
+    }
+    &.MOT_odd_row {
+        background-color:$MOTTableBlue;
+    }
+    &.default_even_row {
+        @include even_row;
+    } 
+    &.default_odd_row {
+        @include odd_row;
+    }
+}
+
+.row_type_1 div:nth-child(even),
+.unit_price_row div:nth-child(even),
+.toggle_even_row div:nth-child(even),
+.toggle_even_row div {
+	@include even_row;
+}
+
+.row_type_1 div:nth-child(odd),
+.unit_price_row div:nth-child(odd),
+.toggle_odd_row div:nth-child(odd),
+.toggle_odd_row div {
+	@include odd_row;
+}
+
+@media (min-width: 768px) and (max-width: 991px) { 
+    .row_type_1 div:nth-child(4n), .row_type_1 div:nth-child(4n-1) {
+    	background-color: $mediumgray;
+    }
+    .row_type_1 div:nth-child(4n-2), .row_type_1 div:nth-child(4n-3) {
+    	background-color: $gray;
+    }
+}
+
+@media (min-width: 992px) {
+  	.row_type_1 div:nth-child(6n), .row_type_1 div:nth-child(6n-1), .row_type_1 div:nth-child(6n-2) {
+    	background-color: $mediumgray;
+    }
+    .row_type_1 div:nth-child(6n-3), .row_type_1 div:nth-child(6n-4), .row_type_1 div:nth-child(6n-5) {
+    	background-color: $gray;
+    }
+}
+
+// Earth: Cut & Fill page:
+// Hides the amount of data input that each check box reveals (checkbox 1 contains 1 
+// section of data input and checkbox 2 contains another section of data input and so on till)
+
+#checkbox1,#checkbox2,#checkbox3,
+#checkbox4,#checkbox5,#checkbox6 {
+    display: none;
+}
+
+// Keeping the MOT table from crowding the edges of the screen
+
+#MOTTable {
+    padding: 15px;
+}
+
+// Miscellaneous
+
+#misc1unit,#misc2unit,#misc3unit,#misc4unit,#misc5unit{
+	width: 75px;
+}
+
+// Enlarging the Receipt Banner to keep the banner readable when the page gets it font
+// changed due to screen resize
+
+#ReceiptBanner {
+    font-size: 300%;
+}
+
+#GrandtotalFC {
+	color: $black; 
+	background-color: $lightgray;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+//
+// <================ Individual InputPage Tweaks ================>
+//
+
+.glyphicon-spacing {
+    position: relative;
+}
+// These rules helps formatting of input boxes where there is a question modal window
+
+#Label_Me {
+	padding: 0px ;
+}
+
+#InfoBox {
+    padding-top: 5px;
+}
+
+#Divboxtweak {
+    padding-bottom: 9px;
+}
+
+// These ID rules help keep silder styles inline with the box right next to it
+
+#Perslider {
+    padding:18px;
+}
+
+#GIPercent,#DIPercent,#PavIPercent,
+#IIPercent,#ProIPercent,#ECPercent,
+#UPercent,#TSPercent,#BPercent,
+#NewHorizontalAlignment,#pcei {
+    padding-bottom: 1px;
+}

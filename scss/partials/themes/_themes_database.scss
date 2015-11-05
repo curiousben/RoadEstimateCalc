@@ -1,0 +1,23 @@
+//
+// <================ Themes for DatabaseInput page ================>
+//
+
+// Selection of rows on the Retireve Record Page
+.SelectedRow:hover {
+    background-color:$SelectionBlue;
+}
+
+
+// Keeps the CreateRecord & UpdateRecord form hidden when the page loads 
+.recordform{
+    display: none;
+}
+
+//
+// <================ Individual DatabaseInput Tweaks for the Theme ================>
+//
+
+// Preload last import button sticks to the Estimator input box 
+#LastImportInfoDiv {
+	padding-bottom:10px;
+}
