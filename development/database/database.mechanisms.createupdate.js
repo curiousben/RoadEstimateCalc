@@ -31,24 +31,16 @@ function TimeStamp () {
 };
 
 function CreateRecordChoice () {
-	windowdown=sessionStorage.getItem('Recordchoice');
-	if (windowdown==2 || windowdown==null) {
-		sessionStorage.setItem('Recordchoice',1);
-		$('#CreateRecordForm').toggle('swing');
-		$('#UpdateRecordForm').toggle(false);
-	};
+	sessionStorage.setItem('Recordchoice',1);
+	ChoiceLoader();
 	document.getElementsByName('CreateCTime')[0].value=TimeStamp();
 	document.getElementsByName('CreateUTime')[0].value=TimeStamp();
 	document.getElementsByName('CreateDataArray')[0].value=JSON.stringify(DataArrayObject());
 };
 
 function UpdateRecordChoice () {
-	windowdown=sessionStorage.getItem('Recordchoice');
-	if (windowdown==1 || windowdown==null) {	
-		sessionStorage.setItem('Recordchoice',2);
-		$('#UpdateRecordForm').toggle('swing');
-		$('#CreateRecordForm').toggle(false);
-	};
+	sessionStorage.setItem('Recordchoice',2);
+	ChoiceLoader();
 	document.getElementsByName('UpdateTimeStamp')[0].value=TimeStamp();
 	document.getElementsByName('UpdateDataArray')[0].value=JSON.stringify(DataArrayObject());
 };
@@ -56,8 +48,8 @@ function UpdateRecordChoice () {
 function ChoiceLoader() {
 	windowdown=sessionStorage.getItem('Recordchoice');
 	if (windowdown==1) {
-		$('#UpdateRecordForm').toggle('swing');
-		$('#CreateRecordForm').toggle(false);
+		$('#UpdateRecordForm').toggle(false);
+		$('#CreateRecordForm').toggle('swing');
 	};
 	if (windowdown==2) {
 		$('#UpdateRecordForm').toggle('swing');

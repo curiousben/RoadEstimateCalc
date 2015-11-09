@@ -20,44 +20,44 @@ module.exports=function (grunt)
 			},
 			PageInputCompress: {
 				files: {
-					'build/js/pageinput.min.js' :['development/PageInput/*.js']
+					'build/js/pageinput.min.js' :['development/pageinput/*.js']
 				}
 			},
 			PageInputContingencyCompress:{
 				files: {
-					'build/js/pageinput.contingency.min.js' :['development/PageInput/Addons/Sliders/pageinput.silders.contingency.mechanisms.js','development/PageInput/Addons/Sliders/pageinput.sliders.contingency.switchs.js']
+					'build/js/pageinput.contingency.min.js' :['development/pageinput/Addons/Sliders/pageinput.silders.contingency.mechanisms.js','development/pageinput/Addons/Sliders/pageinput.sliders.contingency.switchs.js']
 				}
 			},
 			PageInputProposedRoadwayCompress: {
 				files: {
-					'build/js/pageinput.proposedroadway.min.js' :['development/PageInput/Addons/Sliders/pageinput.sliders.proposedroadway.mechanisms.js','development/PageInput/*.js']
+					'build/js/pageinput.proposedroadway.min.js' :['development/pageinput/Addons/Sliders/pageinput.sliders.proposedroadway.mechanisms.js','development/pageinput/*.js']
 				}
 			},
 			PageInputUnitPricesCompress: {
 				files: {
-					'build/js/pageinput.unitprices.min.js' :['development/PageInput/Addons/Sliders/pageinput.sliders.unitprices.mechanisms.js','development/PageInput/*.js']
+					'build/js/pageinput.unitprices.min.js' :['development/pageinput/Addons/Sliders/pageinput.sliders.unitprices.mechanisms.js','development/pageinput/*.js']
 				}
 			},
 			PageInputTrafficCompress: {
 				files: {
-					'build/js/pageinput.traffic.min.js' :['development/PageInput/Addons/Windowresize/pageinput.windowresize.traffic.mechanisms.js','development/PageInput/*.js']
+					'build/js/pageinput.traffic.min.js' :['development/pageinput/Addons/Windowresize/pageinput.windowresize.traffic.mechanisms.js','development/pageinput/*.js']
 				}
 			},
 			PageInputMiscellaneousCompress: {
 				files: {
-					'build/js/pageinput.miscellaneous.min.js' :['development/PageInput/Addons/Windowresize/pageinput.windowresize.miscellaneous.mechanisms.js','development/PageInput/*.js']
+					'build/js/pageinput.miscellaneous.min.js' :['development/pageinput/Addons/Windowresize/pageinput.windowresize.miscellaneous.mechanisms.js','development/pageinput/*.js']
 				}
 			},
 			DatabaseInputCompress:{
 				files: {
-					'build/js/pageinput.database.createupdate.min.js' :['development/DatabaseInput/databaseinput.mechanisms.createupdate.js','development/DatabaseInput/databaseinput.switchs.createupdate.js'],
-					'build/js/pageinput.database.retrieverecord.min.js' :['development/DatabaseInput/databaseinput.retrieverecord.js']
+					'build/js/database.createupdate.min.js' :['development/database/database.mechanisms.createupdate.js','development/database/database.switchs.createupdate.js'],
+					'build/js/database.retrieverecord.min.js' :['development/database/database.retrieverecord.js']
 
 				}
 			},
 			BrainCompress: {
 				files: {
-					'build/js/receipt.min.js':['development/Receipt/*.js']
+					'build/js/receipt.min.js':['development/receipt/*.js']
 				}
 			}
 		},
@@ -73,35 +73,35 @@ module.exports=function (grunt)
 		},
 		watch: {
 			pageinputscripts: {
-				files: ['js/PageInput/*.js'],
+				files: ['js/pageinput/*.js'],
 				tasks: ['uglify:PageInputCompress']
 			},
 			contingencyscripts: {
-				files: ['development/PageInput/Addons/Sliders/pageinput.silders.contingency.mechanisms.js','development/PageInput/Addons/Sliders/pageinput.silders.contingency.switchs.js'],
+				files: ['development/pageinput/Addons/Sliders/pageinput.silders.contingency.mechanisms.js','development/pageinput/Addons/Sliders/pageinput.silders.contingency.switchs.js'],
 				tasks: ['uglify:PageInputContingencyCompress']
 			},
 			proposedroadwayscripts: {
-				files: ['development/PageInput/Addons/Sliders/pageinput.sliders.proposedroadway.mechanisms.js','js/PageInput/*.js'],
+				files: ['development/pageinput/Addons/Sliders/pageinput.sliders.proposedroadway.mechanisms.js','js/pageinput/*.js'],
 				tasks: ['uglify:PageInputProposedRoadwayCompress']
 			},
 			unitpricesscripts: {
-				files: ['development/PageInput/Addons/Sliders/pageinput.sliders.unitprices.mechanisms.js','development/PageInput/*.js'],
+				files: ['development/pageinput/Addons/Sliders/pageinput.sliders.unitprices.mechanisms.js','development/pageinput/*.js'],
 				tasks: ['uglify:PageInputUnitPricesCompress']
 			},
 			trafficscripts: {
-				files: ['development/PageInput/Addons/Windowresize/pageinput.windowresize.traffic.mechanisms.js','development/PageInput/*.js'],
+				files: ['development/pageinput/Addons/Windowresize/pageinput.windowresize.traffic.mechanisms.js','development/pageinput/*.js'],
 				tasks: ['uglify:PageInputTrafficCompress']
 			},
 			miscellaneousscripts: {
-				files: ['development/PageInput/Addons/Windowresize/pageinput.windowresize.miscellaneous.mechanisms.js','development/PageInput/*.js'],
+				files: ['development/pageinput/Addons/Windowresize/pageinput.windowresize.miscellaneous.mechanisms.js','development/pageinput/*.js'],
 				tasks: ['uglify:PageInputMiscellaneousCompress']
 			},
 			databasescripts: {
-				files: ['development/PageInput/Database/*.js'],
+				files: ['development/database/*.js'],
 				tasks: ['uglify:DatabaseInputCompress']
 			},
 			brainsscripts: {
-				files: ['js/Receipt/*.js','js/Minipage_Special_Mods/minipages.loadedrecord.js'],
+				files: ['js/receipt/*.js','js/Minipage_Special_Mods/minipages.loadedrecord.js'],
 				tasks: ['uglify:BrainCompress']
 			},
 			sasscompile: {
