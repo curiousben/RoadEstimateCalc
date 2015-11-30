@@ -45,5 +45,9 @@ Temporary Items
 # Frameworks
 node_modules/
 build/components/
+
+# Compile Cache for SASS
 .sass-cache/
+
+# Seperate Notes
 Nginx.txt

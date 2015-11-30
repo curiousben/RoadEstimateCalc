@@ -2,12 +2,22 @@
 // <================ Button for MOT Button on Traffic.ejs ================>
 //
 
+//adjusting the colors of teh hyperlinks on each page so it retains the 
+a {
+    &.link {
+        color: $white;
+    }
+    &.label_link {
+        color: $labelgrey;
+    }
+}
+
 #MOTrefbutton {
 	padding: 14px;
 }
 
 
-.databasebutton-position{
+.databasebutton-position {
     margin:8px;
 }
 

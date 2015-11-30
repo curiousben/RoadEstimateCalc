@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 		$(ref).each(function() {
 			if ($(this).val() == '') {
-				alert("Please fill in ");
+				alert("Please fill in "+$(this).attr('id'));
 				$(this).focus();
 				e.preventDefault();
 				return false;

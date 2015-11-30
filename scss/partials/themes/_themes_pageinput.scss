@@ -2,6 +2,19 @@
 // <================ Themes for PageInput page ================>
 //
 
+//
+// <========================== Wrong Data Type =============================================> //
+// These style make the tabs appear red when an error is encountered with input data
+
+.navbar-default .navbar-nav>li>a.Error {
+    color: $black;
+    font-weight: bold;
+    background-color:$red;
+    &:hover {
+        background-color:$hoveredred;
+    }
+}
+
 // These give the styles to headers and subheaders
 
 #subheader {
@@ -19,7 +32,7 @@
 }
 
 //
-// ========================== Table Row Themes =============================================//
+// <========================== Table Row Themes =============================================> //
 // These styles rules help with the theme styles of each pages where there are alternating backgrounds
 
 .row {

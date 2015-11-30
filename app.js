@@ -19,7 +19,9 @@ var bodyParser = require('body-parser');
 var helmet = require('helmet');
 
 var mongoose = require('mongoose');
+
 //connection to local Mongo Database
+
 mongoose.connect('mongodb://127.0.0.1/RoadTestDB', function(err, db){
 	if (!err) {
 		console.log("Mongo Server port: Connected to App");

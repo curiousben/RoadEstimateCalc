@@ -2,12 +2,3 @@
 @import 'mixins/mixins_pageinput';
 @import 'themes/themes_pageinput';
 @import 'buttons/buttons_pageinput';
-
-a {
-	&.link {
-		color: $white;
-	}
-	&.label_link {
-		color: $labelgrey;
-	}
-}
