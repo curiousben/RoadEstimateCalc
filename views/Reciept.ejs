@@ -24,7 +24,7 @@
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar" id='menuIcon'>
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -702,6 +702,25 @@
         <div class="row">
             <div class="col-xs-8 text-center" id="subheader">Grand Total</div>
             <div class="col-xs-4 text-center" id="GrandtotalFC"></div>
+        </div>
+    </div>
+    <!-- Modal for errorsOnPage -->
+    <div class="modal fade" id="errorsOnPage" tabindex="-1" role="dialog" aria-labelledby="errorsOnPageLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="errorsOnPageLabel">Reset</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                    There are some errors on some pages, check out the pull down menu and correct the red highlight pages and make sure that you enter numbers and text where appropriate.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

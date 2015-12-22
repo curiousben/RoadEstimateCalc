@@ -1052,14 +1052,19 @@ function CEIContigency()
 }
 function GrandTotal()
 {
-var CurtYear = localStorage.getItem("CurrentYear");
-    PropYear = localStorage.getItem("ProposedAdDateYear");
-    FinalGrandTotal=Math.ceil(((CEIContigency()[1]+CEIContigency()[2]+SubGrandTotals()[4])*(Math.pow((1+0.015),(PropYear-CurtYear))))/10000)*10000;
-    curtime()
-    document.getElementById("ProjectNum").innerHTML=textleftblank(localStorage.getItem("projectnum"));
-    document.getElementById("UPCid").innerHTML=textleftblank(localStorage.getItem("upcid"));
-    document.getElementById("Estname").innerHTML=textleftblank(localStorage.getItem("estname"));
-    document.getElementById("GrandtotalFC").innerHTML="$"+numberleftblankcomma(FinalGrandTotal);
-    MiscellaneousItems();
-    return FinalGrandTotal;
+    var errorLog = localStorage.getItem('ErrorLog')
+    if (errorLog==null||errorLog=='') {
+        var CurtYear = localStorage.getItem("CurrentYear");
+            PropYear = localStorage.getItem("ProposedAdDateYear");
+            FinalGrandTotal=Math.ceil(((CEIContigency()[1]+CEIContigency()[2]+SubGrandTotals()[4])*(Math.pow((1+0.015),(PropYear-CurtYear))))/10000)*10000;
+            curtime();
+        document.getElementById("ProjectNum").innerHTML=textleftblank(localStorage.getItem("projectnum"));
+        document.getElementById("UPCid").innerHTML=textleftblank(localStorage.getItem("upcid"));
+        document.getElementById("Estname").innerHTML=textleftblank(localStorage.getItem("estname"));
+        document.getElementById("GrandtotalFC").innerHTML="$"+numberleftblankcomma(FinalGrandTotal);
+        MiscellaneousItems();
+        return FinalGrandTotal;
+    } else{
+        $('#errorsOnPage').modal('show');
+    };
 }

@@ -13,6 +13,8 @@
 $(document).ready(function() {
 	CurrentlyloadedRecord();
 	ContingencySlider();
+	navBarErrorStorage(pageLetterNumber());
+	navBarErrorCheck(pageLetterNumber());
 	$('#ImportLastloaded').click(ImportCurrentlyLoadedRecord);
 
 	$('#ReceiptOfLoaded').click(ReceiptLink);

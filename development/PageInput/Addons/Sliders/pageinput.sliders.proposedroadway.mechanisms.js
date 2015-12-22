@@ -35,6 +35,13 @@ function ProposedRoadwaySliders() {
 	$('#NewHorizontalAlignmentinput').change(function(event) {
 		localStorage.setItem('NewHorizontalAlignment',$(this).val());
 		$("#NewHorizontalAlignment").slider("option", "value", $(this).val());
+		navBarErrorStorage(pageLetterNumber());
+		navBarErrorCheck(pageLetterNumber());
 	});
 	$('#NewHorizontalAlignmentinput').val($('#NewHorizontalAlignment').slider("value"));
 };
+
+function ProposedRoadwaySlidersIDs () {
+	var ids=['NewHorizontalAlignment','number'];
+	return ids;
+}

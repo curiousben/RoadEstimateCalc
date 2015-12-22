@@ -35,6 +35,8 @@ function UnitPricesSlider() {
 	$('#pceiinput').change(function(event) {
 		localStorage.setItem('pcei',$(this).val());
 		$("#pcei").slider("option", "value", $(this).val());
+		navBarErrorStorage(pageLetterNumber());
+		navBarErrorCheck(pageLetterNumber());
 	});
 	$('#pceiinput').val($('#pcei').slider("value"));
 };
@@ -99,3 +101,8 @@ function RegionalPrices () {
 			break;
 	};
 };
+
+function UnitPricesSliderIDs () {
+	var ids=['pcei','number'];
+	return ids;
+}

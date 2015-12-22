@@ -16,11 +16,17 @@ module.exports=function (grunt)
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
 			options: {
-				banner:'/*\n*\n* DISCLAIMER:\n* The contents of this web application do not nessarily reflect the offical \n* views or policies of the Virginia Department of Transportation, the \n* Commonwealth Transportation Board, or the Federal Highway Administration.\n* This web app does not constitue a standard, specification, or regulation.\n* Any inclusion of manufacturer names, trade names, or trademarksis for \n* identification purposes only and is not to be considered an endorsement.\n*\n*/\n\n/* <%= pkg.name %> v<%= pkg.version %> | 2015 Virginia Transportation Research Council */\n'
+				banner:'/*\n*\n* DISCLAIMER:\n* The contents of this web application do not nessarily reflect the offical \n* views or policies of the Virginia Department of Transportation, the \n* Commonwealth Transportation Board, or the Federal Highway Administration.\n* This web app does not constitue a standard, specification, or regulation.\n* Any inclusion of manufacturer names, trade names, or trademarksis for \n* identification purposes only and is not to be considered an endorsement.\n*\n*/\n\n/* <%= pkg.name %> v<%= pkg.version %> | 2015 Virginia Transportation Research Council */\n',
+				mangle:false
+			},
+			InputErrorCompress: {
+				files: {
+					'build/js/inputerror.min.js' :['development/universal.mechanisms.inputerror.js']
+				}
 			},
 			PageInputCompress: {
 				files: {
-					'build/js/pageinput.min.js' :['development/pageinput/*.js']
+					'build/js/pageinput.min.js' :['development/pageinput/*.js','development/universal.mechanisms.inputerror.js']
 				}
 			},
 			PageInputContingencyCompress:{
@@ -30,22 +36,22 @@ module.exports=function (grunt)
 			},
 			PageInputProposedRoadwayCompress: {
 				files: {
-					'build/js/pageinput.proposedroadway.min.js' :['development/pageinput/Addons/Sliders/pageinput.sliders.proposedroadway.mechanisms.js','development/pageinput/*.js']
+					'build/js/pageinput.proposedroadway.min.js' :['development/pageinput/Addons/Sliders/pageinput.sliders.proposedroadway.mechanisms.js','development/pageinput/*.js','development/universal.mechanisms.inputerror.js']
 				}
 			},
 			PageInputUnitPricesCompress: {
 				files: {
-					'build/js/pageinput.unitprices.min.js' :['development/pageinput/Addons/Sliders/pageinput.sliders.unitprices.mechanisms.js','development/pageinput/*.js']
+					'build/js/pageinput.unitprices.min.js' :['development/pageinput/Addons/Sliders/pageinput.sliders.unitprices.mechanisms.js','development/pageinput/*.js','development/universal.mechanisms.inputerror.js']
 				}
 			},
 			PageInputTrafficCompress: {
 				files: {
-					'build/js/pageinput.traffic.min.js' :['development/pageinput/Addons/Windowresize/pageinput.windowresize.traffic.mechanisms.js','development/pageinput/*.js']
+					'build/js/pageinput.traffic.min.js' :['development/pageinput/Addons/Windowresize/pageinput.windowresize.traffic.mechanisms.js','development/pageinput/*.js','development/universal.mechanisms.inputerror.js']
 				}
 			},
 			PageInputMiscellaneousCompress: {
 				files: {
-					'build/js/pageinput.miscellaneous.min.js' :['development/pageinput/Addons/Windowresize/pageinput.windowresize.miscellaneous.mechanisms.js','development/pageinput/*.js']
+					'build/js/pageinput.miscellaneous.min.js' :['development/pageinput/Addons/Windowresize/pageinput.windowresize.miscellaneous.mechanisms.js','development/pageinput/*.js','development/universal.mechanisms.inputerror.js']
 				}
 			},
 			DatabaseInputCompress:{
@@ -57,7 +63,7 @@ module.exports=function (grunt)
 			},
 			BrainCompress: {
 				files: {
-					'build/js/receipt.min.js':['development/receipt/*.js']
+					'build/js/receipt.min.js':['development/receipt/*.js','development/universal.mechanisms.inputerror.js']
 				}
 			}
 		},
@@ -72,28 +78,32 @@ module.exports=function (grunt)
 			}
 		},
 		watch: {
+			inputerrorscripts:{
+				files:['development/universal.mechanisms.inputerror.js'],
+				tasks:['uglify:InputErrorCompress']
+			},
 			pageinputscripts: {
-				files: ['js/pageinput/*.js'],
+				files: ['development/pageinput/*.js','development/universal.mechanisms.inputerror.js'],
 				tasks: ['uglify:PageInputCompress']
 			},
 			contingencyscripts: {
-				files: ['development/pageinput/Addons/Sliders/pageinput.silders.contingency.mechanisms.js','development/pageinput/Addons/Sliders/pageinput.silders.contingency.switchs.js'],
+				files: ['development/pageinput/Addons/Sliders/pageinput.silders.contingency.mechanisms.js','development/pageinput/Addons/Sliders/pageinput.sliders.contingency.switchs.js'],
 				tasks: ['uglify:PageInputContingencyCompress']
 			},
 			proposedroadwayscripts: {
-				files: ['development/pageinput/Addons/Sliders/pageinput.sliders.proposedroadway.mechanisms.js','js/pageinput/*.js'],
+				files: ['development/pageinput/Addons/Sliders/pageinput.sliders.proposedroadway.mechanisms.js','development/pageinput/*.js','development/universal.mechanisms.inputerror.js'],
 				tasks: ['uglify:PageInputProposedRoadwayCompress']
 			},
 			unitpricesscripts: {
-				files: ['development/pageinput/Addons/Sliders/pageinput.sliders.unitprices.mechanisms.js','development/pageinput/*.js'],
+				files: ['development/pageinput/Addons/Sliders/pageinput.sliders.unitprices.mechanisms.js','development/pageinput/*.js','development/universal.mechanisms.inputerror.js'],
 				tasks: ['uglify:PageInputUnitPricesCompress']
 			},
 			trafficscripts: {
-				files: ['development/pageinput/Addons/Windowresize/pageinput.windowresize.traffic.mechanisms.js','development/pageinput/*.js'],
+				files: ['development/pageinput/Addons/Windowresize/pageinput.windowresize.traffic.mechanisms.js','development/pageinput/*.js','development/universal.mechanisms.inputerror.js'],
 				tasks: ['uglify:PageInputTrafficCompress']
 			},
 			miscellaneousscripts: {
-				files: ['development/pageinput/Addons/Windowresize/pageinput.windowresize.miscellaneous.mechanisms.js','development/pageinput/*.js'],
+				files: ['development/pageinput/Addons/Windowresize/pageinput.windowresize.miscellaneous.mechanisms.js','development/pageinput/*.js','development/universal.mechanisms.inputerror.js'],
 				tasks: ['uglify:PageInputMiscellaneousCompress']
 			},
 			databasescripts: {
@@ -101,7 +111,7 @@ module.exports=function (grunt)
 				tasks: ['uglify:DatabaseInputCompress']
 			},
 			brainsscripts: {
-				files: ['js/receipt/*.js','js/Minipage_Special_Mods/minipages.loadedrecord.js'],
+				files: ['development/receipt/*.js'],
 				tasks: ['uglify:BrainCompress']
 			},
 			sasscompile: {

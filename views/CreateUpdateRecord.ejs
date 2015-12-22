@@ -11,6 +11,13 @@
     <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="/components/jquery/dist/jquery.min.js"><\/script>')</script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">$.fn.modal || document.write('<script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"><\/script>')</script>
+    <script type="text/javascript" src='/js/inputerror.min.js'></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        navBarErrorCheck();
+        pageErrors();
+    });
+    </script>
 </head>
 <body>
     <div class="hide" id="TestsIfCDNBootstrapLoadsProperly"></div>
@@ -22,7 +29,7 @@
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar" id='menuIcon'>
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -41,28 +48,28 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
                 <ul class="nav navbar-nav">
-                    <li><a href="AdministerInformation">Administration Data</a></li>
-                    <li><a href="ExistingRoadway">Existing Road</a></li>
-                    <li><a href="ExistingBridge">Existing Bridge</a></li>
-                    <li><a href="ProposedRoad">Proposed Road</a></li>
-                    <li><a href="ProposedBridge">Proposed Bridge</a></li>
-                    <li><a href="Connections">Connections</a></li>
-                    <li><a href="EarthworkCut">Earthwork:Cut</a></li>
-                    <li><a href="EarthworkFill">Earthwork:Fill</a></li>
-                    <li><a href="UnsuitableMaterial">Unsuitable Material</a></li>
-                    <li><a href="RipRapSlopes">Rip Rap Slopes</a></li>
-                    <li><a href="Drainage">Drainage</a></li>
-                    <li><a href="SWMFacility">SWM Facility</a></li>
-                    <li><a href="Traffic">Traffic</a></li>
-                    <li><a href="Entrances">Entrances</a></li>
-                    <li><a href="UtilityImpacts">Utility Impacts</a></li>
-                    <li><a href="RW3">Retaining Wall RW-3</a></li>
-                    <li><a href="Sidewalk">Sidewalk</a></li>
-                    <li><a href="Mitigation">Mitigation</a></li>
-                    <li><a href="MiscellaneousItems">Miscellaneous Items</a></li>
-                    <li><a href="UnitPrices">Unit Prices</a></li>
-                    <li><a href="Contingency">Contingency</a></li>
-                    <li><a href="Receipt">Receipt</a></li>
+                    <li><a id='AdministerInformation' href="AdministerInformation">Administration Data</a></li>
+                    <li><a id='ExistingRoadway' href="ExistingRoadway">Existing Road</a></li>
+                    <li><a id='ExistingBridge' href="ExistingBridge">Existing Bridge</a></li>
+                    <li><a id='ProposedRoad' href="ProposedRoad">Proposed Road</a></li>
+                    <li><a id='ProposedBridge' href="ProposedBridge">Proposed Bridge</a></li>
+                    <li><a id='Connections' href="Connections">Connections</a></li>
+                    <li><a id='EarthworkCut' href="EarthworkCut">Earthwork:Cut</a></li>
+                    <li><a id='EarthworkFill' href="EarthworkFill">Earthwork:Fill</a></li>
+                    <li><a id='UnsuitableMaterial' href="UnsuitableMaterial">Unsuitable Material</a></li>
+                    <li><a id='RipRapSlopes' href="RipRapSlopes">Rip Rap Slopes</a></li>
+                    <li><a id='Drainage' href="Drainage">Drainage</a></li>
+                    <li><a id='SWMFacility' href="SWMFacility">SWM Facility</a></li>
+                    <li><a id='Traffic' href="Traffic">Traffic</a></li>
+                    <li><a id='Entrances' href="Entrances">Entrances</a></li>
+                    <li><a id='UtilityImpacts' href="UtilityImpacts">Utility Impacts</a></li>
+                    <li><a id='RW3' href="RW3">Retaining Wall RW-3</a></li>
+                    <li><a id='Sidewalk' href="Sidewalk">Sidewalk</a></li>
+                    <li><a id='Mitigation' href="Mitigation">Mitigation</a></li>
+                    <li><a id='MiscellaneousItems' href="MiscellaneousItems">Miscellaneous Items</a></li>
+                    <li><a id='UnitPrices' href="UnitPrices">Unit Prices</a></li>
+                    <li><a id='Contingency' href="Contingency">Contingency</a></li>
+                    <li><a id='Receipt' href="Receipt">Receipt</a></li>
                 </ul>
             </div>
         </div>
@@ -79,6 +86,9 @@
                         <button type='button' class="btn btn-warning btn-md" id='UpdateFormButton'> Update Record <i class='fa fa-pencil'></i></button>
                     </div>
                 </div>
+                <div class='panel-footer'>
+                    <div id='Errors'></div>
+                </div>
             </div>
         </div>
         <div class='recordform' id='CreateRecordForm'>
@@ -88,7 +98,6 @@
                     <div class="panel-body">
                         <form id='CreateForm'>
                             <div class="form-group">
-                                <!-- type=hidden && readonly input Attribute as well as div with id of user -->
                                 <label>Estimator</label>
                                 <input type="text" class="form-control" name="CreateEstimator" required>
                             </div>
@@ -105,7 +114,7 @@
                                 <input type="hidden" name="CreateCTime" required>
                                 <input type="hidden" name="CreateUTime" required>
                             </div>
-                            <button type="submit" class="btn btn-warning btn-md">Create Record</button>
+                            <button type="submit" class="btn btn-warning btn-md" id='CreateRecordButton'>Create Record</button>
                             <button class='btn btn-primary' type='button' data-toggle="modal" data-target="#FormQA"><span>&#63;</span></button>
                         </form>
                     <% if (messageC.length > 0) { %>
@@ -127,7 +136,6 @@
                             <button class='btn btn-success btn-small' type='button' id='LastImportInfo'><span>Last Import Info</span></button>
                         </div>
                             <div class="form-group">
-                                <!-- type=hidden && readonly input Attribute as well as div with id of user -->
                                 <label>Estimator</label>
                                 <input type="text" class="form-control" name="UpdateEstimator" required>
                             </div>
@@ -143,7 +151,7 @@
                                 <input type="hidden" name="UpdateDataArray" required>
                                 <input type="hidden" name="UpdateTimeStamp" required>
                             </div>
-                            <button type="submit" class="btn btn-warning btn-md">Update Record</button>
+                            <button type="submit" class="btn btn-warning btn-md" id='UpdateRecordButton'>Update Record</button>
                             <button class='btn btn-primary' type='button' data-toggle="modal" data-target="#FormQA"><span>&#63;</span></button>
                         </form>
                     <% if (messageU.length > 0) { %>
@@ -161,16 +169,35 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="FormQALabel">Create/Update Form</h4>
-          </div>
+                <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="FormQALabel">Create/Update Form</h4>
+            </div>
             <div class="modal-body">
             When you Create or Update a form a snapshot of the data you have entered is then gathered and stored in the database with your name, UPC number, and Route number. This record is stored on the database for 3 months and then it is automatically deleted. Make sure to fill out ALL of the information on each form.
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
         </div>
+        </div>
+    </div>
+    <!-- Modal for errorsOnPage -->
+    <div class="modal fade" id="errorsOnPage" tabindex="-1" role="dialog" aria-labelledby="errorsOnPageLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="errorsOnPageLabel">Reset</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                    There are some errors on some pages, check out the pull down menu and correct the red highlight pages and make sure that you enter numbers and text where appropriate.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -15,3 +15,18 @@
 	text-align: left;
 	margin-top: 4px;
 }
+
+@mixin error_dot {
+	content: "";
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    top: 0px;
+    right: 0px;
+    background: {
+        image: radial-gradient(circle at center, red 6px, transparent 6px);
+        size: 20px 20px;
+        position: top center, bottom center;
+        repeat: no-repeat;
+    }
+}

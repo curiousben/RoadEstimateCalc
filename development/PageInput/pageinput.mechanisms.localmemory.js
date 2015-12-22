@@ -22,8 +22,8 @@ function Pageload() {
 	
 	if (inp_pres) {
 
-	var	inp_dat_arr=[],
-		che_dat_arr=[];
+		var	inp_dat_arr=[],
+			che_dat_arr=[];
 		// Arrays are only made if they absolutly need to be
 
 		$('#Road_Estimate_Tool input').each(function(){
@@ -50,7 +50,7 @@ function Pageload() {
 					}
 					else
 					{
-					document.getElementById(inp_dat_arr[i]).checked=false;
+						document.getElementById(inp_dat_arr[i]).checked=false;
 					};
 				};
 				document.getElementById(inp_dat_arr[i]).value=localStorage.getItem(inp_dat_arr[i]);

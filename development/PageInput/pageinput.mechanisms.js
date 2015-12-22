@@ -16,6 +16,8 @@
 
 function basicinputmemory () {
 	localStorage.setItem(this.id,this.value);
+	navBarErrorStorage(pageLetterNumber());
+	navBarErrorCheck(pageLetterNumber());
 };
 
 function checkboxmemory () {
@@ -99,7 +101,7 @@ function ImportCurrentlyLoadedRecord () {
 		localStorage.setItem('ImportUPC',datarecord[0].UPC);
 		localStorage.setItem('ImportRoadNumber',datarecord[0].RoadNumber);
 		
-		PageRefreshAddons();
+		PageAndAddonsRefresh();
 		
 		var	lastpageURL,
 			firstfwdslash=true,
@@ -114,6 +116,16 @@ function ImportCurrentlyLoadedRecord () {
 	});
 };
 
+//
+// <================ Page Refresh Functions ================>
+//
+// Handles how to refresh the page so that localstorage is always reflected after
+// any change
+//
+
+// This function is called to initalize the Silder addon functions when the
+// right page is loaded.
+
 function Addons () {
 	if (typeof(ProposedRoadwaySliders)==='function') {
 		ProposedRoadwaySliders();
@@ -124,7 +136,10 @@ function Addons () {
 	};
 };
 
-function PageRefreshAddons (argument) {
+// This functions calls on other functions to refresh all data that is found in
+// localstoarge.
+
+function PageAndAddonsRefresh () {
 	if (typeof(ProposedRoadwaySliders) === 'function') {
 		Pageload();
 		ProposedRoadwaySliders();

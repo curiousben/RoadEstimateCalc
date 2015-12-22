@@ -14,6 +14,8 @@ $(document).ready(function(){
 	CurrentlyloadedRecord();
 	Pageload();
 	Addons();
+	navBarErrorStorage(pageLetterNumber());
+	navBarErrorCheck(pageLetterNumber());
 
 	$( "#Road_Estimate_Tool input" ).bind('keyup mouseup', basicinputmemory);
 

@@ -33,7 +33,7 @@ $(document).ready(function(){
 //================ CHECK LIVE COPY WITH PHONE ================//
 // <================ Required Attribute Not work in Safari Browser ================>
 //
-//the check if the update holds {git pull origin master}
+
 //	console.log($('form'));
 	$('form').submit( function (e) {
 

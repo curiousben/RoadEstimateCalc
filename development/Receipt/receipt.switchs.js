@@ -12,6 +12,7 @@
 
 $(document).ready(function() {
     CurrentlyloadedRecord();
+	navBarErrorCheck();
     
     $("#calc").click(GrandTotal);
 

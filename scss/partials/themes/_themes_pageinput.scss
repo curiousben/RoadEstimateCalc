@@ -4,16 +4,28 @@
 
 //
 // <========================== Wrong Data Type =============================================> //
-// These style make the tabs appear red when an error is encountered with input data
+//
 
+// These styles make the tabs have a small red dot when an error is encountered with input data
 .navbar-default .navbar-nav>li>a.Error {
     color: $black;
     font-weight: bold;
-    background-color:$red;
-    &:hover {
-        background-color:$hoveredred;
+    &:after {
+        @include error_dot
     }
 }
+
+.errorMenu:after {
+    @include error_dot;
+}
+
+// These styles will highlight the individual cells in the page where input errors occur
+
+.cellError {
+    background-color:$red !important;
+    color: $black !important;
+}
+
 
 // These give the styles to headers and subheaders
 
