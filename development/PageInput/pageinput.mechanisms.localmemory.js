@@ -86,13 +86,17 @@ function Pageload() {
 
 	var tex_dat_arr=[];
 
-		$('#Road_Estimate_Tool textarea').each(function(){
+		$('#Road_Estimate_Tool textarea').each(function() {
 			tex_dat_arr.push($(this).attr('id'));
 		});
 		//Grabs each TEXTAREA data type ID
 		
-		// Adds 5 eventlisteners to textareas so they are responsive
-		expandTextarea(tex_dat_arr.length-1);
+		$('#Road_Estimate_Tool textarea').each(function() {
+			this.setAttribute('style','height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+		}).on('input',function () {
+			this.style.height = 'auto';
+			this.style.height = (this.scrollHeight) + 'px';
+		});
 
 		for (var i = tex_dat_arr.length - 1; i >= 0; i--) {
 			if (localStorage.getItem(tex_dat_arr[i])!= null) {
@@ -102,5 +106,6 @@ function Pageload() {
 			};
 		};
 		//Gos through the array of all TEXTAREA ID's and looks to see if there exists data attached to that ID. If not it moves on to the next one
+		$('#Road_Estimate_Tool textarea').trigger('input');
 	};
 };

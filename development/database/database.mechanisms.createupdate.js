@@ -36,7 +36,6 @@ function pageErrors() {
 		sessionStorage.setItem('Recordchoice',0);
 		$('#CreateFormButton').attr('disabled',false);
 		$('#UpdateFormButton').attr('disabled',false);
-		$('#Errors').html('');
 	}else{
 		$('#CreateFormButton').attr('disabled',true);
 		$('#UpdateFormButton').attr('disabled',true);
