@@ -11,6 +11,9 @@
 */
 
 var express = require('express');
+var session = require('express-session');
+var connect = require('connect');
+var MongoStore = require('connect-mongo')(session);
 var path = require('path');
 var favicon = require('serve-favicon');
 var morgan = require('morgan');
@@ -26,8 +29,8 @@ mongoose.connect('mongodb://127.0.0.1/RoadEstiCalcDB', function(err, db){
 		console.log("Mongo Server port: Connected to App");
 	};
 });
-var port = process.env.PORT || 3000;
 
+var port = process.env.PORT || 3000;
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -39,11 +42,12 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('trust proxy',1) //trust first proxy
-app.use(session({secret: 'RoadE5t1mateT00L',
-				resave: false,
-				saveUninitialized: true,
-				cookie: {}}));
-
+app.use(session({
+	secret: 'RoadE5t1mateT00L',
+	resave: false,
+	saveUninitialized: true,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
 //App is able to grab javscript, css, and images
 app.use(express.static(path.join(__dirname, 'build')));
 

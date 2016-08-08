@@ -31,7 +31,7 @@ module.exports=function (grunt)
 			},
 			PageInputContingencyCompress:{
 				files: {
-					'build/js/pageinput.contingency.min.js' :['development/pageinput/Addons/Sliders/pageinput.silders.contingency.mechanisms.js','development/pageinput/Addons/Sliders/pageinput.sliders.contingency.switchs.js']
+					'build/js/pageinput.contingency.min.js' :['development/PageInput/Addons/Sliders/pageinput.silders.contingency.mechanisms.js','development/PageInput/Addons/Sliders/pageinput.sliders.contingency.switchs.js']
 				}
 			},
 			PageInputProposedRoadwayCompress: {
