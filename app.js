@@ -24,7 +24,9 @@ var mongoose = require('mongoose');
 
 //connection to local Mongo Database
 
-mongoose.connect('mongodb://127.0.0.1/RoadEstiCalcDB', function(err, db){
+// mongodb://< mongodb-container-name >:27017/RoadEstiCalcDB
+// change this to the mongodb container name
+mongoose.connect('mongodb://mongodb:27017/RoadEstiCalcDB', function(err, db){
 	if (!err) {
 		console.log("Mongo Server port: Connected to App");
 	} else {
