@@ -27,6 +27,8 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1/RoadEstiCalcDB', function(err, db){
 	if (!err) {
 		console.log("Mongo Server port: Connected to App");
+	} else {
+		console.log(err)
 	};
 });
 
